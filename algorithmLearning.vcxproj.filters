@@ -72,9 +72,6 @@
     <ClInclude Include="recursion\咖啡机问题.h">
       <Filter>头文件\暴力递归和动态规划</Filter>
     </ClInclude>
-    <ClInclude Include="其它\SortAlgorithm.h">
-      <Filter>头文件\排序算法</Filter>
-    </ClInclude>
     <ClInclude Include="LeetCode\1 两数之和.h">
       <Filter>头文件\LeetCode题\1-50</Filter>
     </ClInclude>
@@ -110,6 +107,9 @@
     </ClInclude>
     <ClInclude Include="LeetCode\xxx  - 副本.h">
       <Filter>头文件\LeetCode题\100+</Filter>
+    </ClInclude>
+    <ClInclude Include="sort\SortAlgorithm.h">
+      <Filter>头文件\排序算法</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

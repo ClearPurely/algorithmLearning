@@ -154,11 +154,11 @@
     <ClInclude Include="LeetCode\494 目标和.h" />
     <ClInclude Include="LeetCode\5 最长回文子串.h" />
     <ClInclude Include="LeetCode\7 整数反转.h" />
-    <ClInclude Include="其它\SortAlgorithm.h" />
     <ClInclude Include="recursion\咖啡机问题.h" />
     <ClInclude Include="recursion\数字转换为字符串.h" />
     <ClInclude Include="recursion\纸牌游戏.h" />
     <ClInclude Include="recursion\机器人行走.h" />
+    <ClInclude Include="sort\SortAlgorithm.h" />
     <ClInclude Include="xxx.h" />
     <ClInclude Include="recursion\背包问题.h" />
     <ClInclude Include="recursion\691 贴纸拼词.h" />
