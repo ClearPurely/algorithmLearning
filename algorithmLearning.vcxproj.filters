@@ -111,6 +111,12 @@
     <ClInclude Include="sort\SortAlgorithm.h">
       <Filter>头文件\排序算法</Filter>
     </ClInclude>
+    <ClInclude Include="LeetCode\600 测试.h">
+      <Filter>头文件\LeetCode题</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\1000 test.h">
+      <Filter>头文件\LeetCode题</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">

@@ -140,6 +140,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="DataGenerator.h" />
+    <ClInclude Include="LeetCode\1000 test.h" />
+    <ClInclude Include="LeetCode\600 测试.h" />
     <ClInclude Include="LeetCode\xxx  - 副本.h" />
     <ClInclude Include="recursion\1143 最长公共子序列.h" />
     <ClInclude Include="recursion\516 最长回文子序列.h" />
