@@ -19,7 +19,7 @@ using namespace std;
 //#include"recursion/1143 最长公共子序列.h"
 //#include"recursion/516 最长回文子序列.h"
 //#include"recursion/象棋的骑士到一个点的走法.h"
-#include"recursion/咖啡机问题.h"
+//#include"recursion/咖啡机问题.h"
 
 /*LeetCode测试*/
 //#include"LeetCode/1 两数之和.h"
