@@ -1,25 +1,17 @@
-#pragma once
-#include<iostream>
-#include<vector>
-#include<map>
-#include<math.h>
-#include <unordered_map>
-#include<vector>
-#include"../DataGenerator.h"
+ï»¿#pragma once
+#include "../Solution.h"
 
-using namespace std;
-
-/***ÌâÄ¿½éÉÜ***
-¸ø¶¨Ò»¸öÕûĞÍÊı×éarr£¬´ú±íÊıÖµ²»Í¬µÄÖ½ÅÆÅÅ³ÉÒ»ÌõÏß
-Íæ¼ÒAºÍÍæ¼ÒBÒÀ´ÎÄÃ×ßÃ¿ÕÅÖ½ÅÆ
-¹æ¶¨Íæ¼ÒAÏÈÄÃ£¬Íæ¼ÒBºóÄÃ
-µ«ÊÇÃ¿¸öÍæ¼ÒÃ¿´ÎÖ»ÄÜÄÃ×ß×î×ó»ò×îÓÒµÄÖ½ÅÆ
-Íæ¼ÒAºÍÍæ¼ÒB¶¼¾ø¶¥´ÏÃ÷
-Çë·µ»Ø×îºó»ñÊ¤ÕßµÄ·ÖÊı¡£
+/***é¢˜ç›®ä»‹ç»***
+ç»™å®šä¸€ä¸ªæ•´å‹æ•°ç»„arrï¼Œä»£è¡¨æ•°å€¼ä¸åŒçš„çº¸ç‰Œæ’æˆä¸€æ¡çº¿
+ç©å®¶Aå’Œç©å®¶Bä¾æ¬¡æ‹¿èµ°æ¯å¼ çº¸ç‰Œ
+è§„å®šç©å®¶Aå…ˆæ‹¿ï¼Œç©å®¶Båæ‹¿
+ä½†æ˜¯æ¯ä¸ªç©å®¶æ¯æ¬¡åªèƒ½æ‹¿èµ°æœ€å·¦æˆ–æœ€å³çš„çº¸ç‰Œ
+ç©å®¶Aå’Œç©å®¶Béƒ½ç»é¡¶èªæ˜
+è¯·è¿”å›æœ€åè·èƒœè€…çš„åˆ†æ•°ã€‚
 */
 
 
-class Solution {
+class SolutionZP : public Solution {
 public:
 	int win1(vector<int> arr)
 	{
@@ -33,22 +25,22 @@ public:
 
 		if (first > second)
 		{
-			cout << "ÏÈÊÖ»ñÊ¤,·ÖÊıÎª£º" << first << endl;
+			cout << "å…ˆæ‰‹è·èƒœ,åˆ†æ•°ä¸ºï¼š" << first << endl;
 			return first;
 		}
 		else if (first < second)
 		{
-			cout << "ºóÊÖ»ñÊ¤,·ÖÊıÎª£º" << second << endl;
+			cout << "åæ‰‹è·èƒœ,åˆ†æ•°ä¸ºï¼š" << second << endl;
 			return second;
 		}
 		else
 		{
-			cout << "Æ½¾Ö,·ÖÊıÎª£º" << first << endl;
+			cout << "å¹³å±€,åˆ†æ•°ä¸ºï¼š" << first << endl;
 			return first;
 		}
 	}
 
-	//ÏÈÊÖÇé¿ö½øĞĞÑ¡Ôñ
+	//å…ˆæ‰‹æƒ…å†µè¿›è¡Œé€‰æ‹©
 	int f1(vector<int> arr, int L, int R)
 	{
 		if (L == R)
@@ -58,7 +50,7 @@ public:
 		return max(p1, p2);
 	}
 
-	//ºóÊÖÇé¿ö½øĞĞÑ¡Ôñ
+	//åæ‰‹æƒ…å†µè¿›è¡Œé€‰æ‹©
 	int g1(vector<int> arr, int L, int R)
 	{
 		if (L == R)
@@ -85,19 +77,19 @@ public:
 
 		if (first > second)
 		{
-			cout << "ÏÈÊÖ»ñÊ¤,·ÖÊıÎª£º" << first << endl;
+			cout << "å…ˆæ‰‹è·èƒœ,åˆ†æ•°ä¸ºï¼š" << first << endl;
 		}
 		else if (first < second)
 		{
-			cout << "ºóÊÖ»ñÊ¤,·ÖÊıÎª£º" << second << endl;
+			cout << "åæ‰‹è·èƒœ,åˆ†æ•°ä¸ºï¼š" << second << endl;
 		}
 		else
 		{
-			cout << "Æ½¾Ö,·ÖÊıÎª£º" << first << endl;
+			cout << "å¹³å±€,åˆ†æ•°ä¸ºï¼š" << first << endl;
 		}
 	}
 
-	//ÏÈÊÖÇé¿ö½øĞĞÑ¡Ôñ
+	//å…ˆæ‰‹æƒ…å†µè¿›è¡Œé€‰æ‹©
 	int f2(vector<int> arr, int L, int R, vector<vector<int>> fmap, vector<vector<int>> gmap)
 	{
 		if (fmap[L][R] != -1)
@@ -116,7 +108,7 @@ public:
 		return ans;
 	}
 
-	//ºóÊÖÇé¿ö½øĞĞÑ¡Ôñ
+	//åæ‰‹æƒ…å†µè¿›è¡Œé€‰æ‹©
 	int g2(vector<int> arr, int L, int R, vector<vector<int>> fmap, vector<vector<int>> gmap)
 	{
 		if (gmap[L][R] != -1)
@@ -164,29 +156,29 @@ public:
 		getFuncExcTime(start);
 		if (fmap[0][N - 1] > gmap[0][N - 1])
 		{
-			cout << "ÏÈÊÖ»ñÊ¤,·ÖÊıÎª£º" << fmap[0][N - 1] << endl;
+			cout << "å…ˆæ‰‹è·èƒœ,åˆ†æ•°ä¸ºï¼š" << fmap[0][N - 1] << endl;
 		}
 		else if (fmap[0][N - 1] < gmap[0][N - 1])
 		{
-			cout << "ºóÊÖ»ñÊ¤,·ÖÊıÎª£º" << gmap[0][N - 1] << endl;
+			cout << "åæ‰‹è·èƒœ,åˆ†æ•°ä¸ºï¼š" << gmap[0][N - 1] << endl;
 		}
 		else
 		{
-			cout << "Æ½¾Ö,·ÖÊıÎª£º" << fmap[0][N - 1] << endl;
+			cout << "å¹³å±€,åˆ†æ•°ä¸ºï¼š" << fmap[0][N - 1] << endl;
 		}
 		return max(fmap[0][N - 1], gmap[0][N - 1]);
 	}
 
 
-	void testDemo() {
-		cout << "¸ø¶¨Ò»¸öÕûĞÍÊı×éarr£¬´ú±íÊıÖµ²»Í¬µÄÖ½ÅÆÅÅ³ÉÒ»ÌõÏß" << endl;
-		cout << "Íæ¼ÒAºÍÍæ¼ÒBÒÀ´ÎÄÃ×ßÃ¿ÕÅÖ½ÅÆ" << endl;
-		cout << "¹æ¶¨Íæ¼ÒAÏÈÄÃ£¬Íæ¼ÒBºóÄÃ" << endl;
-		cout << "µ«ÊÇÃ¿¸öÍæ¼ÒÃ¿´ÎÖ»ÄÜÄÃ×ß×î×ó»ò×îÓÒµÄÖ½ÅÆ" << endl;
-		cout << "Íæ¼ÒAºÍÍæ¼ÒB¶¼¾ø¶¥´ÏÃ÷" << endl;
-		cout << "Çë·µ»Ø×îºó»ñÊ¤ÕßµÄ·ÖÊı¡£" << endl;
+	void testDemo() override {
+		cout << "ç»™å®šä¸€ä¸ªæ•´å‹æ•°ç»„arrï¼Œä»£è¡¨æ•°å€¼ä¸åŒçš„çº¸ç‰Œæ’æˆä¸€æ¡çº¿" << endl;
+		cout << "ç©å®¶Aå’Œç©å®¶Bä¾æ¬¡æ‹¿èµ°æ¯å¼ çº¸ç‰Œ" << endl;
+		cout << "è§„å®šç©å®¶Aå…ˆæ‹¿ï¼Œç©å®¶Båæ‹¿" << endl;
+		cout << "ä½†æ˜¯æ¯ä¸ªç©å®¶æ¯æ¬¡åªèƒ½æ‹¿èµ°æœ€å·¦æˆ–æœ€å³çš„çº¸ç‰Œ" << endl;
+		cout << "ç©å®¶Aå’Œç©å®¶Béƒ½ç»é¡¶èªæ˜" << endl;
+		cout << "è¯·è¿”å›æœ€åè·èƒœè€…çš„åˆ†æ•°ã€‚" << endl;
 
-		vector<int> sample = DataGenerator().generateArray(20, 10, false);
+		vector<int> sample = randomArray1(20, 10, false);
 		for (int num : sample)
 		{
 			cout << num << endl;

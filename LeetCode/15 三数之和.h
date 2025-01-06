@@ -7,24 +7,19 @@
 
 *********/
 #pragma once
-#include<iostream>
-#include<vector>
-#include<map>
-#include<algorithm>
-using namespace std;
-
+#include "../Solution.h"
 
  static void printInt(int x) {
     cout << x << "  ";
 }
-class Solution {
-public:
 
+class Solution15 : public Solution {
+public:
     vector<vector<int>> threeSum(vector<int>& nums) {
         int size = nums.size();
         if (size < 3)   return {};          // 特判
         vector<vector<int> >res;            // 保存结果（所有不重复的三元组）
-        std::sort(nums.begin(), nums.end());// 排序（默认递增）
+        sort(nums.begin(), nums.end());// 排序（默认递增）
         for (int i = 0; i < size; i++)      // 固定第一个数，转化为求两数之和
         {
             if (nums[i] > 0)    return res; // 第一个数大于 0，后面都是递增正数，不可能相加为零了
@@ -57,7 +52,7 @@ public:
 
 
     //测试代码
-    void testDemo() {
+    void testDemo() override {
         vector<int> v = { 1,21,-36,32,16,20,3,8,7,2,1,13,-11 };
         vector<vector<int>> ret = threeSum(v);
         for (vector<vector<int>>::iterator it = ret.begin(); it != ret.end();++it) {

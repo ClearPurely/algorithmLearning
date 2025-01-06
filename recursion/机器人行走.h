@@ -1,13 +1,5 @@
 #pragma once
-#include<iostream>
-#include<vector>
-#include<map>
-#include<math.h>
-#include <unordered_map>
-#include<vector>
-#include"../DataGenerator.h"
-
-using namespace std;
+#include "../Solution.h"
 
 /***题目介绍***
 假设有排成一行的N个位置，记为1~N，N一定大于或等于2
@@ -20,7 +12,7 @@ using namespace std;
 */
 
 
-class Solution {
+class SolutionJQRXZ : public Solution {
 public:
 	int ways1(int N, int start, int aim, int rest)
 	{
@@ -126,7 +118,7 @@ public:
 
 
 
-	void testDemo() {
+	void testDemo() override {
 		cout << "假设有排成一行的N个位置，记为1~N，N一定大于或等于2" << endl;
 		cout << "开始时机器人在其中的M位置上(M一定是1~N中的一个)" << endl;
 		cout << "如果机器人来到1位置，那么下一步只能往右来到2位置;" << endl;

@@ -1,57 +1,77 @@
-/*************
-×÷Õß£ºÕÅÎª
-ÏîÄ¿Ãû£ºLeetCodeËã·¨Ìâ´óÈ«
-´´½¨ÈÕÆÚ£º2021.9.20
-×îºó¸üĞÂÈÕÆÚ£º2021.9.20
+ï»¿/*************
+ä½œè€…ï¼šå¼ ä¸º
+é¡¹ç›®åï¼šLeetCodeç®—æ³•é¢˜å¤§å…¨
+åˆ›å»ºæ—¥æœŸï¼š2021.9.20
+æœ€åæ›´æ–°æ—¥æœŸï¼š2025.1.6
 ****************/
-#include <iostream>
-using namespace std;
+#include <conio.h> // åŒ…å«getch()å’Œkbhit()å‡½æ•°
+#include <thread>
 
-//ÅÅĞòËã·¨
+#include"æ ‡é¢˜.h"
 
 
-/*±©Á¦µİ¹éºÍ¶¯Ì¬¹æ»®*/
-//#include"recursion/»úÆ÷ÈËĞĞ×ß.h"
-//#include"recursion/Ö½ÅÆÓÎÏ·.h"
-//#include"recursion/±³°üÎÊÌâ.h"
-//#include"recursion/Êı×Ö×ª»»Îª×Ö·û´®.h"
-//#include"recursion/691 ÌùÖ½Æ´´Ê.h"
-//#include"recursion/1143 ×î³¤¹«¹²×ÓĞòÁĞ.h"
-//#include"recursion/516 ×î³¤»ØÎÄ×ÓĞòÁĞ.h"
-//#include"recursion/ÏóÆåµÄÆïÊ¿µ½Ò»¸öµãµÄ×ß·¨.h"
-//#include"recursion/¿§·È»úÎÊÌâ.h"
+bool shouldExit = false; // ç”¨äºæ ‡è®°æ˜¯å¦åº”è¯¥é€€å‡ºç¨‹åºçš„æ ‡å¿—
 
-/*LeetCode²âÊÔ*/
-//#include"LeetCode/1 Á½ÊıÖ®ºÍ.h"
-//#include"LeetCode/2 Á½ÊıÏà¼Ó.h"
-//#include"LeetCode/3 ÎŞÖØ¸´×Ö·ûµÄ×î³¤×Ó´®.h"
-//#include"LeetCode/4 Ñ°ÕÒÁ½¸öÕıĞòÊı×éµÄÖĞÎ»Êı.h"
-//#include"LeetCode/5 ×î³¤»ØÎÄ×Ó´®.h"
-//#include"LeetCode/10 ÕıÔò±í´ïÊ½Æ¥Åä.h"
-//#include"LeetCode/7 ÕûÊı·´×ª.h"
-//#include"LeetCode/15 ÈıÊıÖ®ºÍ.h"
-//#include"LeetCode/494 Ä¿±êºÍ.h"
-//#include"LeetCode/1891 ¸îÉş×Ó.h"
 
+void listenEvent() {
+	while (!shouldExit) {
+		if (_kbhit()) { // æ£€æŸ¥æ˜¯å¦æœ‰é”®ç›˜è¾“å…¥
+			char ch = _getch(); // è·å–é”®ç›˜è¾“å…¥
+			if (ch == 27) { // æ£€æŸ¥æ˜¯å¦æŒ‰ä¸‹Escé”®ï¼ˆASCIIç ä¸º27ï¼‰
+				shouldExit = true; // è®¾ç½®é€€å‡ºæ ‡å¿—
+				break; // é€€å‡ºå¾ªç¯
+			}
+		}
+		this_thread::sleep_for(chrono::milliseconds(100)); // é¿å…è¿‡åº¦å ç”¨CPUèµ„æº
+	}
+}
 
 int main() 
 {
-	cout << "²âÊÔ¿ªÊ¼" << endl;
+	/*
+	cout << "===æµ‹è¯•å¼€å§‹===" << endl;
 	cout << endl;
 
-	Solution s;
-	s.testDemo();
+	//Solution162 s162;
+	//Solution* solution = &s162;
+	Solution* solution = new Solution162();
+	solution->testDemo();
+	cout << "===æµ‹è¯•ç»“æŸ===" << endl;
 
-	cout << endl;
-	cout << "²âÊÔ½áÊø" << endl;
+	delete solution;
+	solution = nullptr;
+	*/
 
-	pow(10,2);
+	int num = 1;
+	Solution* solution = nullptr;
 
+	while (1) {
 
+		cout << "è¯·è¾“å…¥ä½ è¦æŸ¥çœ‹çš„é¢˜çš„åºå·:" << endl;
+		std::cin >> num;
 
+		switch (num) {
+		case 162:
+			solution = new Solution162();
+			solution->testDemo();
+			break;
+		case 1:
+			solution = new Solution1();
+			solution->testDemo();
+			break;
 
+		default:
+			std::cout << "æ— æ•ˆçš„è¾“å…¥" << std::endl;
+			break;
+		}
 
-
+		system("pause");
+		system("cls");
+		if (solution != nullptr) {
+			delete solution;
+			solution = nullptr;
+		}
+	}
 
 	return 0;
 }

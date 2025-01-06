@@ -16,14 +16,9 @@
 
 
 */
-#pragma once
-#include <climits>
-#include<iostream>
-#include<string>
-#include<vector>
-using namespace std;
+#include "../Solution.h"
 
-class Solution {
+class Solution10 : public Solution {
 public:
     //动态规划
     bool isMatch(string s, string p) {
@@ -78,7 +73,7 @@ public:
     }
 
     //测试代码
-    void testDemo() {
+    void testDemo() override {
         cout << isMatch("abc*bj.j", "abcabcabcbjaj") << endl;
         cout << isMatch("abbbbbb", "ab*") << endl;
 

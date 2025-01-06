@@ -1,13 +1,5 @@
 #pragma once
-#include<iostream>
-#include<vector>
-#include<map>
-#include<math.h>
-#include <unordered_map>
-#include<vector>
-#include"../DataGenerator.h"
-
-using namespace std;
+#include "../Solution.h"
 
 /***题目介绍***
 给定一个字符串str，返回这个字符串的最长回文子序列长度
@@ -16,7 +8,7 @@ using namespace std;
 */
 
 
-class Solution {
+class Solution516 : public Solution {
 public:
 	//可以看做是一个字符串和其逆序字符串的最大公共子序列，解法可见1143题
 	int longestPalindromeSubseq(string s) {
@@ -100,7 +92,7 @@ public:
 	}
 
 	//优化
-	int longestPalindromeSubseq3(string s) {
+	int longestPalindromeSubseq4(string s) {
 		if (s.empty())
 			return 0;
 		int N = s.size();
@@ -124,7 +116,7 @@ public:
 		return dp[0][N - 1];
 	}
 
-	void testDemo() {
+	void testDemo() override {
 		cout << "给定一个字符串str，返回这个字符串的最长回文子序列长度" << endl;
 		cout << "比如: str = “a12b3c43def2ghi1kpm”" << endl;
 		cout << "最长回文子序列是“1234321”或者“123c321”，返回长度7" << endl;

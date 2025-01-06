@@ -1,15 +1,9 @@
 /*********
 给定一个字符串s，请你找出其中不含有重复字符的最长子串的长度。
 *********/
-#pragma once
-#include<iostream>
-#include<string>
-#include <unordered_set>
-using namespace std;
+#include "../Solution.h"
 
-
-
-class Solution {
+class Solution3 : public Solution{
 public:
     int lengthOfLongestSubstring(string s) {
         // 哈希集合，记录每个字符是否出现过
@@ -36,7 +30,7 @@ public:
 
 
     //测试代码
-    void testDemo() {
+    void testDemo() override{
 
 
 

@@ -1,13 +1,5 @@
 #pragma once
-#include<iostream>
-#include<vector>
-#include<map>
-#include<math.h>
-#include <unordered_map>
-#include<vector>
-#include"../DataGenerator.h"
-
-using namespace std;
+#include "../Solution.h"
 
 /***题目介绍***
 给定一个字符串str，给定一个字符串类型的数组arc，出现的字符都是小写英文
@@ -19,7 +11,7 @@ arr每一个字符串，代表一张贴纸，你可以把单个字符剪开使用，
 */
 
 
-class Solution {
+class Solution691 : public Solution {
 public:
 	int minStickers(vector<string>& stickers, string target) {
 		int ans = process1(stickers, target);
@@ -224,7 +216,7 @@ public:
 		return strStickerCnt[target];
 	}
 
-	void testDemo() {
+	void testDemo() override {
 		cout << "给定一个字符串str，给定一个字符串类型的数组arc，出现的字符都是小写英文" << endl;
 		cout << "arr每一个字符串，代表一张贴纸，你可以把单个字符剪开使用，" << endl;
 		cout << "目的是拼出str来返回需要至少多少张贴纸可以完成这个任务。" << endl;

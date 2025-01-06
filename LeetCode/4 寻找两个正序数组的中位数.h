@@ -6,13 +6,9 @@
 解释：合并数组 = [1,2,3] ，中位数 2
 */
 #pragma once
-#include<iostream>
-#include<vector>
-#include <algorithm>
+#include "../Solution.h"
 
-using namespace std;
-
-class Solution {
+class Solution4 : public Solution{
 public:
     //无法处理一个元素的情况
     double findMedianSortedArrays1(vector<int>& nums1, vector<int>& nums2) {
@@ -119,7 +115,7 @@ public:
 
 
     //测试代码
-    void testDemo() {
+    void testDemo() override {
         vector<int> v1;
         vector<int> v2;
         v1.push_back(1);

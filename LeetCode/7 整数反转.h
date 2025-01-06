@@ -7,14 +7,9 @@
 输出：-321
 *******/
 #pragma once
-#include <climits>
-#include<iostream>
-#include<string>
-using namespace std;
+#include "../Solution.h"
 
-
-class Solution
-{
+class Solution7 : public Solution {
 public:
 	int reverse(int x) {
 		{
@@ -33,7 +28,7 @@ public:
 
 
 	//测试代码
-	void testDemo() {
+	void testDemo() override {
 
 
 

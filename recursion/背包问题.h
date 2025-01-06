@@ -1,14 +1,5 @@
 #pragma once
-#include<iostream>
-#include<vector>
-#include<map>
-#include<math.h>
-#include <unordered_map>
-#include<vector>
-#include"../DataGenerator.h"
-#include<windows.h>
-
-using namespace std;
+#include "../Solution.h"
 
 /***题目介绍***
 有N个货物，每个货物有它的重量和价值，有两个数组
@@ -18,7 +9,7 @@ using namespace std;
 */
 
 
-class Solution {
+class SolutionBB : public Solution {
 public:
 	int maxValue(vector<int> w, vector<int> v, int bag)
 	{
@@ -78,13 +69,13 @@ public:
 	}
 
 
-	void testDemo() {
+	void testDemo() override{
 		cout << "有一堆货物，每个货物有它的重量和价值，有两个数组" << endl;
 		cout << "一组表示所有货物的重量，另一组表示所有货物的重量" << endl;
 		cout << "有一个背包，可以装bag个单位重量的货物，" << endl;
 		cout << "问怎样可以装下价值最多的货物。" << endl;
 
-		int bag = DataGenerator().RadomNum(50);
+		int bag = randomNum(50);
 		vector<int> w;
 		vector<int> v;
 		//cout << bag << endl;

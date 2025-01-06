@@ -1,10 +1,5 @@
-#pragma once
-#include<iostream>
-#include<vector>
-#include<map>
-#include <unordered_map>
-
-using namespace std;
+ï»¿#pragma once
+#include "../Solution.h"
 
 
 // Definition for a Node.
@@ -22,9 +17,9 @@ public:
 };
 
 
-class Solution {
+class Solution138 : public Solution {
 public:
-	//ÀûÓÃÒ»¶ÔÒ»¶Ô±éÀúÊµÏÖ
+	//åˆ©ç”¨ä¸€å¯¹ä¸€å¯¹éå†å®ç°
 	
     Node* copyRandomList(Node* head) {
 		if (head == nullptr) {
@@ -43,7 +38,7 @@ public:
 		cur = head;
 		Node* copy = nullptr;
 		// 1 1' 2 2' 3 3'
-		// ÒÀ´ÎÉèÖÃ 1' 2' 3' randomÖ¸Õë
+		// ä¾æ¬¡è®¾ç½® 1' 2' 3' randomæŒ‡é’ˆ
 		while (cur != nullptr) {
 			next = cur->next->next;
 			copy = cur->next;
@@ -52,8 +47,8 @@ public:
 		}
 		Node* res = head->next;
 		cur = head;
-		// ÀÏ ĞÂ »ìÔÚÒ»Æğ£¬next·½ÏòÉÏ£¬randomÕıÈ·
-		// next·½ÏòÉÏ£¬°ÑĞÂÀÏÁ´±í·ÖÀë
+		// è€ æ–° æ··åœ¨ä¸€èµ·ï¼Œnextæ–¹å‘ä¸Šï¼Œrandomæ­£ç¡®
+		// nextæ–¹å‘ä¸Šï¼ŒæŠŠæ–°è€é“¾è¡¨åˆ†ç¦»
 		while (cur != nullptr) {
 			next = cur->next->next;
 			copy = cur->next;
@@ -64,10 +59,10 @@ public:
 		return res;
     }
 
-	//ÀûÓÃmapÊµÏÖ
+	//åˆ©ç”¨mapå®ç°
 	Node* copyRandomList1(Node* head) {
-		// key ÀÏ½Úµã
-		// value ĞÂ½Úµã
+		// key è€èŠ‚ç‚¹
+		// value æ–°èŠ‚ç‚¹
 		unordered_map<Node*, Node*> map;
 		Node* cur = head;
 		while (cur != nullptr) {
@@ -76,9 +71,9 @@ public:
 		}
 		cur = head;
 		while (cur != nullptr) {
-			// cur ÀÏ
-			// map.get(cur) ĞÂ
-			// ĞÂ.next ->  cur.next¿ËÂ¡½ÚµãÕÒµ½
+			// cur è€
+			// map.get(cur) æ–°
+			// æ–°.next ->  cur.nextå…‹éš†èŠ‚ç‚¹æ‰¾åˆ°
 			//map.get(cur).next = map.get(cur.next);
 			//map.get(cur).random = map.get(cur.random);
 			//(*(map.find(cur))).second->next = (*(map.find(cur->next))).second;
@@ -91,11 +86,10 @@ public:
 	}
 
 
-	void testDemo()
-	{
-		cout << "ÌâÄ¿ÃèÊö" << endl;
-		cout << "¸øÄãÒ»¸ö³¤¶ÈÎª n µÄÁ´±í£¬Ã¿¸ö½Úµã°üº¬Ò»¸ö¶îÍâÔö¼ÓµÄËæ»ú" << endl;
-		cout << "Ö¸Õë random £¬¸ÃÖ¸Õë¿ÉÒÔÖ¸ÏòÁ´±íÖĞµÄÈÎºÎ½Úµã»ò¿Õ½Úµã¡£" << endl;
+	void testDemo() override {
+		cout << "é¢˜ç›®æè¿°" << endl;
+		cout << "ç»™ä½ ä¸€ä¸ªé•¿åº¦ä¸º n çš„é“¾è¡¨ï¼Œæ¯ä¸ªèŠ‚ç‚¹åŒ…å«ä¸€ä¸ªé¢å¤–å¢åŠ çš„éšæœº" << endl;
+		cout << "æŒ‡é’ˆ random ï¼Œè¯¥æŒ‡é’ˆå¯ä»¥æŒ‡å‘é“¾è¡¨ä¸­çš„ä»»ä½•èŠ‚ç‚¹æˆ–ç©ºèŠ‚ç‚¹ã€‚" << endl;
 
 	}
 };

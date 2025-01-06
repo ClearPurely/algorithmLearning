@@ -6,16 +6,9 @@
 输出："bab"
 解释："aba" 同样是符合题意的答案。
 */
+#include "../Solution.h"
 
-#pragma once
-#include<string>
-#include<iostream>
-#include<set>
-using namespace std;
-
-
-
-class Solution {
+class Solution5 : public Solution {
 public:
     string longestPalindrome1(string s) {
         int size = s.size();
@@ -108,7 +101,7 @@ public:
 
 
     //测试代码
-    void testDemo() {
+    void testDemo() override {
         //string s = "babad";
         string s = "a";
         string ret = longestPalindrome(s);

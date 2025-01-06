@@ -31,22 +31,19 @@
     <Filter Include="头文件\LeetCode题">
       <UniqueIdentifier>{6e313266-8480-47ce-8ea7-a1576d17d327}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\LeetCode题\1-50">
-      <UniqueIdentifier>{65088d06-d11f-41a4-823a-e0fc6729cfd1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="头文件\LeetCode题\100+">
       <UniqueIdentifier>{57fc3824-daf5-4e08-ab95-fd7c4ca6f295}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\LeetCode题\500+">
+      <UniqueIdentifier>{60ca1739-d3b5-4c46-9ba9-4bdf19df7032}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\LeetCode题\1-99">
+      <UniqueIdentifier>{65088d06-d11f-41a4-823a-e0fc6729cfd1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="xxx.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="recursion\机器人行走.h">
       <Filter>头文件\暴力递归和动态规划</Filter>
-    </ClInclude>
-    <ClInclude Include="DataGenerator.h">
-      <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="recursion\纸牌游戏.h">
       <Filter>头文件\暴力递归和动态规划</Filter>
@@ -73,28 +70,28 @@
       <Filter>头文件\暴力递归和动态规划</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\1 两数之和.h">
-      <Filter>头文件\LeetCode题\1-50</Filter>
+      <Filter>头文件\LeetCode题\1-99</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\2 两数相加.h">
-      <Filter>头文件\LeetCode题\1-50</Filter>
+      <Filter>头文件\LeetCode题\1-99</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\3 无重复字符的最长子串.h">
-      <Filter>头文件\LeetCode题\1-50</Filter>
+      <Filter>头文件\LeetCode题\1-99</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\4 寻找两个正序数组的中位数.h">
-      <Filter>头文件\LeetCode题\1-50</Filter>
+      <Filter>头文件\LeetCode题\1-99</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\5 最长回文子串.h">
-      <Filter>头文件\LeetCode题\1-50</Filter>
+      <Filter>头文件\LeetCode题\1-99</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\7 整数反转.h">
-      <Filter>头文件\LeetCode题\1-50</Filter>
+      <Filter>头文件\LeetCode题\1-99</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\10 正则表达式匹配.h">
-      <Filter>头文件\LeetCode题\1-50</Filter>
+      <Filter>头文件\LeetCode题\1-99</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\15 三数之和.h">
-      <Filter>头文件\LeetCode题\1-50</Filter>
+      <Filter>头文件\LeetCode题\1-99</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\138 复制带随机指针的链表.h">
       <Filter>头文件\LeetCode题\100+</Filter>
@@ -105,21 +102,30 @@
     <ClInclude Include="LeetCode\1891 割绳子.h">
       <Filter>头文件\LeetCode题\100+</Filter>
     </ClInclude>
-    <ClInclude Include="LeetCode\xxx  - 副本.h">
-      <Filter>头文件\LeetCode题\100+</Filter>
-    </ClInclude>
     <ClInclude Include="sort\SortAlgorithm.h">
       <Filter>头文件\排序算法</Filter>
     </ClInclude>
-    <ClInclude Include="LeetCode\600 测试.h">
-      <Filter>头文件\LeetCode题</Filter>
+    <ClInclude Include="Validator.h">
+      <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="LeetCode\1000 test.h">
-      <Filter>头文件\LeetCode题</Filter>
+    <ClInclude Include="LeetCode\600 测试.h">
+      <Filter>头文件\LeetCode题\500+</Filter>
+    </ClInclude>
+    <ClInclude Include="Solution.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="标题.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LeetCode\162 找峰值.h">
+      <Filter>头文件\LeetCode题\100+</Filter>
+    </ClCompile>
+    <ClCompile Include="Validator.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

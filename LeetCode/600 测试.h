@@ -1,46 +1,30 @@
-#pragma once
-#include<iostream>
-#include<vector>
-#include<map>
-#include<math.h>
-#include <unordered_map>
-#include<vector>
-#include <random>
-#include"../DataGenerator.h"
+ï»¿#pragma once
+#include "../Solution.h"
 
-using namespace std;
+/***é¢˜ç›®ä»‹ç»***
+çŽ°æœ‰å¸æœºN*2äººï¼Œè°ƒåº¦ä¸­å¿ƒä¼šå°†æ‰€æœ‰å¸æœºå¹³åˆ†ç»™Aã€Bä¸¤ä¸ªåŒºåŸŸ
+ç¬¬iä¸ªå¸æœºåŽ»Aå¯å¾—æ”¶å…¥ä¸ºincome[i][0],
+ç¬¬iä¸ªå¸æœºåŽ»Bå¯å¾—æ”¶å…¥ä¸ºincome[i][1],
+è¿”å›žæ‰€æœ‰è°ƒåº¦æ–¹æ¡ˆä¸­èƒ½ä½¿æ‰€æœ‰å¸æœºæ€»æ”¶å…¥æœ€é«˜çš„æ–¹æ¡ˆï¼Œæ˜¯å¤šå°‘é’±
 
-/***ÌâÄ¿½éÉÜ***
-ÏÖÓÐË¾»úN*2ÈË£¬µ÷¶ÈÖÐÐÄ»á½«ËùÓÐË¾»úÆ½·Ö¸øA¡¢BÁ½¸öÇøÓò
-µÚi¸öË¾»úÈ¥A¿ÉµÃÊÕÈëÎªincome[i][0],
-µÚi¸öË¾»úÈ¥B¿ÉµÃÊÕÈëÎªincome[i][1],
-·µ»ØËùÓÐµ÷¶È·½°¸ÖÐÄÜÊ¹ËùÓÐË¾»ú×ÜÊÕÈë×î¸ßµÄ·½°¸£¬ÊÇ¶àÉÙÇ®
-
-¼ÙÉèÓÐÅÅ³ÉÒ»ÐÐµÄN¸öÎ»ÖÃ£¬¼ÇÎª1~N£¬NÒ»¶¨´óÓÚ»òµÈÓÚ2
-¿ªÊ¼Ê±»úÆ÷ÈËÔÚÆäÖÐµÄMÎ»ÖÃÉÏ(MÒ»¶¨ÊÇ1~NÖÐµÄÒ»¸ö)
-Èç¹û»úÆ÷ÈËÀ´µ½1Î»ÖÃ£¬ÄÇÃ´ÏÂÒ»²½Ö»ÄÜÍùÓÒÀ´µ½2Î»ÖÃ;
-Èç¹û»úÆ÷ÈËÀ´µ½NÎ»ÖÃ£¬ÄÇÃ´ÏÂÒ»²½Ö»ÄÜÍù×óÀ´µ½N-1Î»ÖÃ;
-Èç¹û»úÆ÷ÈËÀ´µ½ÖÐ¼äÎ»ÖÃ£¬ÄÇÃ´ÏÂÒ»²½¿ÉÒÔÍù×ó×ß»òÕßÍùÓÒ×ß;
-¹æ¶¨»úÆ÷ÈË±ØÐë×ßK²½£¬×îÖÕÄÜÀ´µ½PÎ»ÖÃ(PÒ²ÊÇ1~NÖÐµÄÒ»¸ö)µÄ·½·¨ÓÐ¶àÉÙÖÖ
-¸ø¶¨ËÄ¸ö²ÎÊýN¡¢M¡¢K¡¢P£¬·µ»Ø·½·¨Êý¡£
+å‡è®¾æœ‰æŽ’æˆä¸€è¡Œçš„Nä¸ªä½ç½®ï¼Œè®°ä¸º1~Nï¼ŒNä¸€å®šå¤§äºŽæˆ–ç­‰äºŽ2
+å¼€å§‹æ—¶æœºå™¨äººåœ¨å…¶ä¸­çš„Mä½ç½®ä¸Š(Mä¸€å®šæ˜¯1~Nä¸­çš„ä¸€ä¸ª)
+å¦‚æžœæœºå™¨äººæ¥åˆ°1ä½ç½®ï¼Œé‚£ä¹ˆä¸‹ä¸€æ­¥åªèƒ½å¾€å³æ¥åˆ°2ä½ç½®;
+å¦‚æžœæœºå™¨äººæ¥åˆ°Nä½ç½®ï¼Œé‚£ä¹ˆä¸‹ä¸€æ­¥åªèƒ½å¾€å·¦æ¥åˆ°N-1ä½ç½®;
+å¦‚æžœæœºå™¨äººæ¥åˆ°ä¸­é—´ä½ç½®ï¼Œé‚£ä¹ˆä¸‹ä¸€æ­¥å¯ä»¥å¾€å·¦èµ°æˆ–è€…å¾€å³èµ°;
+è§„å®šæœºå™¨äººå¿…é¡»èµ°Kæ­¥ï¼Œæœ€ç»ˆèƒ½æ¥åˆ°Pä½ç½®(Pä¹Ÿæ˜¯1~Nä¸­çš„ä¸€ä¸ª)çš„æ–¹æ³•æœ‰å¤šå°‘ç§
+ç»™å®šå››ä¸ªå‚æ•°Nã€Mã€Kã€Pï¼Œè¿”å›žæ–¹æ³•æ•°ã€‚
 */
 
 
-class Solution {
+class Solution600 : public Solution {
 public:
-	Solution()
-	{
-	}
 
-
-
-
-
-	void testDemo() {
-		cout << "ÏÖÓÐË¾»úN*2ÈË£¬µ÷¶ÈÖÐÐÄ»á½«ËùÓÐË¾»úÆ½·Ö¸øA¡¢BÁ½¸öÇøÓò" << endl;
-		cout << "µÚi¸öË¾»úÈ¥A¿ÉµÃÊÕÈëÎªincome[i][0]," << endl;
-		cout << "µÚi¸öË¾»úÈ¥B¿ÉµÃÊÕÈëÎªincome[i][1]," << endl;
-		cout << "·µ»ØËùÓÐµ÷¶È·½°¸ÖÐÄÜÊ¹ËùÓÐË¾»ú×ÜÊÕÈë×î¸ßµÄ·½°¸£¬ÊÇ¶àÉÙÇ®£¿" << endl;
+	void testDemo() override {
+		cout << "çŽ°æœ‰å¸æœºN*2äººï¼Œè°ƒåº¦ä¸­å¿ƒä¼šå°†æ‰€æœ‰å¸æœºå¹³åˆ†ç»™Aã€Bä¸¤ä¸ªåŒºåŸŸ" << endl;
+		cout << "ç¬¬iä¸ªå¸æœºåŽ»Aå¯å¾—æ”¶å…¥ä¸ºincome[i][0]," << endl;
+		cout << "ç¬¬iä¸ªå¸æœºåŽ»Bå¯å¾—æ”¶å…¥ä¸ºincome[i][1]," << endl;
+		cout << "è¿”å›žæ‰€æœ‰è°ƒåº¦æ–¹æ¡ˆä¸­èƒ½ä½¿æ‰€æœ‰å¸æœºæ€»æ”¶å…¥æœ€é«˜çš„æ–¹æ¡ˆï¼Œæ˜¯å¤šå°‘é’±ï¼Ÿ" << endl;
 
 
 

@@ -1,25 +1,16 @@
-#pragma once
-#include<iostream>
-#include<vector>
-#include<map>
-#include<math.h>
-#include <unordered_map>
-#include<vector>
-#include"../DataGenerator.h"
+ï»¿#pragma once
+#include "../Solution.h"
 
-using namespace std;
-
-/***ÌâÄ¿½éÉÜ***
-¸ø¶¨Ò»¸öÓĞĞòÊı×éarr£¬´ú±í×øÂäÔÚXÖáÉÏµÄµã
-¸ø¶¨Ò»¸öÕıÊıK£¬´ú±íÉş×ÓµÄ³¤¶È
-·µ»ØÉş×Ó×î¶àÑ¹ÖĞ¼¸¸öµã?
-¼´Ê¹Éş×Ó±ßÔµ´¦¸Ç×¡µãÒ²Ëã¸Ç×¡
+/***é¢˜ç›®ä»‹ç»***
+ç»™å®šä¸€ä¸ªæœ‰åºæ•°ç»„arrï¼Œä»£è¡¨åè½åœ¨Xè½´ä¸Šçš„ç‚¹
+ç»™å®šä¸€ä¸ªæ­£æ•°Kï¼Œä»£è¡¨ç»³å­çš„é•¿åº¦
+è¿”å›ç»³å­æœ€å¤šå‹ä¸­å‡ ä¸ªç‚¹?
+å³ä½¿ç»³å­è¾¹ç¼˜å¤„ç›–ä½ç‚¹ä¹Ÿç®—ç›–ä½
 */
 
 
-class Solution {
+class Solution1891 : public Solution {
 public:
-
 	int maxPoint1(vector<int> arr, int L) {
 		int res = 1;
 		for (int i = 0; i < arr.size(); i++) {
@@ -61,7 +52,7 @@ public:
 	}
 
 	// for test
-	//±©Á¦Çî¾Ù·¨
+	//æš´åŠ›ç©·ä¸¾æ³•
 	int test(vector<int> arr, int L) {
 		int max = 0;
 		for (int i = 0; i < arr.size(); i++) {
@@ -76,22 +67,23 @@ public:
 
 
 
-	void testDemo() {
+	void testDemo() override {
 		int len = 100;
 		int max = 1000;
 		int testTime = 100;
-		cout << "¸ø¶¨Ò»¸öÓĞĞòÊı×éarr£¬´ú±í×øÂäÔÚXÖáÉÏµÄµã" << endl;
-		cout << "¸ø¶¨Ò»¸öÕıÊıK£¬´ú±íÉş×ÓµÄ³¤¶È" << endl;
-		cout << "·µ»ØÉş×Ó×î¶àÑ¹ÖĞ¼¸¸öµã ?" << endl;
-		cout << "¼´Ê¹Éş×Ó±ßÔµ´¦¸Ç×¡µãÒ²Ëã¸Ç×¡" << endl;
+		cout << "ç»™å®šä¸€ä¸ªæœ‰åºæ•°ç»„arrï¼Œä»£è¡¨åè½åœ¨Xè½´ä¸Šçš„ç‚¹" << endl;
+		cout << "ç»™å®šä¸€ä¸ªæ­£æ•°Kï¼Œä»£è¡¨ç»³å­çš„é•¿åº¦" << endl;
+		cout << "è¿”å›ç»³å­æœ€å¤šå‹ä¸­å‡ ä¸ªç‚¹ ?" << endl;
+		cout << "å³ä½¿ç»³å­è¾¹ç¼˜å¤„ç›–ä½ç‚¹ä¹Ÿç®—ç›–ä½" << endl;
 		for (int i = 0; i < testTime; i++) {
 			int L = (int)((rand() % len) + 1);
-			vector<int> arr = DataGenerator().generateArray(len, max, true);
+
+			vector<int> arr = randomArray1(len, max, true);
 			int ans1 = maxPoint1(arr, L);
 			int ans2 = maxPoint2(arr, L);
-			int ans3 = test(arr, L);	//±©Á¦Ñ­»·½â·¨
+			int ans3 = test(arr, L);	//æš´åŠ›å¾ªç¯è§£æ³•
 			if (ans1 != ans2 || ans2 != ans3) {
-				cout << "´íÎó" << endl;
+				cout << "é”™è¯¯" << endl;
 				break;
 			}
 			else

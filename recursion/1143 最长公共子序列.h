@@ -1,13 +1,5 @@
 #pragma once
-#include<iostream>
-#include<vector>
-#include<map>
-#include<math.h>
-#include <unordered_map>
-#include<vector>
-#include"../DataGenerator.h"
-
-using namespace std;
+#include "../Solution.h"
 
 /***题目介绍***
 给定两个字符串text1和text2，返回这两个字符串的最长公共子序列 的长度。如果不存在公共子序列,返回0。
@@ -18,7 +10,7 @@ using namespace std;
 */
 
 
-class Solution {
+class Solution1143 : public Solution {
 public:
 	int longestCommonSubsequence(string text1, string text2) {
 		if (text1.empty() || text2.empty())
@@ -80,7 +72,7 @@ public:
 		return dp[N - 1][M - 1];
 	}
 
-	void testDemo() {
+	void testDemo() override {
 		cout << "给定两个字符串text1和text2，返回这两个字符串的最长公共子序列 的长度。如果不存在公共子序列,返回0。" << endl;
 
 		string s = "abc";

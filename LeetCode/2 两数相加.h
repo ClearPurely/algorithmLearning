@@ -8,11 +8,7 @@
 输出：[7,0,8]
 解释：342 + 465 = 807.
  **/
-#include<iostream>
-#include<sstream>
-#include<stack>
-#include<string>
-using namespace std;
+#include "../Solution.h"
 
 struct ListNode {
     int val;
@@ -23,7 +19,7 @@ struct ListNode {
 };
 
 
-class Solution {
+class Solution2 : public Solution{
 public:
     //链表过长 整数行不通
     ListNode* MyaddTwoNumbers(ListNode* l1, ListNode* l2) {
@@ -212,7 +208,7 @@ public:
 
 
     //测试代码
-    void testDemo() {
+    void testDemo() override{
  /*       ListNode* n1 = new ListNode(2);
         ListNode* n2 = new ListNode(4);
         ListNode* n3 = new ListNode(9);

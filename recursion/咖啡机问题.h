@@ -1,28 +1,20 @@
-#pragma once
-#include<iostream>
-#include<vector>
-#include<map>
-#include<math.h>
-#include <unordered_map>
-#include<vector>
-#include <queue>
-
-#include"../DataGenerator.h"
+ï»¿#pragma once
+#include "../Solution.h"
 
 using namespace std;
 
-/***ÌâÄ¿½éÉÜ***
-¸ø¶¨Ò»¸öÊı×éarr£¬arr[i]´ú±íµÚiºÅ¿§·È»úÅİÒ»±­¿§·ÈµÄÊ±¼ä
-¸ø¶¨Ò»¸öÕıÊıN£¬±íÊ¾N¸öÈËµÈ×Å¿§·È»úÅİ¿§·È£¬Ã¿Ì¨¿§·È»úÖ»ÄÜÂÖÁ÷Åİ¿§·È
-Ö»ÓĞÒ»Ì¨Ï´¿§·È±­µÄ»úÆ÷£¬Ò»´ÎÖ»ÄÜÏ´Ò»¸ö±­×Ó£¬Ê±¼äºÄ·Ña£¬Ï´Íê²ÅÄÜÏ´ÏÂÒ»±­
-Ã¿¸ö¿§·È±­Ò²¿ÉÒÔ×Ô¼º»Ó·¢¸É¾»£¬Ê±¼äºÄ·Ñb£¬¿§·È±­¿ÉÒÔ²¢ĞĞ»Ó·¢
-¼ÙÉèËùÓĞÈËÄÃµ½¿§·ÈÖ®ºóÁ¢¿ÌºÈ¸É¾»£¬
-·µ»Ø´Ó¿ªÊ¼µÈµ½ËùÓĞ¿§·È»ú±ä¸É¾»µÄ×î¶ÌÊ±¼ä
-Èı¸ö²ÎÊı:int[arr¡¢int N, int a¡¢int b
+/***é¢˜ç›®ä»‹ç»***
+ç»™å®šä¸€ä¸ªæ•°ç»„arrï¼Œarr[i]ä»£è¡¨ç¬¬iå·å’–å•¡æœºæ³¡ä¸€æ¯å’–å•¡çš„æ—¶é—´
+ç»™å®šä¸€ä¸ªæ­£æ•°Nï¼Œè¡¨ç¤ºNä¸ªäººç­‰ç€å’–å•¡æœºæ³¡å’–å•¡ï¼Œæ¯å°å’–å•¡æœºåªèƒ½è½®æµæ³¡å’–å•¡
+åªæœ‰ä¸€å°æ´—å’–å•¡æ¯çš„æœºå™¨ï¼Œä¸€æ¬¡åªèƒ½æ´—ä¸€ä¸ªæ¯å­ï¼Œæ—¶é—´è€—è´¹aï¼Œæ´—å®Œæ‰èƒ½æ´—ä¸‹ä¸€æ¯
+æ¯ä¸ªå’–å•¡æ¯ä¹Ÿå¯ä»¥è‡ªå·±æŒ¥å‘å¹²å‡€ï¼Œæ—¶é—´è€—è´¹bï¼Œå’–å•¡æ¯å¯ä»¥å¹¶è¡ŒæŒ¥å‘
+å‡è®¾æ‰€æœ‰äººæ‹¿åˆ°å’–å•¡ä¹‹åç«‹åˆ»å–å¹²å‡€ï¼Œ
+è¿”å›ä»å¼€å§‹ç­‰åˆ°æ‰€æœ‰å’–å•¡æœºå˜å¹²å‡€çš„æœ€çŸ­æ—¶é—´
+ä¸‰ä¸ªå‚æ•°:int[arrã€int N, int aã€int b
 */
 
 
-class Solution {
+class SolutionKFJ : public Solution {
 public:
 	class Machine
 	{
@@ -56,7 +48,7 @@ public:
 			heap.push(Machine(0, arr[i]));
 		}
 
-		vector<int> drinks(n, 0);		//Ã¿¸öÅÅ¶ÓµÄÈËÄÃµ½¿§·ÈµÄÊ±¼äµã
+		vector<int> drinks(n, 0);		//æ¯ä¸ªæ’é˜Ÿçš„äººæ‹¿åˆ°å’–å•¡çš„æ—¶é—´ç‚¹
 		for (int i = 0; i < n; i++)
 		{
 			Machine cur(heap.top().timePoint + heap.top().workTime, heap.top().workTime);
@@ -64,31 +56,31 @@ public:
 			drinks[i] = cur.timePoint;
 			heap.push(cur);
 		}
-		printArray(drinks);
+		//printArray(drinks);
 
 		return bestTime(drinks, a, b, 0, 0);
 	}
 
 	/// <summary>
-	/// ËùÓĞ±­×Ó±ä¸É¾»ËùĞèµÄÊÂ¼ş
+	/// æ‰€æœ‰æ¯å­å˜å¹²å‡€æ‰€éœ€çš„äº‹ä»¶
 	/// </summary>
-	/// <param name="drinks" Ã¿¸ö±­×Ó¿ªÊ¼Ï´µÄÊ±¼äµã£¬¹Ì¶¨±äÁ¿ ></param>
-	/// <param name="wash" Ï´±­×ÓµÄ»úÆ÷Ï´Ò»¸ö±»×ÓËùĞèµÄÊÂ¼ş£¬¹Ì¶¨±äÁ¿ ></param>
-	/// <param name="air" ±­×Ó×Ô¼º»Ó·¢¸É¾»ËùĞèµÄÊ±¼ä£¬¹Ì¶¨±äÁ¿ ></param>
-	/// <param name="index" Ï´µ½µÚ¼¸¸ö±­×Ó ></param>
-	/// <param name="free" Ï´µÄ»úÆ÷ºÎÊ±¿ÉÓÃ ></param>
+	/// <param name="drinks" æ¯ä¸ªæ¯å­å¼€å§‹æ´—çš„æ—¶é—´ç‚¹ï¼Œå›ºå®šå˜é‡ ></param>
+	/// <param name="wash" æ´—æ¯å­çš„æœºå™¨æ´—ä¸€ä¸ªè¢«å­æ‰€éœ€çš„äº‹ä»¶ï¼Œå›ºå®šå˜é‡ ></param>
+	/// <param name="air" æ¯å­è‡ªå·±æŒ¥å‘å¹²å‡€æ‰€éœ€çš„æ—¶é—´ï¼Œå›ºå®šå˜é‡ ></param>
+	/// <param name="index" æ´—åˆ°ç¬¬å‡ ä¸ªæ¯å­ ></param>
+	/// <param name="free" æ´—çš„æœºå™¨ä½•æ—¶å¯ç”¨ ></param>
 	/// <returns></returns>
 	int bestTime(vector<int>& drinks, int& wash, int& air, int index, int free)
 	{
 		if (index == drinks.size())
 			return 0;
-		//¾ö¶¨Ï´±­×ÓµÄÇé¿ö
-		//ÒªÈÃËùÓĞ±­×Ó¶¼Ï´Íê,ÒòÎª¿ÉÒÔ´æ×Å±»×Ó²»Ï´µÈ»Ó·¢£¬
-		//ËùÒÔÕâ¸ö±­×ÓºÎÊ±Ï´Íê È¡¾öÓÚ µ±Ç°±­×ÓÏ´ÍêµÄÊ±¼ä ºÍ ÏÂ¸ö±­×ÓÏ´ÍêµÄÊ±¼ä È¡×î´ó
+		//å†³å®šæ´—æ¯å­çš„æƒ…å†µ
+		//è¦è®©æ‰€æœ‰æ¯å­éƒ½æ´—å®Œ,å› ä¸ºå¯ä»¥å­˜ç€è¢«å­ä¸æ´—ç­‰æŒ¥å‘ï¼Œ
+		//æ‰€ä»¥è¿™ä¸ªæ¯å­ä½•æ—¶æ´—å®Œ å–å†³äº å½“å‰æ¯å­æ´—å®Œçš„æ—¶é—´ å’Œ ä¸‹ä¸ªæ¯å­æ´—å®Œçš„æ—¶é—´ å–æœ€å¤§
 		int selfClean1 = max(drinks[index], free) + wash;	
 		int restClean1 = bestTime(drinks, wash, air, index + 1, selfClean1);
 		int p1 = max(selfClean1, restClean1);
-		//¾ö¶¨»Ó·¢µÄÇé¿ö
+		//å†³å®šæŒ¥å‘çš„æƒ…å†µ
 		int selfClean2 = drinks[index] + air;
 		int restClean2 = bestTime(drinks, wash, air, index + 1, free);
 		int p2 = max(selfClean2, restClean2);
@@ -104,7 +96,7 @@ public:
 			heap.push(Machine(0, arr[i]));
 		}
 
-		vector<int> drinks(n, 0);		//Ã¿¸öÅÅ¶ÓµÄÈËÄÃµ½¿§·ÈµÄÊ±¼äµã
+		vector<int> drinks(n, 0);		//æ¯ä¸ªæ’é˜Ÿçš„äººæ‹¿åˆ°å’–å•¡çš„æ—¶é—´ç‚¹
 		for (int i = 0; i < n; i++)
 		{
 			Machine cur(heap.top().timePoint + heap.top().workTime, heap.top().workTime);
@@ -112,7 +104,7 @@ public:
 			drinks[i] = cur.timePoint;
 			heap.push(cur);
 		}
-		printArray(drinks);
+		//printArray(drinks);
 
 		return bestTimeDp(drinks, a, b);
 	}
@@ -123,23 +115,23 @@ public:
 		int maxFree = 0;
 		for (int i = 0; i < drinks.size(); i++)
 		{
-			maxFree = max(maxFree, drinks[i]) + wash;	//ËùÓĞ±­×Ó¶¼È¥Ï´ÊÇ×î²îÇé¿ö
+			maxFree = max(maxFree, drinks[i]) + wash;	//æ‰€æœ‰æ¯å­éƒ½å»æ´—æ˜¯æœ€å·®æƒ…å†µ
 		}
 
-		//ĞĞ´ú±íµÚ¼¸±­£¬ÁĞµÄ×î´óÖµ´ú±í×î²îÇé¿öÏÂËùÓĞ±­×ÓÏ´ÍêµÄÊ±¼äµã£¬ÒÔ±ãÄÜÄÒÀ¨Ã¿¸öÊ±¼äµã¶¼ÓĞ¿ÉÄÜÏ´ÍêµÄÇé¿ö
+		//è¡Œä»£è¡¨ç¬¬å‡ æ¯ï¼Œåˆ—çš„æœ€å¤§å€¼ä»£è¡¨æœ€å·®æƒ…å†µä¸‹æ‰€æœ‰æ¯å­æ´—å®Œçš„æ—¶é—´ç‚¹ï¼Œä»¥ä¾¿èƒ½å›Šæ‹¬æ¯ä¸ªæ—¶é—´ç‚¹éƒ½æœ‰å¯èƒ½æ´—å®Œçš„æƒ…å†µ
 		vector<vector<int>> dp(N + 1, vector<int>(maxFree + 1, 0));
 
-		//´Ó×îºóÒ»±­¿ªÊ¼µ¹ÍÆ
+		//ä»æœ€åä¸€æ¯å¼€å§‹å€’æ¨
 		for (int index = N-1; index >= 0 ; --index)
 		{
 			for (int free = 0; free <= maxFree; ++free)
 			{
-				//µ±Ç°Õâ¸ö±­×ÓÏ´ÍêµÄÊ±¼äÈ¡¾öÓÚÉÏÒ»¸ö±­×ÓºÈÍêµÄÊ±¼ä+Ï´µÄÊ±¼ä
+				//å½“å‰è¿™ä¸ªæ¯å­æ´—å®Œçš„æ—¶é—´å–å†³äºä¸Šä¸€ä¸ªæ¯å­å–å®Œçš„æ—¶é—´+æ´—çš„æ—¶é—´
 				int selfClean1 = max(drinks[index], free) + wash;	
-				if (selfClean1 > maxFree)	//²»¿ÉÄÜ³¬¹ı×î²îÇé¿ö
+				if (selfClean1 > maxFree)	//ä¸å¯èƒ½è¶…è¿‡æœ€å·®æƒ…å†µ
 					continue;
 				int restClean1 = dp[index + 1][selfClean1];
-				//Èç¹ûÏ´±­×Ó£¬µ±Ç°±­×ÓÏ´¸É¾»µÄÊ±¼ä ºÍ ÉÏ¸ö±­×ÓÏ´ÍêµÄÊ±¼ä È¡ ×î´ó
+				//å¦‚æœæ´—æ¯å­ï¼Œå½“å‰æ¯å­æ´—å¹²å‡€çš„æ—¶é—´ å’Œ ä¸Šä¸ªæ¯å­æ´—å®Œçš„æ—¶é—´ å– æœ€å¤§
 				int p1 = max(selfClean1, restClean1);
 
 				int selfClean2 = drinks[index] + air;
@@ -148,28 +140,26 @@ public:
 				dp[index][free] = min(p1, p2);
 			}
 		}
-		printMatrix(dp);
+		//printMatrix(dp);
 		return dp[0][0];
 	}
 
-	void testDemo() {
-		cout << "¸ø¶¨Ò»¸öÊı×éarr£¬arr[i]´ú±íµÚiºÅ¿§·È»úÅİÒ»±­¿§·ÈµÄÊ±¼ä" << endl;
-		cout << "¸ø¶¨Ò»¸öÕıÊıN£¬±íÊ¾N¸öÈËµÈ×Å¿§·È»úÅİ¿§·È£¬Ã¿Ì¨¿§·È»úÖ»ÄÜÂÖÁ÷Åİ¿§·È" << endl;
-		cout << "Ö»ÓĞÒ»Ì¨¿§·È»ú£¬Ò»´ÎÖ»ÄÜÏ´Ò»¸ö±­×Ó£¬Ê±¼äºÄ·Ña£¬Ï´Íê²ÅÄÜÏ´ÏÂÒ»±­" << endl;
-		cout << "Ã¿¸ö¿§·È±­Ò²¿ÉÒÔ×Ô¼º»Ó·¢¸É¾»£¬Ê±¼äºÄ·Ñb£¬¿§·È±­¿ÉÒÔ²¢ĞĞ»Ó·¢" << endl;
-		cout << "¼ÙÉèËùÓĞÈËÄÃµ½¿§·ÈÖ®ºóÁ¢¿ÌºÈ¸É¾»£¬" << endl;
-		cout << "·µ»Ø´Ó¿ªÊ¼µÈµ½ËùÓĞ¿§·È»ú±ä¸É¾»µÄ×î¶ÌÊ±¼ä" << endl;
-		cout << "Èı¸ö²ÎÊı:int[arr¡¢int N, int a¡¢int b" << endl;
+	void testDemo() override {
+		cout << "ç»™å®šä¸€ä¸ªæ•°ç»„arrï¼Œarr[i]ä»£è¡¨ç¬¬iå·å’–å•¡æœºæ³¡ä¸€æ¯å’–å•¡çš„æ—¶é—´" << endl;
+		cout << "ç»™å®šä¸€ä¸ªæ­£æ•°Nï¼Œè¡¨ç¤ºNä¸ªäººç­‰ç€å’–å•¡æœºæ³¡å’–å•¡ï¼Œæ¯å°å’–å•¡æœºåªèƒ½è½®æµæ³¡å’–å•¡" << endl;
+		cout << "åªæœ‰ä¸€å°å’–å•¡æœºï¼Œä¸€æ¬¡åªèƒ½æ´—ä¸€ä¸ªæ¯å­ï¼Œæ—¶é—´è€—è´¹aï¼Œæ´—å®Œæ‰èƒ½æ´—ä¸‹ä¸€æ¯" << endl;
+		cout << "æ¯ä¸ªå’–å•¡æ¯ä¹Ÿå¯ä»¥è‡ªå·±æŒ¥å‘å¹²å‡€ï¼Œæ—¶é—´è€—è´¹bï¼Œå’–å•¡æ¯å¯ä»¥å¹¶è¡ŒæŒ¥å‘" << endl;
+		cout << "å‡è®¾æ‰€æœ‰äººæ‹¿åˆ°å’–å•¡ä¹‹åç«‹åˆ»å–å¹²å‡€ï¼Œ" << endl;
+		cout << "è¿”å›ä»å¼€å§‹ç­‰åˆ°æ‰€æœ‰å’–å•¡æœºå˜å¹²å‡€çš„æœ€çŸ­æ—¶é—´" << endl;
+		cout << "ä¸‰ä¸ªå‚æ•°:int[arrã€int N, int aã€int b" << endl;
 
-
-		DataGenerator data;
-		vector<int> arr = data.generateArray(5, 9);
-		int n = data.RadomNum(5);
-		int a = data.RadomNum(5);
-		int b = data.RadomNum(10);
+		vector<int> arr = randomArray1(5, 9);
+		int n = randomNum(5);
+		int a = randomNum(5);
+		int b = randomNum(10);
 
 		printArray(arr);
-		cout << n << "¸öÈË  " << a << "·ÖÖÓÏ´±­×Ó  " << b << "·ÖÖÓ»Ó·¢¸É¾»  " << endl;
+		cout << n << "ä¸ªäºº  " << a << "åˆ†é’Ÿæ´—æ¯å­  " << b << "åˆ†é’ŸæŒ¥å‘å¹²å‡€  " << endl;
 		cout << MinTime(arr, n, a, b) << endl;
 		cout << MinTime2(arr, n, a, b) << endl;
 	}
