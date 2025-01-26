@@ -140,7 +140,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="LeetCode\BinaryTreeTraversalRecursion.h" />
     <ClInclude Include="LeetCode\600 测试.h" />
+    <ClInclude Include="readProcessFun.h" />
     <ClInclude Include="recursion\1143 最长公共子序列.h" />
     <ClInclude Include="recursion\516 最长回文子序列.h" />
     <ClInclude Include="LeetCode\1 两数之和.h" />
@@ -148,7 +150,6 @@
     <ClInclude Include="LeetCode\138 复制带随机指针的链表.h" />
     <ClInclude Include="LeetCode\15 三数之和.h" />
     <ClInclude Include="LeetCode\1891 割绳子.h" />
-    <ClInclude Include="LeetCode\2 两数相加.h" />
     <ClInclude Include="LeetCode\3 无重复字符的最长子串.h" />
     <ClInclude Include="LeetCode\4 寻找两个正序数组的中位数.h" />
     <ClInclude Include="LeetCode\494 目标和.h" />
@@ -158,20 +159,37 @@
     <ClInclude Include="recursion\数字转换为字符串.h" />
     <ClInclude Include="recursion\纸牌游戏.h" />
     <ClInclude Include="recursion\机器人行走.h" />
-    <ClInclude Include="sort\SortAlgorithm.h" />
+    <ClInclude Include="sort\SolutionSort.h" />
     <ClInclude Include="Validator.h" />
     <ClInclude Include="Solution.h" />
     <ClInclude Include="recursion\背包问题.h" />
     <ClInclude Include="recursion\691 贴纸拼词.h" />
     <ClInclude Include="recursion\象棋的骑士到一个点的走法.h" />
-    <ClInclude Include="标题.h" />
+    <ClInclude Include="LeetCode\_21_MergeTwoLists.h" />
+    <ClInclude Include="LeetCode\_2_AddTwoNumbers.h" />
+    <ClInclude Include="LeetCode\_86_Partition.h" />
+    <ClInclude Include="LeetCode\_622_MyCircularQueue.h" />
+    <ClInclude Include="LeetCode\_232_MyQueue.h" />
+    <ClInclude Include="LeetCode\_225_MyStack.h" />
+    <ClInclude Include="LeetCode\_155_MinStack.h" />
+    <ClInclude Include="LeetCode\_641_MyCircularDeque.h" />
+    <ClInclude Include="title.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="LeetCode\BinaryTreeTraversalRecursion.cpp" />
     <ClCompile Include="LeetCode\162 找峰值.h">
       <MinimalRebuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</MinimalRebuild>
     </ClCompile>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="readProcessFun.cpp" />
     <ClCompile Include="Validator.cpp" />
+    <ClCompile Include="LeetCode\_21_MergeTwoLists.cpp" />
+    <ClCompile Include="LeetCode\_2_AddTwoNumbers.cpp" />
+    <ClCompile Include="LeetCode\_86_Partition.cpp" />
+    <ClCompile Include="LeetCode\_622_MyCircularQueue.cpp" />
+    <ClCompile Include="LeetCode\_232_MyQueue.cpp" />
+    <ClCompile Include="LeetCode\_225_MyStack.cpp" />
+    <ClCompile Include="LeetCode\_155_MinStack.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

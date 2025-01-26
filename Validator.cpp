@@ -196,3 +196,4 @@ std::vector<int> copyArray(const std::vector<int>& source) {
 bool sameArray(const std::vector<int>& arr1, const std::vector<int>& arr2) {
 	return arr1 == arr2; // 使用 std::vector 的比较运算符
 }
+

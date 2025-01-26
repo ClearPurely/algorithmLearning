@@ -25,9 +25,6 @@
     <Filter Include="头文件\暴力递归和动态规划">
       <UniqueIdentifier>{f33945e8-6194-474a-9154-1497dc7d94aa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\排序算法">
-      <UniqueIdentifier>{8a409fac-34b0-4e61-af45-eab9bd7150e9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="头文件\LeetCode题">
       <UniqueIdentifier>{6e313266-8480-47ce-8ea7-a1576d17d327}</UniqueIdentifier>
     </Filter>
@@ -39,6 +36,21 @@
     </Filter>
     <Filter Include="头文件\LeetCode题\1-99">
       <UniqueIdentifier>{65088d06-d11f-41a4-823a-e0fc6729cfd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\content">
+      <UniqueIdentifier>{6cb355f0-252b-4084-bbfb-9be33cfe03a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="类文件">
+      <UniqueIdentifier>{5e2ef0c8-a2ef-4e5a-a947-a37b4e8ac4aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Content">
+      <UniqueIdentifier>{851f6b46-bbfe-4236-aad8-5afb23a591cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\排序算法">
+      <UniqueIdentifier>{8a409fac-34b0-4e61-af45-eab9bd7150e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="类文件\1星">
+      <UniqueIdentifier>{c4783676-3e54-4db1-85d9-fb424050e4ef}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -72,9 +84,6 @@
     <ClInclude Include="LeetCode\1 两数之和.h">
       <Filter>头文件\LeetCode题\1-99</Filter>
     </ClInclude>
-    <ClInclude Include="LeetCode\2 两数相加.h">
-      <Filter>头文件\LeetCode题\1-99</Filter>
-    </ClInclude>
     <ClInclude Include="LeetCode\3 无重复字符的最长子串.h">
       <Filter>头文件\LeetCode题\1-99</Filter>
     </ClInclude>
@@ -102,20 +111,50 @@
     <ClInclude Include="LeetCode\1891 割绳子.h">
       <Filter>头文件\LeetCode题\100+</Filter>
     </ClInclude>
-    <ClInclude Include="sort\SortAlgorithm.h">
-      <Filter>头文件\排序算法</Filter>
-    </ClInclude>
-    <ClInclude Include="Validator.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="LeetCode\600 测试.h">
       <Filter>头文件\LeetCode题\500+</Filter>
     </ClInclude>
     <ClInclude Include="Solution.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\Content</Filter>
     </ClInclude>
-    <ClInclude Include="标题.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="Validator.h">
+      <Filter>头文件\Content</Filter>
+    </ClInclude>
+    <ClInclude Include="title.h">
+      <Filter>头文件\Content</Filter>
+    </ClInclude>
+    <ClInclude Include="sort\SolutionSort.h">
+      <Filter>头文件\排序算法</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_21_MergeTwoLists.h">
+      <Filter>类文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_2_AddTwoNumbers.h">
+      <Filter>类文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_86_Partition.h">
+      <Filter>类文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_622_MyCircularQueue.h">
+      <Filter>类文件\1星</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_155_MinStack.h">
+      <Filter>类文件\1星</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_225_MyStack.h">
+      <Filter>类文件\1星</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_232_MyQueue.h">
+      <Filter>类文件\1星</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_641_MyCircularDeque.h">
+      <Filter>类文件\1星</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\BinaryTreeTraversalRecursion.h">
+      <Filter>头文件\树</Filter>
+    </ClInclude>
+    <ClInclude Include="readProcessFun.h">
+      <Filter>头文件\Content</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -126,7 +165,34 @@
       <Filter>头文件\LeetCode题\100+</Filter>
     </ClCompile>
     <ClCompile Include="Validator.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\content</Filter>
+    </ClCompile>
+    <ClCompile Include="LeetCode\_21_MergeTwoLists.cpp">
+      <Filter>类文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LeetCode\_2_AddTwoNumbers.cpp">
+      <Filter>类文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LeetCode\_86_Partition.cpp">
+      <Filter>类文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LeetCode\_155_MinStack.cpp">
+      <Filter>类文件\1星</Filter>
+    </ClCompile>
+    <ClCompile Include="LeetCode\_225_MyStack.cpp">
+      <Filter>类文件\1星</Filter>
+    </ClCompile>
+    <ClCompile Include="LeetCode\_232_MyQueue.cpp">
+      <Filter>类文件\1星</Filter>
+    </ClCompile>
+    <ClCompile Include="LeetCode\_622_MyCircularQueue.cpp">
+      <Filter>类文件\1星</Filter>
+    </ClCompile>
+    <ClCompile Include="LeetCode\BinaryTreeTraversalRecursion.cpp">
+      <Filter>头文件\树</Filter>
+    </ClCompile>
+    <ClCompile Include="readProcessFun.cpp">
+      <Filter>源文件\content</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -12,6 +12,7 @@
 #include <set>
 #include <algorithm>
 #include <bitset>
+#include <functional>
 
 using namespace std;
 
@@ -81,14 +82,9 @@ std::string randomString(int maxLen, const std::string& exaction = "GB");
 /// <summary>
 /// 拷贝一个数组并返回新数组
 /// </summary>
-/// <param name="source">源数组</param>
-/// <returns>拷贝后的新数组</returns>
 std::vector<int> copyArray(const std::vector<int>& source);
 
 /// <summary>
 /// 验证两个数组是否相同
 /// </summary>
-/// <param name="arr1">第一个数组</param>
-/// <param name="arr2">第二个数组</param>
-/// <returns>如果两个数组相同则返回true，否则返回false</returns>
 bool sameArray(const std::vector<int>& arr1, const std::vector<int>& arr2);
