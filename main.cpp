@@ -4,14 +4,9 @@
 创建日期：2021.9.20
 最后更新日期：2025.1.6
 ****************/
-#include <conio.h> // 包含getch()和kbhit()函数
-#include <thread>
-
 #include"title.h"
-#include"readProcessFun.h"
 
-
-
+//#include"readProcessFun.h"
 // 示例操作函数，将元素加1
 void addOne(std::vector<std::vector<int>>& mat) {
 	for (auto& row : mat) {
@@ -19,11 +14,6 @@ void addOne(std::vector<std::vector<int>>& mat) {
 			element += 1;
 		}
 	}
-}
-
-void useMerge(vector<int>& arr)
-{
-
 }
 
 int main()

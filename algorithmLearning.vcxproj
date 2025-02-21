@@ -140,11 +140,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="LeetCode\1143 最长公共子序列.h" />
+    <ClInclude Include="LeetCode\516 最长回文子序列.h" />
+    <ClInclude Include="LeetCode\691 贴纸拼词.h" />
     <ClInclude Include="LeetCode\BinaryTreeTraversalRecursion.h" />
     <ClInclude Include="LeetCode\600 测试.h" />
+    <ClInclude Include="OtherQuestion\SmallSum.h" />
+    <ClInclude Include="OtherQuestion\咖啡机问题.h" />
+    <ClInclude Include="OtherQuestion\数字转换为字符串.h" />
+    <ClInclude Include="OtherQuestion\机器人行走.h" />
+    <ClInclude Include="OtherQuestion\纸牌游戏.h" />
+    <ClInclude Include="OtherQuestion\背包问题.h" />
+    <ClInclude Include="OtherQuestion\象棋的骑士到一个点的走法.h" />
     <ClInclude Include="readProcessFun.h" />
-    <ClInclude Include="recursion\1143 最长公共子序列.h" />
-    <ClInclude Include="recursion\516 最长回文子序列.h" />
     <ClInclude Include="LeetCode\1 两数之和.h" />
     <ClInclude Include="LeetCode\10 正则表达式匹配.h" />
     <ClInclude Include="LeetCode\138 复制带随机指针的链表.h" />
@@ -155,16 +163,9 @@
     <ClInclude Include="LeetCode\494 目标和.h" />
     <ClInclude Include="LeetCode\5 最长回文子串.h" />
     <ClInclude Include="LeetCode\7 整数反转.h" />
-    <ClInclude Include="recursion\咖啡机问题.h" />
-    <ClInclude Include="recursion\数字转换为字符串.h" />
-    <ClInclude Include="recursion\纸牌游戏.h" />
-    <ClInclude Include="recursion\机器人行走.h" />
     <ClInclude Include="sort\SolutionSort.h" />
     <ClInclude Include="Validator.h" />
     <ClInclude Include="Solution.h" />
-    <ClInclude Include="recursion\背包问题.h" />
-    <ClInclude Include="recursion\691 贴纸拼词.h" />
-    <ClInclude Include="recursion\象棋的骑士到一个点的走法.h" />
     <ClInclude Include="LeetCode\_21_MergeTwoLists.h" />
     <ClInclude Include="LeetCode\_2_AddTwoNumbers.h" />
     <ClInclude Include="LeetCode\_86_Partition.h" />
@@ -182,6 +183,7 @@
     </ClCompile>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="readProcessFun.cpp" />
+    <ClCompile Include="sort\SolutionSort.cpp" />
     <ClCompile Include="Validator.cpp" />
     <ClCompile Include="LeetCode\_21_MergeTwoLists.cpp" />
     <ClCompile Include="LeetCode\_2_AddTwoNumbers.cpp" />

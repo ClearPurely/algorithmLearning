@@ -1,4 +1,11 @@
-﻿#pragma once
+﻿/*************
+作者：ClearPurely
+项目名：解决leetcode题目的基类
+描述：包含一些基本常用的方法和结构体
+创建日期：2025.1.20
+最后更新日期：2025.2.7
+****************/
+#pragma once
 #include<iostream>		//	输入输出打印
 #include<vector>		//向量
 #include<map>			//	图

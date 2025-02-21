@@ -1,4 +1,11 @@
-﻿#pragma once
+﻿/*************
+作者：ClearPurely
+项目名：对数器
+描述：记录一些生成随机数的方法，用于带入进行计算
+创建日期：2025.1.20
+最后更新日期：2025.2.7
+****************/
+#pragma once
 #include<iostream>		//	输入输出打印
 #include<vector>		//向量
 #include<map>			//	图
@@ -13,11 +20,15 @@
 #include <algorithm>
 #include <bitset>
 #include <functional>
+#include <random>
 
 using namespace std;
 
 // 生成一个随机数，范围在1到max之间
 int randomNum(int max);
+
+// 生成 min 到 max 之间（包含 min 和 max）的随机数(使用random的高级方法)
+int randomNum1(int min, int max);
 
 /// <summary>
 /// 获取一个函数的运行时间

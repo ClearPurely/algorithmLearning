@@ -120,7 +120,37 @@ bool sameArray(const vector<int>& arr1, const vector<int>& arr2) {
 */
 
 int randomNum(int max) {
-	return std::rand() % max + 1;
+	//std::srand(static_cast<unsigned int>(std::time(nullptr)));
+	//return std::rand() % max + 1;
+	return randomNum1(0, max);
+}
+
+int randomNum1(int min, int max) {
+	//std::srand(static_cast<unsigned int>(std::time(nullptr)));
+	// min + std::rand() % (max - min + 1);
+
+	// std::random_device 是一个非确定性的随机数生成器，
+	// 通常基于硬件设备（如系统的熵池）来生成随机数。
+	// 它的主要作用是为随机数引擎提供一个高质量的随机种子。
+	// 这里创建了一个 std::random_device 对象 rd，用于获取随机种子。
+	std::random_device rd;
+
+	// std::mt19937 是一个基于梅森旋转算法的伪随机数生成器。
+	// 它是一个随机数引擎，能够根据给定的种子生成一系列随机数。
+	// 这里使用 std::random_device 对象 rd 生成的随机数作为种子，
+	// 初始化 std::mt19937 对象 gen。
+	std::mt19937 gen(rd());
+
+	// std::uniform_int_distribution 是一个离散均匀分布类模板，
+	// 用于将随机数引擎生成的随机数映射到指定的整数范围内。
+	// 这里创建了一个 std::uniform_int_distribution 对象 dis，
+	// 并指定了分布的范围为 [min, max]，即生成的随机数会均匀分布在这个区间内。
+	std::uniform_int_distribution<> dis(min, max);
+
+	// 调用 std::uniform_int_distribution 对象 dis 的函数调用运算符，
+	// 传入随机数引擎 gen 作为参数，生成一个在 [min, max] 范围内的随机整数，
+	// 并将其作为函数的返回值。
+	return dis(gen);
 }
 
 double getFuncExcTime(std::clock_t start, bool isPrint) {
