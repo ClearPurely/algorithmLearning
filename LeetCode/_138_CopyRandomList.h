@@ -1,6 +1,9 @@
-﻿#pragma once
-#include "../Solution.h"
+﻿/***题目介绍***
+复制带随机指针的链表
 
+*/
+#pragma once
+#include "../Solution.h"
 
 // Definition for a Node.
 class Node {
@@ -17,7 +20,7 @@ public:
 };
 
 
-class Solution138 : public Solution {
+class _138_CopyRandomList : public Solution {
 public:
 	//利用一对一对遍历实现
 	

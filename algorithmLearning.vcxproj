@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -140,11 +140,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="LeetCode\1143 最长公共子序列.h" />
-    <ClInclude Include="LeetCode\516 最长回文子序列.h" />
-    <ClInclude Include="LeetCode\691 贴纸拼词.h" />
+    <ClInclude Include="Bitset.h" />
+    <ClInclude Include="LeetCode\SimpleSolution.h" />
+    <ClInclude Include="LeetCode\_2208_HalveArray.h" />
+    <ClInclude Include="LeetCode\_1143_LongestCommonSubsequence.h" />
+    <ClInclude Include="LeetCode\_516_LongestPalindromeSubseq.h" />
+    <ClInclude Include="LeetCode\_691_MinStickers.h" />
     <ClInclude Include="LeetCode\BinaryTreeTraversalRecursion.h" />
-    <ClInclude Include="LeetCode\600 测试.h" />
+    <ClInclude Include="LeetCode\99999 测试.h" />
+    <ClInclude Include="LeetCode\_252_MinMeetingRooms.h" />
+    <ClInclude Include="MyHeap.h" />
     <ClInclude Include="OtherQuestion\SmallSum.h" />
     <ClInclude Include="OtherQuestion\咖啡机问题.h" />
     <ClInclude Include="OtherQuestion\数字转换为字符串.h" />
@@ -153,16 +158,16 @@
     <ClInclude Include="OtherQuestion\背包问题.h" />
     <ClInclude Include="OtherQuestion\象棋的骑士到一个点的走法.h" />
     <ClInclude Include="readProcessFun.h" />
-    <ClInclude Include="LeetCode\1 两数之和.h" />
-    <ClInclude Include="LeetCode\10 正则表达式匹配.h" />
-    <ClInclude Include="LeetCode\138 复制带随机指针的链表.h" />
-    <ClInclude Include="LeetCode\15 三数之和.h" />
-    <ClInclude Include="LeetCode\1891 割绳子.h" />
-    <ClInclude Include="LeetCode\3 无重复字符的最长子串.h" />
-    <ClInclude Include="LeetCode\4 寻找两个正序数组的中位数.h" />
-    <ClInclude Include="LeetCode\494 目标和.h" />
-    <ClInclude Include="LeetCode\5 最长回文子串.h" />
-    <ClInclude Include="LeetCode\7 整数反转.h" />
+    <ClInclude Include="LeetCode\_1_TwoSum.h" />
+    <ClInclude Include="LeetCode\_10_IsMatch.h" />
+    <ClInclude Include="LeetCode\_138_CopyRandomList.h" />
+    <ClInclude Include="LeetCode\_15_ThreeSum.h" />
+    <ClInclude Include="LeetCode\_1891_MaxPoint.h" />
+    <ClInclude Include="LeetCode\_3_LengthOfLongestSubstring.h" />
+    <ClInclude Include="LeetCode\_4_FindMedianSortedArrays.h" />
+    <ClInclude Include="LeetCode\_494_FindTargetSumWays.h" />
+    <ClInclude Include="LeetCode\_5_LongestPalindrome.h" />
+    <ClInclude Include="LeetCode\_7_Reverse.h" />
     <ClInclude Include="sort\SolutionSort.h" />
     <ClInclude Include="Validator.h" />
     <ClInclude Include="Solution.h" />
@@ -177,12 +182,15 @@
     <ClInclude Include="title.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bitset.cpp" />
     <ClCompile Include="LeetCode\BinaryTreeTraversalRecursion.cpp" />
-    <ClCompile Include="LeetCode\162 找峰值.h">
+    <ClCompile Include="LeetCode\_162_FindPeakElement.h">
       <MinimalRebuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</MinimalRebuild>
     </ClCompile>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MyHeap.cpp" />
     <ClCompile Include="readProcessFun.cpp" />
+    <ClCompile Include="LeetCode\SimpleSolution.cpp" />
     <ClCompile Include="sort\SolutionSort.cpp" />
     <ClCompile Include="Validator.cpp" />
     <ClCompile Include="LeetCode\_21_MergeTwoLists.cpp" />

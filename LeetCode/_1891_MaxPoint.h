@@ -1,15 +1,14 @@
-﻿#pragma once
-#include "../Solution.h"
-
-/***题目介绍***
+﻿/***题目介绍***
+割绳子
 给定一个有序数组arr，代表坐落在X轴上的点
 给定一个正数K，代表绳子的长度
 返回绳子最多压中几个点?
 即使绳子边缘处盖住点也算盖住
 */
+#pragma once
+#include "../Solution.h"
 
-
-class Solution1891 : public Solution {
+class _1891_MaxPoint : public Solution {
 public:
 	int maxPoint1(vector<int> arr, int L) {
 		int res = 1;

@@ -25,7 +25,6 @@ int main()
 	int num = 1;
 	Solution* solution = nullptr;
 	while (1) {
-
 		cout << "请输入你要查看的题的序号:" << endl;
 		std::cin >> num;
 
@@ -35,7 +34,7 @@ int main()
 			solution->testDemo();
 			break;
 		case 1:
-			solution = new Solution1();
+			solution = new _1_TwoSum();
 			solution->testDemo();
 			break;
 		case 2:
@@ -43,7 +42,7 @@ int main()
 			solution->testDemo();
 			break;
 		case 162:
-			solution = new Solution162();
+			solution = new _162_FindPeakElement();
 			solution->testDemo();
 			break;
 

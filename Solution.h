@@ -19,6 +19,7 @@
 #include <set>
 #include <string>
 #include <algorithm>
+#include <numeric> // for std::accumulate
 
 using namespace std;
 

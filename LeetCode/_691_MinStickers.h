@@ -1,7 +1,5 @@
-#pragma once
-#include "../Solution.h"
-
 /***题目介绍***
+贴纸拼词
 给定一个字符串str，给定一个字符串类型的数组arc，出现的字符都是小写英文
 arr每一个字符串，代表一张贴纸，你可以把单个字符剪开使用，
 目的是拼出str来返回需要至少多少张贴纸可以完成这个任务。
@@ -10,8 +8,10 @@ arr每一个字符串，代表一张贴纸，你可以把单个字符剪开使用，
 把每一个字符单独剪开，含有2个a、2个b、1个c。是可以拼出str的。所以返回3。
 */
 
+#pragma once
+#include "../Solution.h"
 
-class Solution691 : public Solution {
+class _691_MinStickers : public Solution {
 public:
 	int minStickers(vector<string>& stickers, string target) {
 		int ans = process1(stickers, target);

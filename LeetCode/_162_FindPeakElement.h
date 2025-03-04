@@ -1,7 +1,12 @@
-﻿#pragma once
+﻿/***题目介绍***
+找峰值
+
+
+*/
+#pragma once
 #include "../Solution.h"
 
-class Solution162 : public Solution {
+class _162_FindPeakElement : public Solution {
 public:
 	int findPeakElement(vector<int>& nums) {
 		int num = nums.size();

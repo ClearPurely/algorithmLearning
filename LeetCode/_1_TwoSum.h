@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "../Solution.h"
 
-class Solution1 : public Solution {
+class _1_TwoSum : public Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
         int i = 0, j = 0;

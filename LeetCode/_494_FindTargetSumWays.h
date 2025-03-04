@@ -1,16 +1,18 @@
-﻿#pragma once
-#include "../Solution.h"
-
-/***题目介绍***
+﻿/***题目介绍***
+目标和
 给定一个数组arr，你可以在每个数字之前决定+或者-
 但是必须所有数字都参与
 再给定一个数target，请问最后算出target的方法数是多少?
 */
+#pragma once
+#include "../Solution.h"
 
 
-class Solution494 : public Solution {
+
+
+class _494_FindTargetSumWays : public Solution {
 public:
-	Solution494()
+	_494_FindTargetSumWays()
 	{
 		srand(time(NULL));
 	}

@@ -34,54 +34,24 @@
     <Filter Include="头文件\LeetCode题\类实例">
       <UniqueIdentifier>{5e2ef0c8-a2ef-4e5a-a947-a37b4e8ac4aa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\附加题">
-      <UniqueIdentifier>{83d9efb7-edae-4517-a602-4f3890fcdcc8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="头文件\Content\排序算法">
       <UniqueIdentifier>{8a409fac-34b0-4e61-af45-eab9bd7150e9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\LeetCode题\附加题">
+      <UniqueIdentifier>{83d9efb7-edae-4517-a602-4f3890fcdcc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\content\排序算法">
+      <UniqueIdentifier>{770a5089-bdbb-42cc-a86d-e2d48cc77185}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\content\数据结构">
+      <UniqueIdentifier>{c89dae77-c2a8-42ec-a2f6-83ca3bec2a31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Content\数据结构">
+      <UniqueIdentifier>{74c60960-c9d9-44bd-90f3-7851c88296fc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="LeetCode\1 两数之和.h">
-      <Filter>头文件\LeetCode题\1-99</Filter>
-    </ClInclude>
-    <ClInclude Include="LeetCode\3 无重复字符的最长子串.h">
-      <Filter>头文件\LeetCode题\1-99</Filter>
-    </ClInclude>
-    <ClInclude Include="LeetCode\4 寻找两个正序数组的中位数.h">
-      <Filter>头文件\LeetCode题\1-99</Filter>
-    </ClInclude>
-    <ClInclude Include="LeetCode\5 最长回文子串.h">
-      <Filter>头文件\LeetCode题\1-99</Filter>
-    </ClInclude>
-    <ClInclude Include="LeetCode\7 整数反转.h">
-      <Filter>头文件\LeetCode题\1-99</Filter>
-    </ClInclude>
-    <ClInclude Include="LeetCode\10 正则表达式匹配.h">
-      <Filter>头文件\LeetCode题\1-99</Filter>
-    </ClInclude>
-    <ClInclude Include="LeetCode\15 三数之和.h">
-      <Filter>头文件\LeetCode题\1-99</Filter>
-    </ClInclude>
-    <ClInclude Include="LeetCode\138 复制带随机指针的链表.h">
-      <Filter>头文件\LeetCode题\100+</Filter>
-    </ClInclude>
-    <ClInclude Include="LeetCode\494 目标和.h">
-      <Filter>头文件\LeetCode题\100+</Filter>
-    </ClInclude>
-    <ClInclude Include="LeetCode\1891 割绳子.h">
-      <Filter>头文件\LeetCode题\100+</Filter>
-    </ClInclude>
-    <ClInclude Include="LeetCode\600 测试.h">
-      <Filter>头文件\LeetCode题\500+</Filter>
-    </ClInclude>
-    <ClInclude Include="Solution.h">
-      <Filter>头文件\Content</Filter>
-    </ClInclude>
     <ClInclude Include="Validator.h">
-      <Filter>头文件\Content</Filter>
-    </ClInclude>
-    <ClInclude Include="title.h">
       <Filter>头文件\Content</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_21_MergeTwoLists.h">
@@ -115,45 +85,96 @@
       <Filter>头文件\LeetCode题\类实例</Filter>
     </ClInclude>
     <ClInclude Include="OtherQuestion\背包问题.h">
-      <Filter>头文件\附加题</Filter>
+      <Filter>头文件\LeetCode题\附加题</Filter>
     </ClInclude>
     <ClInclude Include="OtherQuestion\机器人行走.h">
-      <Filter>头文件\附加题</Filter>
+      <Filter>头文件\LeetCode题\附加题</Filter>
     </ClInclude>
     <ClInclude Include="OtherQuestion\咖啡机问题.h">
-      <Filter>头文件\附加题</Filter>
+      <Filter>头文件\LeetCode题\附加题</Filter>
     </ClInclude>
     <ClInclude Include="OtherQuestion\数字转换为字符串.h">
-      <Filter>头文件\附加题</Filter>
+      <Filter>头文件\LeetCode题\附加题</Filter>
     </ClInclude>
     <ClInclude Include="OtherQuestion\象棋的骑士到一个点的走法.h">
-      <Filter>头文件\附加题</Filter>
+      <Filter>头文件\LeetCode题\附加题</Filter>
     </ClInclude>
     <ClInclude Include="OtherQuestion\纸牌游戏.h">
-      <Filter>头文件\附加题</Filter>
+      <Filter>头文件\LeetCode题\附加题</Filter>
     </ClInclude>
     <ClInclude Include="OtherQuestion\SmallSum.h">
-      <Filter>头文件\附加题</Filter>
-    </ClInclude>
-    <ClInclude Include="LeetCode\516 最长回文子序列.h">
-      <Filter>头文件\LeetCode题</Filter>
-    </ClInclude>
-    <ClInclude Include="LeetCode\691 贴纸拼词.h">
-      <Filter>头文件\LeetCode题</Filter>
-    </ClInclude>
-    <ClInclude Include="LeetCode\1143 最长公共子序列.h">
-      <Filter>头文件\LeetCode题</Filter>
+      <Filter>头文件\LeetCode题\附加题</Filter>
     </ClInclude>
     <ClInclude Include="sort\SolutionSort.h">
       <Filter>头文件\Content\排序算法</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_1_TwoSum.h">
+      <Filter>头文件\LeetCode题\1-99</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_3_LengthOfLongestSubstring.h">
+      <Filter>头文件\LeetCode题\1-99</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_4_FindMedianSortedArrays.h">
+      <Filter>头文件\LeetCode题\1-99</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_5_LongestPalindrome.h">
+      <Filter>头文件\LeetCode题\1-99</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_7_Reverse.h">
+      <Filter>头文件\LeetCode题\1-99</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_10_IsMatch.h">
+      <Filter>头文件\LeetCode题\1-99</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_15_ThreeSum.h">
+      <Filter>头文件\LeetCode题\1-99</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_138_CopyRandomList.h">
+      <Filter>头文件\LeetCode题\100+</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_252_MinMeetingRooms.h">
+      <Filter>头文件\LeetCode题\100+</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_494_FindTargetSumWays.h">
+      <Filter>头文件\LeetCode题\100+</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_516_LongestPalindromeSubseq.h">
+      <Filter>头文件\LeetCode题\500+</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_691_MinStickers.h">
+      <Filter>头文件\LeetCode题\500+</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_1891_MaxPoint.h">
+      <Filter>头文件\LeetCode题\500+</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_1143_LongestCommonSubsequence.h">
+      <Filter>头文件\LeetCode题\500+</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\99999 测试.h">
+      <Filter>头文件\LeetCode题</Filter>
+    </ClInclude>
+    <ClInclude Include="MyHeap.h">
+      <Filter>头文件\Content\数据结构</Filter>
+    </ClInclude>
+    <ClInclude Include="Solution.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="title.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_2208_HalveArray.h">
+      <Filter>头文件\LeetCode题\500+</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\SimpleSolution.h">
+      <Filter>头文件\LeetCode题</Filter>
+    </ClInclude>
+    <ClInclude Include="Bitset.h">
+      <Filter>头文件\Content\数据结构</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="LeetCode\162 找峰值.h">
-      <Filter>头文件\LeetCode题\100+</Filter>
     </ClCompile>
     <ClCompile Include="Validator.cpp">
       <Filter>源文件\content</Filter>
@@ -185,8 +206,20 @@
     <ClCompile Include="LeetCode\BinaryTreeTraversalRecursion.cpp">
       <Filter>头文件\LeetCode题\类实例</Filter>
     </ClCompile>
+    <ClCompile Include="LeetCode\_162_FindPeakElement.h">
+      <Filter>头文件\LeetCode题\100+</Filter>
+    </ClCompile>
     <ClCompile Include="sort\SolutionSort.cpp">
-      <Filter>源文件\content</Filter>
+      <Filter>源文件\content\排序算法</Filter>
+    </ClCompile>
+    <ClCompile Include="MyHeap.cpp">
+      <Filter>源文件\content\数据结构</Filter>
+    </ClCompile>
+    <ClCompile Include="LeetCode\SimpleSolution.cpp">
+      <Filter>头文件\LeetCode题</Filter>
+    </ClCompile>
+    <ClCompile Include="Bitset.cpp">
+      <Filter>源文件\content\数据结构</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

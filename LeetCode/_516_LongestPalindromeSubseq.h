@@ -1,14 +1,13 @@
-#pragma once
-#include "../Solution.h"
-
 /***题目介绍***
+最长回文子序列
 给定一个字符串str，返回这个字符串的最长回文子序列长度
 比如: str = “a12b3c43def2ghi1kpm”
 最长回文子序列是“1234321”或者“123c321”，返回长度7
 */
+#pragma once
+#include "../Solution.h"
 
-
-class Solution516 : public Solution {
+class _516_LongestPalindromeSubseq : public Solution {
 public:
 	//可以看做是一个字符串和其逆序字符串的最大公共子序列，解法可见1143题
 	int longestPalindromeSubseq(string s) {

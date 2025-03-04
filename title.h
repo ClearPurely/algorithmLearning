@@ -1,11 +1,8 @@
 ﻿#pragma once
 
 #include "Solution.h"
-
-#include"LeetCode/BinaryTreeTraversalRecursion.h"
-
-
 #include"sort/SolutionSort.h"
+#include"LeetCode/SimpleSolution.h"
 
 /*暴力递归和动态规划*/
 #include"OtherQuestion/机器人行走.h"
@@ -17,24 +14,29 @@
 #include"OtherQuestion/SmallSum.h"
 
 /*LeetCode测试*/
-#include"LeetCode/1 两数之和.h"
-#include"LeetCode/3 无重复字符的最长子串.h"
-#include"LeetCode/4 寻找两个正序数组的中位数.h"
-#include"LeetCode/5 最长回文子串.h"
-#include"LeetCode/10 正则表达式匹配.h"
-#include"LeetCode/7 整数反转.h"
-#include"LeetCode/15 三数之和.h"
-#include"LeetCode/162 找峰值.h"
-#include"LeetCode/494 目标和.h"
-#include"LeetCode/516 最长回文子序列.h"
-#include"LeetCode/691 贴纸拼词.h"
-#include"LeetCode/1143 最长公共子序列.h"
-#include"LeetCode/1891 割绳子.h"
+#include"LeetCode/_1_TwoSum.h"
+#include"LeetCode/_3_LengthOfLongestSubstring.h"
+#include"LeetCode/_4_FindMedianSortedArrays.h"
+#include"LeetCode/_5_LongestPalindrome.h"
+#include"LeetCode/_7_Reverse.h"
+#include"LeetCode/_10_IsMatch.h"
+#include"LeetCode/_15_ThreeSum.h"
+#include"LeetCode/_138_CopyRandomList.h"
+#include"LeetCode/_162_FindPeakElement.h"
+#include"LeetCode/_252_MinMeetingRooms.h"
+#include"LeetCode/_494_FindTargetSumWays.h"
+#include"LeetCode/_516_LongestPalindromeSubseq.h"
+#include"LeetCode/_691_MinStickers.h"
+#include"LeetCode/_1143_LongestCommonSubsequence.h"
+#include"LeetCode/_1891_MaxPoint.h"
 
-#include"LeetCode/_21_MergeTwoLists.h"
 #include"LeetCode/_2_AddTwoNumbers.h"
+#include"LeetCode/_21_MergeTwoLists.h"
 #include"LeetCode/_622_MyCircularQueue.h"
 #include"LeetCode/_232_MyQueue.h"
 #include"LeetCode/_225_MyStack.h"
 #include"LeetCode/_155_MinStack.h"
 #include"LeetCode/_641_MyCircularDeque.h"
+#include"LeetCode/_2208_HalveArray.h"
+
+#include"LeetCode/BinaryTreeTraversalRecursion.h"

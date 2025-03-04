@@ -1,9 +1,11 @@
 /*********
+无重复字符的最长子串
 给定一个字符串s，请你找出其中不含有重复字符的最长子串的长度。
-*********/
+********/
+
 #include "../Solution.h"
 
-class Solution3 : public Solution{
+class _3_LengthOfLongestSubstring : public Solution{
 public:
     int lengthOfLongestSubstring(string s) {
         // 哈希集合，记录每个字符是否出现过

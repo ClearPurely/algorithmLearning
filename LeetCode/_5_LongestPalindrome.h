@@ -1,4 +1,5 @@
 /*
+最长回文子串
 给你一个字符串 s，找到 s 中最长的回文子串。
 
 
@@ -8,7 +9,7 @@
 */
 #include "../Solution.h"
 
-class Solution5 : public Solution {
+class _5_LongestPalindrome : public Solution {
 public:
     string longestPalindrome1(string s) {
         int size = s.size();
