@@ -139,7 +139,6 @@ vector<vector<int>> BinaryTreeSolution::levelOrder(TreeNode* root)
 		}
 		ans.push_back(move(currentLevel)); // 使用移动语义减少拷贝
 	}
-
 	return ans;
 }
 
@@ -264,4 +263,86 @@ int BinaryTreeSolution::minDepth(TreeNode* root) {
 		return minDepth(root->left) + 1;
 	}
 	return std::min(minDepth(root->left), minDepth(root->right)) + 1;
+}
+
+TreeNode* BinaryTreeSolution::buildTree(vector<int>& pre, vector<int>& in) {
+	if (pre.empty() || in.empty() || (int)pre.size() != (int)in.size()) {
+		return nullptr;
+	}
+	unordered_map<int, int> map = unordered_map<int, int>();
+	for (int i = 0; i < (int)in.size(); i++)
+		map[in[i]] = i;
+	return buildTreeF(pre, 0, (int)pre.size() - 1, in, 0, (int)in.size() - 1, map);
+}
+TreeNode* BinaryTreeSolution::buildTreeF(vector<int>& pre, int l1, int r1, vector<int>& in, int l2, int r2, unordered_map<int, int>& map) {
+	if (l1 > r1) {
+		return nullptr;
+	}
+	TreeNode* head = new TreeNode(pre[l1]);
+	if (l1 == r1) {
+		return head;
+	}
+	int k = map[pre[l1]];
+	// pre : l1(........)[.......r1]
+	// in  : (l2......)k[........r2]
+	// (...)是左树对应，[...]是右树的对应
+	head->left = buildTreeF(pre, l1 + 1, l1 + k - l2, in, l2, k - 1, map);
+	head->right = buildTreeF(pre, l1 + k - l2 + 1, r1, in, k + 1, r2, map);
+	return head;
+}
+
+bool BinaryTreeSolution::isCompleteTree(TreeNode* root) {
+	if (!root) return true;
+	queue<TreeNode*> q;
+	q.push(root);
+	bool leaf = false;
+
+	while (!q.empty()) {
+		int level_size = (int)q.size();
+
+		for (int i = 0; i < level_size; ++i) {
+			TreeNode* node = q.front();
+			q.pop();
+			//一个节点只有右节点  或者  该节点不是叶节点，就进入条件二
+			if ((node->left == nullptr && node->right != nullptr) || (leaf && (node->left != nullptr || node->right != nullptr))) {
+				return false;
+			}
+
+			if (node->left) q.push(node->left);
+			if (node->right) q.push(node->right);
+
+			//条件二：检查每个节点都是叶节点
+			if (node->left == nullptr || node->right == nullptr) {
+				leaf = true;
+			}
+		}
+	}
+	return true;
+}
+
+int BinaryTreeSolution::countNodes(TreeNode* root) {
+	if (root == nullptr) {
+		return 0;
+	}
+	return countNodesF(root, 1, mostLeft(root, 1));
+}
+int BinaryTreeSolution::countNodesF(TreeNode* cur, int level, int h) {
+	if (level == h) {
+		return 1;
+	}
+	if (mostLeft(cur->right, level + 1) == h) {
+		// cur右树上的最左节点，扎到了最深层
+		return (1 << (h - level)) + countNodesF(cur->right, level + 1, h);
+	}
+	else {
+		// cur右树上的最左节点，没扎到最深层
+		return (1 << (h - level - 1)) + countNodesF(cur->left, level + 1, h);
+	}
+}
+int BinaryTreeSolution::mostLeft(TreeNode* cur, int level) {
+	while (cur != nullptr) {
+		level++;
+		cur = cur->left;
+	}
+	return level - 1;
 }
