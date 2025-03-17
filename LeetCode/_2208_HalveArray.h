@@ -65,7 +65,7 @@ public:
 
     // 主函数：将数组和减半的最少操作次数
     int halveArray2(std::vector<int>& nums) {
-        size = nums.size(); // 初始化堆的大小
+        size = (int)nums.size(); // 初始化堆的大小
         long sum = 0;       // 初始化总和
 
         // 将数组元素放入堆中，并计算总和

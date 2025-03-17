@@ -117,6 +117,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <MinimalRebuild>true</MinimalRebuild>
+      <LanguageStandard>Default</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -141,13 +142,24 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Bitset.h" />
-    <ClInclude Include="LeetCode\SimpleSolution.h" />
+    <ClInclude Include="LeetCode\BitwiseOperationSolution.h" />
+    <ClInclude Include="LeetCode\RandomizedSet.h" />
     <ClInclude Include="LeetCode\_2208_HalveArray.h" />
     <ClInclude Include="LeetCode\_1143_LongestCommonSubsequence.h" />
     <ClInclude Include="LeetCode\_516_LongestPalindromeSubseq.h" />
     <ClInclude Include="LeetCode\_691_MinStickers.h" />
-    <ClInclude Include="LeetCode\BinaryTreeTraversalRecursion.h" />
-    <ClInclude Include="LeetCode\99999 测试.h" />
+    <ClInclude Include="LeetCode\BinaryTreeSolution.h" />
+    <ClInclude Include="LeetCode\_29_Divide.h" />
+    <ClInclude Include="LeetCode\LinkListSolution.h" />
+    <ClInclude Include="LeetCode\_25_ReverseKGroup.h" />
+    <ClInclude Include="LeetCode\_148_SortList.h" />
+    <ClInclude Include="LeetCode\LRUCache.h" />
+    <ClInclude Include="LeetCode\RandomizedCollection.h" />
+    <ClInclude Include="LeetCode\MedianFinder.h" />
+    <ClInclude Include="LeetCode\FreqStack.h" />
+    <ClInclude Include="LeetCode\AllOne.h" />
+    <ClInclude Include="LeetCode\_297_SerializeBinaryTree.h" />
+    <ClInclude Include="LeetCode\_99999_NewName.h" />
     <ClInclude Include="LeetCode\_252_MinMeetingRooms.h" />
     <ClInclude Include="MyHeap.h" />
     <ClInclude Include="OtherQuestion\SmallSum.h" />
@@ -183,14 +195,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bitset.cpp" />
-    <ClCompile Include="LeetCode\BinaryTreeTraversalRecursion.cpp" />
+    <ClCompile Include="LeetCode\BinaryTreeSolution.cpp" />
     <ClCompile Include="LeetCode\_162_FindPeakElement.h">
       <MinimalRebuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</MinimalRebuild>
     </ClCompile>
+    <ClCompile Include="LeetCode\LinkListSolution.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MyHeap.cpp" />
     <ClCompile Include="readProcessFun.cpp" />
-    <ClCompile Include="LeetCode\SimpleSolution.cpp" />
+    <ClCompile Include="LeetCode\BitwiseOperationSolution.cpp" />
     <ClCompile Include="sort\SolutionSort.cpp" />
     <ClCompile Include="Validator.cpp" />
     <ClCompile Include="LeetCode\_21_MergeTwoLists.cpp" />

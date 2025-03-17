@@ -5,25 +5,9 @@
 #pragma once
 #include "../Solution.h"
 
-// Definition for a Node.
-class Node {
-public:
-    int val;
-    Node* next;
-    Node* random;
-
-    Node(int _val) {
-        val = _val;
-        next = nullptr;
-        random = nullptr;
-    }
-};
-
-
 class _138_CopyRandomList : public Solution {
 public:
 	//利用一对一对遍历实现
-	
     Node* copyRandomList(Node* head) {
 		if (head == nullptr) {
 			return nullptr;
@@ -87,7 +71,6 @@ public:
 		}
 		return map[head];
 	}
-
 
 	void testDemo() override {
 		cout << "题目描述" << endl;

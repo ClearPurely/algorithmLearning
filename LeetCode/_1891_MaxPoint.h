@@ -39,7 +39,7 @@ public:
 	int maxPoint2(vector<int> arr, int L) {
 		int left = 0;
 		int right = 0;
-		int N = arr.size();
+		int N = (int)arr.size();
 		int max = 0;
 		while (left < N) {
 			while (right < N && arr[right] - arr[left] <= L) {

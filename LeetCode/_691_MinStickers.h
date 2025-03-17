@@ -1,11 +1,11 @@
-/***ÌâÄ¿½éÉÜ***
-ÌùÖ½Æ´´Ê
-¸ø¶¨Ò»¸ö×Ö·û´®str£¬¸ø¶¨Ò»¸ö×Ö·û´®ÀàĞÍµÄÊı×éarc£¬³öÏÖµÄ×Ö·û¶¼ÊÇĞ¡Ğ´Ó¢ÎÄ
-arrÃ¿Ò»¸ö×Ö·û´®£¬´ú±íÒ»ÕÅÌùÖ½£¬Äã¿ÉÒÔ°Ñµ¥¸ö×Ö·û¼ô¿ªÊ¹ÓÃ£¬
-Ä¿µÄÊÇÆ´³östrÀ´·µ»ØĞèÒªÖÁÉÙ¶àÉÙÕÅÌùÖ½¿ÉÒÔÍê³ÉÕâ¸öÈÎÎñ¡£
-Àı×Ó¡Ãstr= "babac", arr = {"ba" , "c","abcd"]
-ÖÁÉÙĞèÒªÁ½ÕÅÌùÖ½"ha"ºÍ"abcd"£¬ÒòÎªÊ¹ÓÃÕâÁ½ÕÅÌùÖ½£¬
-°ÑÃ¿Ò»¸ö×Ö·ûµ¥¶À¼ô¿ª£¬º¬ÓĞ2¸öa¡¢2¸öb¡¢1¸öc¡£ÊÇ¿ÉÒÔÆ´³östrµÄ¡£ËùÒÔ·µ»Ø3¡£
+ï»¿/***é¢˜ç›®ä»‹ç»***
+è´´çº¸æ‹¼è¯
+ç»™å®šä¸€ä¸ªå­—ç¬¦ä¸²strï¼Œç»™å®šä¸€ä¸ªå­—ç¬¦ä¸²ç±»å‹çš„æ•°ç»„arcï¼Œå‡ºç°çš„å­—ç¬¦éƒ½æ˜¯å°å†™è‹±æ–‡
+arræ¯ä¸€ä¸ªå­—ç¬¦ä¸²ï¼Œä»£è¡¨ä¸€å¼ è´´çº¸ï¼Œä½ å¯ä»¥æŠŠå•ä¸ªå­—ç¬¦å‰ªå¼€ä½¿ç”¨ï¼Œ
+ç›®çš„æ˜¯æ‹¼å‡ºstræ¥è¿”å›éœ€è¦è‡³å°‘å¤šå°‘å¼ è´´çº¸å¯ä»¥å®Œæˆè¿™ä¸ªä»»åŠ¡ã€‚
+ä¾‹å­âˆ¶str= "babac", arr = {"ba" , "c","abcd"]
+è‡³å°‘éœ€è¦ä¸¤å¼ è´´çº¸"ha"å’Œ"abcd"ï¼Œå› ä¸ºä½¿ç”¨è¿™ä¸¤å¼ è´´çº¸ï¼Œ
+æŠŠæ¯ä¸€ä¸ªå­—ç¬¦å•ç‹¬å‰ªå¼€ï¼Œå«æœ‰2ä¸ªaã€2ä¸ªbã€1ä¸ªcã€‚æ˜¯å¯ä»¥æ‹¼å‡ºstrçš„ã€‚æ‰€ä»¥è¿”å›3ã€‚
 */
 
 #pragma once
@@ -33,8 +33,8 @@ public:
 	}
 
 	/// <summary>
-	/// ÓÃÒ»ÕÅÌùÖ½³¢ÊÔÈ¥Æ´Ğ´£¬·µ»ØÒ»¸ö±»ÕâÕÅÌùÖ½Æ´ºÃµÄ×Ö·û´®
-	/// ²»Ò»¶¨ÊÇÍêÕûµÄÄ¿±ê×Ö·û´®
+	/// ç”¨ä¸€å¼ è´´çº¸å°è¯•å»æ‹¼å†™ï¼Œè¿”å›ä¸€ä¸ªè¢«è¿™å¼ è´´çº¸æ‹¼å¥½çš„å­—ç¬¦ä¸²
+	/// ä¸ä¸€å®šæ˜¯å®Œæ•´çš„ç›®æ ‡å­—ç¬¦ä¸²
 	/// </summary>
 	/// <param name="s1"></param>
 	/// <param name="s2"></param>
@@ -60,7 +60,7 @@ public:
 
 
 	int minStickers2(vector<string>& stickers, string target) {
-		int N = stickers.size();
+		int N = (int)stickers.size();
 		vector<int> temp(26, 0);
 		vector<vector<int>> counts(N, temp);
 		for (int i = 0; i < N; i++)
@@ -72,25 +72,25 @@ public:
 		return ans == INT_MAX ? -1 : ans;
 	}
 
-	//ÓÃÒ»¸ö¾ØÕó±íÊ¾Ò»×é×Ö·û´®£¬Ã¿Ò»ĞĞÍ³¼ÆÒ»¸öµ¥´ÊµÄ×ÖÄ¸³öÏÖÆµÂÊ
+	//ç”¨ä¸€ä¸ªçŸ©é˜µè¡¨ç¤ºä¸€ç»„å­—ç¬¦ä¸²ï¼Œæ¯ä¸€è¡Œç»Ÿè®¡ä¸€ä¸ªå•è¯çš„å­—æ¯å‡ºç°é¢‘ç‡
 	int process2(vector<vector<int>> stickers, string target)
 	{
 		if (target.empty())
 			return 0;
-		//¶Ôtarget×ö×ÖÄ¸³öÏÖÆµÂÊµÄÍ³¼Æ
+		//å¯¹targetåšå­—æ¯å‡ºç°é¢‘ç‡çš„ç»Ÿè®¡
 		int tCounts[26] = {};
 		for (char c : target)
 		{
 			tCounts[c - 'a']++;
 		}
 
-		int N = stickers.size();
+		int N = (int)stickers.size();
 		int minMeth = INT_MAX;
 		for (int i = 0; i < N; ++i)
 		{
-			//³¢ÊÔµÚÒ»ÕÅÌùÖ½
+			//å°è¯•ç¬¬ä¸€å¼ è´´çº¸
 			vector<int> sticker = stickers[i];
-			//¼ôÖ¦£¬×î¹Ø¼üµÄÓÅ»¯£¬ÈÃ°üº¬µÚÒ»¸ö×Ö·ûµÄÌùÖ½ÏÈÈ¥³¢ÊÔ
+			//å‰ªæï¼Œæœ€å…³é”®çš„ä¼˜åŒ–ï¼Œè®©åŒ…å«ç¬¬ä¸€ä¸ªå­—ç¬¦çš„è´´çº¸å…ˆå»å°è¯•
 			if (sticker[target[0] - 'a'] > 0)
 			{
 				string temp = "";
@@ -98,7 +98,7 @@ public:
 				{
 					if (tCounts[j] > 0)
 					{
-						int nums = tCounts[j] - sticker[j];		//¼õµôÆ´ºÃµÄ×Ö·û
+						int nums = tCounts[j] - sticker[j];		//å‡æ‰æ‹¼å¥½çš„å­—ç¬¦
 						for (int k = 0; k < nums; ++k)
 						{
 							temp.push_back((char)(j + 'a'));
@@ -113,11 +113,11 @@ public:
 
 
 	int minStickers3(vector<string>& stickers, string target) {
-		int N = stickers.size();
+		int N = (int)stickers.size();
 		vector<int> temp(26, 0);
 		vector<vector<int>> counts(N, temp);
 		unordered_map<string, int> dp;
-		dp[""] = 0;		//Èç¹ûÃ»ÓĞ×Ö·û£¬ÄÇÃ´¾Í·µ»Ø0
+		dp[""] = 0;		//å¦‚æœæ²¡æœ‰å­—ç¬¦ï¼Œé‚£ä¹ˆå°±è¿”å›0
 		for (int i = 0; i < N; ++i)
 		{
 			for (char cha : stickers[i])
@@ -133,19 +133,19 @@ public:
 		{
 			return dp[target];
 		}
-		//¶Ôtarget×ö×ÖÄ¸³öÏÖÆµÂÊµÄÍ³¼Æ
+		//å¯¹targetåšå­—æ¯å‡ºç°é¢‘ç‡çš„ç»Ÿè®¡
 		vector<int> tCounts(26,0);
 		for (char c : target)
 		{
 			tCounts[c - 'a']++;
 		}
 
-		int N = stickers.size();
+		int N = (int)stickers.size();
 		int minMeth = INT_MAX;
 		for (int i = 0; i < N; ++i)
 		{
-			//³¢ÊÔµÚÒ»ÕÅÌùÖ½
-			//¼ôÖ¦£¬×î¹Ø¼üµÄÓÅ»¯£¬ÈÃ°üº¬µÚÒ»¸ö×Ö·ûµÄÌùÖ½ÏÈÈ¥³¢ÊÔ
+			//å°è¯•ç¬¬ä¸€å¼ è´´çº¸
+			//å‰ªæï¼Œæœ€å…³é”®çš„ä¼˜åŒ–ï¼Œè®©åŒ…å«ç¬¬ä¸€ä¸ªå­—ç¬¦çš„è´´çº¸å…ˆå»å°è¯•
 			if (stickers[i][target[0] - 'a'] > 0)
 			{
 				string temp = "";
@@ -153,7 +153,7 @@ public:
 				{
 					if (tCounts[j] > 0)
 					{
-						int nums = tCounts[j] - stickers[i][j];		//¼õµôÆ´ºÃµÄ×Ö·û
+						int nums = tCounts[j] - stickers[i][j];		//å‡æ‰æ‹¼å¥½çš„å­—ç¬¦
 						for (int k = 0; k < nums; ++k)
 							temp += (char)(j + 'a');
 					}
@@ -167,62 +167,62 @@ public:
 
 
 	int minStickers4(vector<string>& stickers, string target) {
-		int stickersSize = stickers.size();
-		unordered_map<string, int> strStickerCnt;//strStickerCnt[str]±íÊ¾µÄ×Ö·û´®strĞèÒªµÄ×îÉÙÌùÖ½ÊıÁ¿
-		vector<vector<int>> myStickers(stickersSize, vector<int>(26, 0));//¸÷¸öÌùÖ½ÖĞ¸÷¸ö×ÖÄ¸³öÏÖµÄ´ÎÊı
-		//Í³¼ÆÃ¿Ò»¸östickerÖĞ¸÷¸ö×Ö·û³öÏÖµÄ´ÎÊı
+		int stickersSize = (int)stickers.size();
+		unordered_map<string, int> strStickerCnt;//strStickerCnt[str]è¡¨ç¤ºçš„å­—ç¬¦ä¸²stréœ€è¦çš„æœ€å°‘è´´çº¸æ•°é‡
+		vector<vector<int>> myStickers(stickersSize, vector<int>(26, 0));//å„ä¸ªè´´çº¸ä¸­å„ä¸ªå­—æ¯å‡ºç°çš„æ¬¡æ•°
+		//ç»Ÿè®¡æ¯ä¸€ä¸ªstickerä¸­å„ä¸ªå­—ç¬¦å‡ºç°çš„æ¬¡æ•°
 		for (int i = 0; i < stickersSize; ++i) {
 			for (char ch : stickers[i]) {
 				myStickers[i][ch - 'a'] += 1;
 			}
 		}
-		strStickerCnt[""] = 0;//³õÊ¼»¯£¬¿Õ×Ö·û´®²»ĞèÒªÌùÖ½
+		strStickerCnt[""] = 0;//åˆå§‹åŒ–ï¼Œç©ºå­—ç¬¦ä¸²ä¸éœ€è¦è´´çº¸
 		return dfs(strStickerCnt, myStickers, target);
 	}
 
-	//ËÑË÷Æ´´ÕtargetĞèÒªµÄ×îÉÙÌùÖ½ÊıÁ¿
+	//æœç´¢æ‹¼å‡‘targetéœ€è¦çš„æœ€å°‘è´´çº¸æ•°é‡
 	int dfs(unordered_map<string, int>& strStickerCnt, vector<vector<int>>& myStickers, string target) {
 		if (strStickerCnt.count(target)) {
-			//Èç¹ûtargetÒÑ¾­ËÑË÷¹ı£¬Ö±½Ó·µ»Ø
+			//å¦‚æœtargetå·²ç»æœç´¢è¿‡ï¼Œç›´æ¥è¿”å›
 			return strStickerCnt[target];
 		}
-		int minRes = INT_MAX, stickersSize = myStickers.size();
-		//Í³¼ÆtargetÖĞ¸÷¸ö×Ö·û³öÏÖµÄ´ÎÊı
+		int minRes = INT_MAX, stickersSize = (int)myStickers.size();
+		//ç»Ÿè®¡targetä¸­å„ä¸ªå­—ç¬¦å‡ºç°çš„æ¬¡æ•°
 		vector<int> tar(26, 0);
 		for (char ch : target) {
 			tar[ch - 'a'] += 1;
 		}
-		//³¢ÊÔÊ¹ÓÃÃ¿Ò»¸östicker
+		//å°è¯•ä½¿ç”¨æ¯ä¸€ä¸ªsticker
 		for (int i = 0; i < stickersSize; ++i) {
-			//Èç¹ûµ±Ç°stickerÖĞÃ»ÓĞtarget[0]Õâ¸ö×Ö·ûÔò¼ôÖ¦
+			//å¦‚æœå½“å‰stickerä¸­æ²¡æœ‰target[0]è¿™ä¸ªå­—ç¬¦åˆ™å‰ªæ
 			if (myStickers[i][target[0] - 'a'] == 0) {
 				continue;
 			}
-			//Ê¹ÓÃµ±Ç°sticker£¬nowTargetÎªÔËÓÃÌùÖ½ºóÊ£ÓàµÄ×ÖÄ¸
+			//ä½¿ç”¨å½“å‰stickerï¼ŒnowTargetä¸ºè¿ç”¨è´´çº¸åå‰©ä½™çš„å­—æ¯
 			string nowTarget = "";
 			for (int j = 0; j < 26; j++) {
 				if (tar[j] - myStickers[i][j] > 0) {
 					nowTarget += string(tar[j] - myStickers[i][j], 'a' + j);
 				}
 			}
-			//ËÑË÷nowTarget×Ö·û´®ĞèÒª×îÉÙÌùÖ½Êı
+			//æœç´¢nowTargetå­—ç¬¦ä¸²éœ€è¦æœ€å°‘è´´çº¸æ•°
 			int tempRes = dfs(strStickerCnt, myStickers, nowTarget);
-			//¸üĞÂtarget×Ö·û´®ĞèÒªµÄ×îÉÙÌùÖ½Êı
+			//æ›´æ–°targetå­—ç¬¦ä¸²éœ€è¦çš„æœ€å°‘è´´çº¸æ•°
 			if (tempRes != -1) {
 				minRes = min(minRes, 1 + tempRes);
 			}
 		}
-		strStickerCnt[target] = (minRes == INT_MAX ? -1 : minRes);//±ê¼ÇtargetÒÑ¾­ËÑË÷¹ı
+		strStickerCnt[target] = (minRes == INT_MAX ? -1 : minRes);//æ ‡è®°targetå·²ç»æœç´¢è¿‡
 		return strStickerCnt[target];
 	}
 
 	void testDemo() override {
-		cout << "¸ø¶¨Ò»¸ö×Ö·û´®str£¬¸ø¶¨Ò»¸ö×Ö·û´®ÀàĞÍµÄÊı×éarc£¬³öÏÖµÄ×Ö·û¶¼ÊÇĞ¡Ğ´Ó¢ÎÄ" << endl;
-		cout << "arrÃ¿Ò»¸ö×Ö·û´®£¬´ú±íÒ»ÕÅÌùÖ½£¬Äã¿ÉÒÔ°Ñµ¥¸ö×Ö·û¼ô¿ªÊ¹ÓÃ£¬" << endl;
-		cout << "Ä¿µÄÊÇÆ´³östrÀ´·µ»ØĞèÒªÖÁÉÙ¶àÉÙÕÅÌùÖ½¿ÉÒÔÍê³ÉÕâ¸öÈÎÎñ¡£" << endl;
-		cout << "Àı×Ó¡Ãstr= \"babac\", arr = {\"ba\" , \"c\",\"abcd\"]" << endl;
-		cout << "ÖÁÉÙĞèÒªÁ½ÕÅÌùÖ½\"ha\"ºÍ\"abcd\"£¬ÒòÎªÊ¹ÓÃÕâÁ½ÕÅÌùÖ½£¬" << endl;
-		cout << "°ÑÃ¿Ò»¸ö×Ö·ûµ¥¶À¼ô¿ª£¬º¬ÓĞ2¸öa¡¢2¸öb¡¢1¸öc¡£ÊÇ¿ÉÒÔÆ´³östrµÄ¡£ËùÒÔ·µ»Ø2¡£" << endl;
+		cout << "ç»™å®šä¸€ä¸ªå­—ç¬¦ä¸²strï¼Œç»™å®šä¸€ä¸ªå­—ç¬¦ä¸²ç±»å‹çš„æ•°ç»„arcï¼Œå‡ºç°çš„å­—ç¬¦éƒ½æ˜¯å°å†™è‹±æ–‡" << endl;
+		cout << "arræ¯ä¸€ä¸ªå­—ç¬¦ä¸²ï¼Œä»£è¡¨ä¸€å¼ è´´çº¸ï¼Œä½ å¯ä»¥æŠŠå•ä¸ªå­—ç¬¦å‰ªå¼€ä½¿ç”¨ï¼Œ" << endl;
+		cout << "ç›®çš„æ˜¯æ‹¼å‡ºstræ¥è¿”å›éœ€è¦è‡³å°‘å¤šå°‘å¼ è´´çº¸å¯ä»¥å®Œæˆè¿™ä¸ªä»»åŠ¡ã€‚" << endl;
+		cout << "ä¾‹å­âˆ¶str= \"babac\", arr = {\"ba\" , \"c\",\"abcd\"]" << endl;
+		cout << "è‡³å°‘éœ€è¦ä¸¤å¼ è´´çº¸\"ha\"å’Œ\"abcd\"ï¼Œå› ä¸ºä½¿ç”¨è¿™ä¸¤å¼ è´´çº¸ï¼Œ" << endl;
+		cout << "æŠŠæ¯ä¸€ä¸ªå­—ç¬¦å•ç‹¬å‰ªå¼€ï¼Œå«æœ‰2ä¸ªaã€2ä¸ªbã€1ä¸ªcã€‚æ˜¯å¯ä»¥æ‹¼å‡ºstrçš„ã€‚æ‰€ä»¥è¿”å›2ã€‚" << endl;
 
 
 		vector<string> str;

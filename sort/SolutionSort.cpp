@@ -1,4 +1,4 @@
-#include "SolutionSort.h"
+ï»¿#include "SolutionSort.h"
 
 void SolutionSort::merge(vector<int>& arr, int l, int m, int r) {
 	int i = l;
@@ -7,10 +7,10 @@ void SolutionSort::merge(vector<int>& arr, int l, int m, int r) {
 	while (a <= m && b <= r) {
 		helpArr->at(i++) = arr[a] <= arr[b] ? arr[a++] : arr[b++];
 	}
-	while (a <= m) {		//Èç¹û×îºóºÏ²¢Ê£Ò»¸ö×ó±ßµÄÊı
+	while (a <= m) {		//å¦‚æœæœ€ååˆå¹¶å‰©ä¸€ä¸ªå·¦è¾¹çš„æ•°
 		helpArr->at(i++) = arr[a++];
 	}
-	while (b <= r) {		//Ê£ÓÒ±ßµÄÊı
+	while (b <= r) {		//å‰©å³è¾¹çš„æ•°
 		helpArr->at(i++) = arr[b++];
 	}
 	for (i = l; i <= r; i++) {
@@ -29,7 +29,7 @@ void SolutionSort::mergeSort(vector<int>& arr, int l, int r) {
 }
 
 void SolutionSort::mergeSort1(vector<int>& arr) {
-	int n = arr.size();
+	int n = (int)arr.size();
 	for (int l, r, m, step = 1; step < n; step <<= 1)
 	{
 		l = 0;
@@ -66,12 +66,12 @@ void SolutionSort::quickSort(int l, int r) {
 	if (l >= r) {
 		return;
 	}
-	// Ëæ»úÕâÒ»ÏÂ£¬³£ÊıÊ±¼ä±È½Ï´ó
-	// µ«Ö»ÓĞÕâÒ»ÏÂËæ»ú£¬²ÅÄÜÔÚ¸ÅÂÊÉÏ°Ñ¿ìËÙÅÅĞòµÄÊ±¼ä¸´ÔÓ¶ÈÊÕÁ²µ½O(n * logn)
+	// éšæœºè¿™ä¸€ä¸‹ï¼Œå¸¸æ•°æ—¶é—´æ¯”è¾ƒå¤§
+	// ä½†åªæœ‰è¿™ä¸€ä¸‹éšæœºï¼Œæ‰èƒ½åœ¨æ¦‚ç‡ä¸ŠæŠŠå¿«é€Ÿæ’åºçš„æ—¶é—´å¤æ‚åº¦æ”¶æ•›åˆ°O(n * logn)
 	int x = sourceArr[(int)randomNum1(l, r)];
 	partition(l, r, x);
-	// ÎªÁË·ÀÖ¹µ×²ãµÄµİ¹é¹ı³Ì¸²¸ÇÈ«¾Ö±äÁ¿
-	// ÕâÀïÓÃÁÙÊ±±äÁ¿¼ÇÂ¼first¡¢last
+	// ä¸ºäº†é˜²æ­¢åº•å±‚çš„é€’å½’è¿‡ç¨‹è¦†ç›–å…¨å±€å˜é‡
+	// è¿™é‡Œç”¨ä¸´æ—¶å˜é‡è®°å½•firstã€last
 	int left = first;
 	int right = last;
 	quickSort(l, left - 1);
@@ -82,21 +82,21 @@ void SolutionSort::useQuickSort(vector<int>& arr) {
 	if (arr.size() < 1)
 		return;
 	sourceArr = arr;
-	quickSort(0, sourceArr.size() - 1);
+	quickSort(0, (int)sourceArr.size() - 1);
 }
 
 int SolutionSort::randomizedSelect(vector<int>& arr, int i) {
 	int ans = 0;
-	i = i - sourceArr.size();
+	i = i - (int)sourceArr.size();
 	sourceArr = arr;
-	for (int l = 0, r = sourceArr.size() - 1; l <= r;) {
-		// Ëæ»úÕâÒ»ÏÂ£¬³£ÊıÊ±¼ä±È½Ï´ó
-		// µ«Ö»ÓĞÕâÒ»ÏÂËæ»ú£¬²ÅÄÜÔÚ¸ÅÂÊÉÏ°ÑÊ±¼ä¸´ÔÓ¶ÈÊÕÁ²µ½O(n)
+	for (int l = 0, r = (int)sourceArr.size() - 1; l <= r;) {
+		// éšæœºè¿™ä¸€ä¸‹ï¼Œå¸¸æ•°æ—¶é—´æ¯”è¾ƒå¤§
+		// ä½†åªæœ‰è¿™ä¸€ä¸‹éšæœºï¼Œæ‰èƒ½åœ¨æ¦‚ç‡ä¸ŠæŠŠæ—¶é—´å¤æ‚åº¦æ”¶æ•›åˆ°O(n)
 		srand(static_cast<unsigned int>(time(nullptr)));
 		partition(l, r, arr[l + (int)(std::rand() % (r - l + 1))]);
-		// ÒòÎª×óÓÒÁ½²àÖ»ĞèÒª×ßÒ»²à
-		// ËùÒÔ²»ĞèÒªÁÙÊ±±äÁ¿¼ÇÂ¼È«¾ÖµÄfirst¡¢last
-		// Ö±½ÓÓÃ¼´¿É
+		// å› ä¸ºå·¦å³ä¸¤ä¾§åªéœ€è¦èµ°ä¸€ä¾§
+		// æ‰€ä»¥ä¸éœ€è¦ä¸´æ—¶å˜é‡è®°å½•å…¨å±€çš„firstã€last
+		// ç›´æ¥ç”¨å³å¯
 		if (i < first) {
 			r = first - 1;
 		}
@@ -114,13 +114,13 @@ int SolutionSort::randomizedSelect(vector<int>& arr, int i) {
 void SolutionSort::heapSort(vector<int>& arr)
 {
 	make_heap(arr.begin(), arr.end(), less<int>());
-	// ÒÀ´Î½«¶Ñ¶¥ÔªËØ£¨×î´óÔªËØ£©ÒÆµ½Êı×éÄ©Î²
+	// ä¾æ¬¡å°†å †é¡¶å…ƒç´ ï¼ˆæœ€å¤§å…ƒç´ ï¼‰ç§»åˆ°æ•°ç»„æœ«å°¾
 	for (int i = 0; i < arr.size(); i++)
 	{
-		// ½«¶Ñ¶¥ÔªËØÒÆ¶¯µ½µ±Ç°·¶Î§µÄÄ©Î²£¬²¢ÖØĞÂµ÷ÕûÊ£ÓàÔªËØÎª×î´ó¶Ñ
+		// å°†å †é¡¶å…ƒç´ ç§»åŠ¨åˆ°å½“å‰èŒƒå›´çš„æœ«å°¾ï¼Œå¹¶é‡æ–°è°ƒæ•´å‰©ä½™å…ƒç´ ä¸ºæœ€å¤§å †
 		std::pop_heap(arr.begin(), arr.end() - i, less<int>());
 	}
-	// ÒÆ³ıÄ©Î²ÔªËØ
+	// ç§»é™¤æœ«å°¾å…ƒç´ 
 	//arr.pop_back();
 }
 
@@ -135,23 +135,23 @@ int SolutionSort::bits(int number) {
 
 vector<int> SolutionSort::radixSortArray(vector<int>& arr) {
 	if (arr.size() > 1) {
-		// Èç¹û»áÒç³ö£¬ÄÇÃ´Òª¸ÄÓÃlongÀàĞÍÊı×éÀ´ÅÅĞò
-		int n = arr.size();
-		// ÕÒµ½Êı×éÖĞµÄ×îĞ¡Öµ
+		// å¦‚æœä¼šæº¢å‡ºï¼Œé‚£ä¹ˆè¦æ”¹ç”¨longç±»å‹æ•°ç»„æ¥æ’åº
+		int n = (int)arr.size();
+		// æ‰¾åˆ°æ•°ç»„ä¸­çš„æœ€å°å€¼
 		int min = arr[0];
 		for (int i = 1; i < n; i++) {
 			min = std::min(min, arr[i]);
 		}
 		int max = 0;
 		for (int i = 0; i < n; i++) {
-			// Êı×éÖĞµÄÃ¿¸öÊı×Ö£¬¼õÈ¥Êı×éÖĞµÄ×îĞ¡Öµ£¬¾Í°Ñarr×ª³ÉÁË·Ç¸ºÊı×é
+			// æ•°ç»„ä¸­çš„æ¯ä¸ªæ•°å­—ï¼Œå‡å»æ•°ç»„ä¸­çš„æœ€å°å€¼ï¼Œå°±æŠŠarrè½¬æˆäº†éè´Ÿæ•°ç»„
 			arr[i] -= min;
-			// ¼ÇÂ¼Êı×éÖĞµÄ×î´óÖµ
+			// è®°å½•æ•°ç»„ä¸­çš„æœ€å¤§å€¼
 			max = std::max(max, arr[i]);
 		}
-		// ¸ù¾İ×î´óÖµÔÚBASE½øÖÆÏÂµÄÎ»Êı£¬¾ö¶¨»ùÊıÅÅĞò×ö¶àÉÙÂÖ
+		// æ ¹æ®æœ€å¤§å€¼åœ¨BASEè¿›åˆ¶ä¸‹çš„ä½æ•°ï¼Œå†³å®šåŸºæ•°æ’åºåšå¤šå°‘è½®
 		radixSort(arr, n, bits(max));
-		// Êı×éÖĞËùÓĞÊı¶¼¼õÈ¥ÁË×îĞ¡Öµ£¬ËùÒÔ×îºó²»ÒªÍüÁË»¹Ô­
+		// æ•°ç»„ä¸­æ‰€æœ‰æ•°éƒ½å‡å»äº†æœ€å°å€¼ï¼Œæ‰€ä»¥æœ€åä¸è¦å¿˜äº†è¿˜åŸ
 		for (int i = 0; i < n; i++) {
 			arr[i] += min;
 		}
@@ -160,20 +160,20 @@ vector<int> SolutionSort::radixSortArray(vector<int>& arr) {
 }
 
 void SolutionSort::radixSort(vector<int>& arr, int n, int bits) {
-	// Àí½âµÄÊ±ºò¿ÉÒÔ¼ÙÉèBASE = 10
+	// ç†è§£çš„æ—¶å€™å¯ä»¥å‡è®¾BASE = 10
 	for (int offset = 1; bits > 0; offset *= BASE, bits--) {
 		std::fill(cnts.begin(), cnts.end(), 0);
 		for (int i = 0; i < n; i++) {
-			// Êı×ÖÌáÈ¡Ä³Ò»Î»µÄ¼¼ÇÉ
+			// æ•°å­—æå–æŸä¸€ä½çš„æŠ€å·§
 			cnts[(arr[i] / offset) % BASE]++;
 		}
-		// ´¦Àí³ÉÇ°×º´ÎÊıÀÛ¼ÓµÄĞÎÊ½
+		// å¤„ç†æˆå‰ç¼€æ¬¡æ•°ç´¯åŠ çš„å½¢å¼
 		for (int i = 1; i < BASE; i++) {
 			cnts[i] = cnts[i] + cnts[i - 1];
 		}
 		for (int i = n - 1; i >= 0; i--) {
-			// Ç°×ºÊıÁ¿·ÖÇøµÄ¼¼ÇÉ
-			// Êı×ÖÌáÈ¡Ä³Ò»Î»µÄ¼¼ÇÉ
+			// å‰ç¼€æ•°é‡åˆ†åŒºçš„æŠ€å·§
+			// æ•°å­—æå–æŸä¸€ä½çš„æŠ€å·§
 			help[--cnts[(arr[i] / offset) % BASE]] = arr[i];
 		}
 		for (int i = 0; i < n; i++) {
@@ -186,29 +186,29 @@ void SolutionSort::useSort(vector<int>& arr)
 {
 	helpArr = new vector<int>(arr.size(), 1);
 
-	cout << "¹é²¢ÅÅĞòµÄ½á¹û£º" << endl;
-	mergeSort(arr, 0, arr.size() - 1);
+	cout << "å½’å¹¶æ’åºçš„ç»“æœï¼š" << endl;
+	mergeSort(arr, 0, (int)arr.size() - 1);
 	printArray(arr);
-	cout << "·Çµİ¹é·½Ê½¹é²¢ÅÅĞòµÄ½á¹û£º" << endl;
+	cout << "éé€’å½’æ–¹å¼å½’å¹¶æ’åºçš„ç»“æœï¼š" << endl;
 	vector<int> arr2 = copyArray(arr);
 	mergeSort1(arr2);
 	printArray(arr2);
 
 	vector<int> arr3 = copyArray(arr);
 	useQuickSort(arr3);
-	cout << "¿ìËÙÅÅĞòµÄ½á¹û£º" << endl;
+	cout << "å¿«é€Ÿæ’åºçš„ç»“æœï¼š" << endl;
 	printArray(arr3);
 
 
 	vector<int> arr4 = copyArray(arr);
 	heapSort(arr4);
-	cout << "¹é²¢ÅÅĞòµÄ½á¹û£º" << endl;
+	cout << "å½’å¹¶æ’åºçš„ç»“æœï¼š" << endl;
 	printArray(arr4);
 
 
 	vector<int> arr5 = copyArray(arr);
 	radixSortArray(arr5);
-	cout << "»ùÊıÅÅĞòµÄ½á¹û£º" << endl;
+	cout << "åŸºæ•°æ’åºçš„ç»“æœï¼š" << endl;
 	printArray(arr5);
 }
 
@@ -217,7 +217,7 @@ void SolutionSort::testDemo(){
 	//processInputArray(func);
 
 	vector<int> testArr = randomArray(10, 100);
-	cout << "ÅÅĞòÇ°µÄÊı×é£º" << endl;
+	cout << "æ’åºå‰çš„æ•°ç»„ï¼š" << endl;
 	printArray(testArr);
 
 	useSort(testArr);

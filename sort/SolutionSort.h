@@ -1,15 +1,13 @@
-/*************
+﻿/*************
 作者：ClearPurely
 项目名：排序方法
 描述：实现一些常用的排序方法
 创建日期：2025.1.20
 最后更新日期：2025.2.7
+
 ****************/
 #pragma once
 #include "../Solution.h"
-#include"../readProcessFun.h"
-
-using namespace std;
 
 /***题目介绍***
 对数组进行排序
@@ -17,7 +15,6 @@ using namespace std;
 https://leetcode.cn/problems/sort-an-array/
 https://www.luogu.com.cn/problem/P1177
 */
-
 
 class SolutionSort : public Solution {
 private:

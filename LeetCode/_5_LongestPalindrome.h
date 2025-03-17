@@ -1,18 +1,16 @@
-/*
-×î³¤»ØÎÄ×Ó´®
-¸øÄãÒ»¸ö×Ö·û´® s£¬ÕÒµ½ s ÖĞ×î³¤µÄ»ØÎÄ×Ó´®¡£
+ï»¿#include "../Solution.h"
 
-
-ÊäÈë£ºs = "babad"
-Êä³ö£º"bab"
-½âÊÍ£º"aba" Í¬ÑùÊÇ·ûºÏÌâÒâµÄ´ğ°¸¡£
-*/
-#include "../Solution.h"
-
+/// <summary>
+/// 5 æœ€é•¿å›æ–‡å­ä¸²
+/// ç»™ä½ ä¸€ä¸ªå­—ç¬¦ä¸² sï¼Œæ‰¾åˆ° s ä¸­æœ€é•¿çš„å›æ–‡å­ä¸²ã€‚
+/// è¾“å…¥ï¼šs = "babad"
+/// è¾“å‡ºï¼š"bab"
+/// è§£é‡Šï¼š"aba" åŒæ ·æ˜¯ç¬¦åˆé¢˜æ„çš„ç­”æ¡ˆã€‚
+/// </summary>
 class _5_LongestPalindrome : public Solution {
 public:
     string longestPalindrome1(string s) {
-        int size = s.size();
+        int size = (int)s.size();
         int start = 0, end = size - 1;
         string ret = "";
         for (int i = 0; i < size; i++) {
@@ -30,12 +28,11 @@ public:
                 }
             }
         }
-
         return ret;
     }
     
     string isPal(string s) {
-        int size = s.size();
+        int size = (int)s.size();
         int start = 0, end = size - 1;
         string ret = "";
         set<int> index;
@@ -67,7 +64,6 @@ public:
         return ret;
     }
 
-
     string longestPalindrome(string s)
     {
         if (s.length() < 1)
@@ -77,8 +73,8 @@ public:
         int start = 0, end = 0;
         for (int i = 0; i < s.length(); i++)
         {
-            int len1 = expandAroundCenter(s, i, i);//Ò»¸öÔªËØÎªÖĞĞÄ
-            int len2 = expandAroundCenter(s, i, i + 1);//Á½¸öÔªËØÎªÖĞĞÄ
+            int len1 = expandAroundCenter(s, i, i);//ä¸€ä¸ªå…ƒç´ ä¸ºä¸­å¿ƒ
+            int len2 = expandAroundCenter(s, i, i + 1);//ä¸¤ä¸ªå…ƒç´ ä¸ºä¸­å¿ƒ
             int len = max(len1, len2);
             if (len > end - start)
             {
@@ -93,15 +89,14 @@ public:
     {
         int L = left, R = right;
         while (L >= 0 && R < s.length() && s[L] == s[R])
-        {// ¼ÆËãÒÔleftºÍrightÎªÖĞĞÄµÄ»ØÎÄ´®³¤¶È
+        {// è®¡ç®—ä»¥leftå’Œrightä¸ºä¸­å¿ƒçš„å›æ–‡ä¸²é•¿åº¦
             L--;
             R++;
         }
         return R - L - 1;
     }
 
-
-    //²âÊÔ´úÂë
+    //æµ‹è¯•ä»£ç 
     void testDemo() override {
         //string s = "babad";
         string s = "a";

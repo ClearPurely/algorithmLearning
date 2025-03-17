@@ -1,14 +1,12 @@
-#pragma once
+ï»¿#pragma once
 #include "../Solution.h"
 
-/***ÌâÄ¿½éÉÜ***
-ÓĞN¸ö»õÎï£¬Ã¿¸ö»õÎïÓĞËüµÄÖØÁ¿ºÍ¼ÛÖµ£¬ÓĞÁ½¸öÊı×é
-Ò»×é±íÊ¾ËùÓĞ»õÎïµÄÖØÁ¿£¬ÁíÒ»×é±íÊ¾ËùÓĞ»õÎïµÄÖØÁ¿
-ÓĞÒ»¸ö±³°ü£¬¿ÉÒÔ×°bag¸öµ¥Î»ÖØÁ¿µÄ»õÎï£¬
-ÎÊÔõÑù¿ÉÒÔ×°ÏÂ¼ÛÖµ×î¶àµÄ»õÎï¡£
-*/
-
-
+/// <summary>
+/// æœ‰Nä¸ªè´§ç‰©ï¼Œæ¯ä¸ªè´§ç‰©æœ‰å®ƒçš„é‡é‡å’Œä»·å€¼ï¼Œæœ‰ä¸¤ä¸ªæ•°ç»„
+/// ä¸€ç»„è¡¨ç¤ºæ‰€æœ‰è´§ç‰©çš„é‡é‡ï¼Œå¦ä¸€ç»„è¡¨ç¤ºæ‰€æœ‰è´§ç‰©çš„é‡é‡
+/// æœ‰ä¸€ä¸ªèƒŒåŒ…ï¼Œå¯ä»¥è£…bagä¸ªå•ä½é‡é‡çš„è´§ç‰©ï¼Œ
+/// é—®æ€æ ·å¯ä»¥è£…ä¸‹ä»·å€¼æœ€å¤šçš„è´§ç‰©ã€‚
+/// </summary>
 class SolutionBB : public Solution {
 public:
 	int maxValue(vector<int> w, vector<int> v, int bag)
@@ -20,34 +18,34 @@ public:
 		cout << process1(w, v, 0, bag) << endl;
 	}
 
-	//µ±Ç°¿¼ÂÇµ½ÁËindexºÅ»õÎï£¬index¿ÉÒÔ×ÔÓÉÑ¡Ôñ
-	//ÖØÁ¿²»ÄÜ³¬¹ıbag
+	//å½“å‰è€ƒè™‘åˆ°äº†indexå·è´§ç‰©ï¼Œindexå¯ä»¥è‡ªç”±é€‰æ‹©
+	//é‡é‡ä¸èƒ½è¶…è¿‡bag
 	int process1(vector<int> w, vector<int> v, int index,int bag)
 	{
 		if (bag < 0)
 			return -1;
 		if (index == w.size())
 			return 0;
-		//indexÃ»µ½×îºó£¬ËµÃ÷»¹ÓĞ»õÎï£¬ÇÒbag»¹ÓĞ¿Õ¼ä
-		int p1 = process1(w, v, index + 1, bag);		//²»Òªµ±Ç°µÄ»õÎï
+		//indexæ²¡åˆ°æœ€åï¼Œè¯´æ˜è¿˜æœ‰è´§ç‰©ï¼Œä¸”bagè¿˜æœ‰ç©ºé—´
+		int p1 = process1(w, v, index + 1, bag);		//ä¸è¦å½“å‰çš„è´§ç‰©
 		int p2 = 0;
 		int next = process1(w, v, index + 1, bag - w[index]);
-		if (next != -1)		//ÅĞ¶ÏÕâ´ÎÑ¡È¡ÊÇ·ñÓĞĞ§
+		if (next != -1)		//åˆ¤æ–­è¿™æ¬¡é€‰å–æ˜¯å¦æœ‰æ•ˆ
 		{
-			p2 = v[index] + next;	//Òªµ±Ç°µÄ»õÎï
+			p2 = v[index] + next;	//è¦å½“å‰çš„è´§ç‰©
 		}
 		
 		return max(p1, p2);
 	}
 
-	//¶¯Ì¬¹æ»®
+	//åŠ¨æ€è§„åˆ’
 	int dp(vector<int> w, vector<int> v, int bag)
 	{
 		if (w.empty() || v.empty() || w.size() != v.size() || w.size() == 0)
 		{
 			return 0;
 		}
-		int N = w.size();
+		int N = (int)w.size();
 		vector<int> temp(bag + 1, 0);
 		vector<vector<int>> dp(N + 1, temp);
 		for (int index = N-1; index >= 0; index--)
@@ -57,23 +55,23 @@ public:
 				int p1 = dp[index + 1][rest];
 				int p2 = 0;
 				int next = rest - w[index] < 0 ? -1 : dp[index + 1][rest - w[index]];
-				if (next != -1)		//ÅĞ¶ÏÕâ´ÎÑ¡È¡ÊÇ·ñÓĞĞ§
+				if (next != -1)		//åˆ¤æ–­è¿™æ¬¡é€‰å–æ˜¯å¦æœ‰æ•ˆ
 				{
-					p2 = v[index] + next;	//Òªµ±Ç°µÄ»õÎï
+					p2 = v[index] + next;	//è¦å½“å‰çš„è´§ç‰©
 				}
 				dp[index][rest] = max(p1, p2);
 			}
 
 		}
-		return dp[0][bag];	//´ú±íbagÕıºÃ×°ÂúÊ±
+		return dp[0][bag];	//ä»£è¡¨bagæ­£å¥½è£…æ»¡æ—¶
 	}
 
 
 	void testDemo() override{
-		cout << "ÓĞÒ»¶Ñ»õÎï£¬Ã¿¸ö»õÎïÓĞËüµÄÖØÁ¿ºÍ¼ÛÖµ£¬ÓĞÁ½¸öÊı×é" << endl;
-		cout << "Ò»×é±íÊ¾ËùÓĞ»õÎïµÄÖØÁ¿£¬ÁíÒ»×é±íÊ¾ËùÓĞ»õÎïµÄÖØÁ¿" << endl;
-		cout << "ÓĞÒ»¸ö±³°ü£¬¿ÉÒÔ×°bag¸öµ¥Î»ÖØÁ¿µÄ»õÎï£¬" << endl;
-		cout << "ÎÊÔõÑù¿ÉÒÔ×°ÏÂ¼ÛÖµ×î¶àµÄ»õÎï¡£" << endl;
+		cout << "æœ‰ä¸€å †è´§ç‰©ï¼Œæ¯ä¸ªè´§ç‰©æœ‰å®ƒçš„é‡é‡å’Œä»·å€¼ï¼Œæœ‰ä¸¤ä¸ªæ•°ç»„" << endl;
+		cout << "ä¸€ç»„è¡¨ç¤ºæ‰€æœ‰è´§ç‰©çš„é‡é‡ï¼Œå¦ä¸€ç»„è¡¨ç¤ºæ‰€æœ‰è´§ç‰©çš„é‡é‡" << endl;
+		cout << "æœ‰ä¸€ä¸ªèƒŒåŒ…ï¼Œå¯ä»¥è£…bagä¸ªå•ä½é‡é‡çš„è´§ç‰©ï¼Œ" << endl;
+		cout << "é—®æ€æ ·å¯ä»¥è£…ä¸‹ä»·å€¼æœ€å¤šçš„è´§ç‰©ã€‚" << endl;
 
 		int bag = randomNum(50);
 		vector<int> w;

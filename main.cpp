@@ -22,6 +22,8 @@ int main()
 	//processInputMatrix(func);
 
 
+	std::cout << "int: " << sizeof(int) << " bytes (" << 8 * sizeof(int) << " bits)\n";
+	std::cout << "long: " << sizeof(long) << " bytes (" << 8 * sizeof(long) << " bits)\n";
 	int num = 1;
 	Solution* solution = nullptr;
 	while (1) {
@@ -41,6 +43,11 @@ int main()
 			solution = new _2_AddTwoNumbers();
 			solution->testDemo();
 			break;
+		case 29:
+			solution = new _29_Divide();
+			solution->testDemo();
+			break;
+
 		case 162:
 			solution = new _162_FindPeakElement();
 			solution->testDemo();

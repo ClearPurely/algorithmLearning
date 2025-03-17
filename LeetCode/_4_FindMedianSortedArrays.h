@@ -1,21 +1,20 @@
-/*
-Ñ°ÕÒÁ½¸öÕıĞòÊı×éµÄÖĞÎ»Êı
-¸ø¶¨Á½¸ö´óĞ¡·Ö±ğÎª m ºÍ n µÄÕıĞò£¨´ÓĞ¡µ½´ó£©Êı×é nums1 ºÍ nums2¡£ÇëÄãÕÒ³ö²¢·µ»ØÕâÁ½¸öÕıĞòÊı×éµÄ ÖĞÎ»Êı¡£
-
-ÊäÈë£ºnums1 = [1,3], nums2 = [2]
-Êä³ö£º2.00000
-½âÊÍ£ººÏ²¢Êı×é = [1,2,3] £¬ÖĞÎ»Êı 2
-*/
-#pragma once
+ï»¿#pragma once
 #include "../Solution.h"
 
+/// <summary>
+/// 4 å¯»æ‰¾ä¸¤ä¸ªæ­£åºæ•°ç»„çš„ä¸­ä½æ•°
+/// ç»™å®šä¸¤ä¸ªå¤§å°åˆ†åˆ«ä¸º m å’Œ n çš„æ­£åºï¼ˆä»å°åˆ°å¤§ï¼‰æ•°ç»„ nums1 å’Œ nums2ã€‚è¯·ä½ æ‰¾å‡ºå¹¶è¿”å›è¿™ä¸¤ä¸ªæ­£åºæ•°ç»„çš„ ä¸­ä½æ•°ã€‚
+/// è¾“å…¥ï¼šnums1 = [1, 3], nums2 = [2]
+/// è¾“å‡ºï¼š2.00000
+/// è§£é‡Šï¼šåˆå¹¶æ•°ç»„ = [1, 2, 3] ï¼Œä¸­ä½æ•° 2
+/// </summary>
 class _4_FindMedianSortedArrays : public Solution{
 public:
-    //ÎŞ·¨´¦ÀíÒ»¸öÔªËØµÄÇé¿ö
+    //æ— æ³•å¤„ç†ä¸€ä¸ªå…ƒç´ çš„æƒ…å†µ
     double findMedianSortedArrays1(vector<int>& nums1, vector<int>& nums2) {
         double ret = 0;
         double num1 = 0, num2 = 0;
-        int size = nums1.size() + nums2.size();
+        int size = (int)nums1.size() + (int)nums2.size();
         if (size < 1 || size > 2000) {
             return false;
         }
@@ -40,7 +39,7 @@ public:
                 }
                 cout << L << " " << R << endl << endl;
             }
-            int L2 = nums1.size()-1, R2 = nums2.size() - 1;
+            int L2 = (int)nums1.size() - 1, R2 = (int)nums2.size() - 1;
             for (int i = 0; i < index; i++) {
                 if (nums1[L2] > nums2[R2]) {
                     num2 = nums1[L2];
@@ -92,7 +91,7 @@ public:
             nums1.push_back(nums2[i]);
         }
         sort(nums1.begin(),nums1.end());
-        int size = nums1.size();
+        int size = (int)nums1.size();
         cout << size << endl << endl;
         int index = (size + 1) / 2;
         cout << index << endl << endl;
@@ -112,10 +111,7 @@ public:
         return ret;
     }
 
-
-
-
-    //²âÊÔ´úÂë
+    //æµ‹è¯•ä»£ç 
     void testDemo() override {
         vector<int> v1;
         vector<int> v2;

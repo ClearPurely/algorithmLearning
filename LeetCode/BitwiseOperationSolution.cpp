@@ -1,7 +1,7 @@
 #pragma once
-#include "SimpleSolution.h"
+#include "BitwiseOperationSolution.h"
 
-int SimpleSolution::missingNumber(vector<int>& nums) {
+int BitwiseOperationSolution::missingNumber(vector<int>& nums) {
 	int eorAll = 0, eorHas = 0;
 	for (int i = 0; i < nums.size(); i++) {
 		eorAll ^= i;
@@ -11,7 +11,7 @@ int SimpleSolution::missingNumber(vector<int>& nums) {
 	return eorAll ^ eorHas;
 }
 
-int SimpleSolution::singleNumber(vector<int>& nums) {
+int BitwiseOperationSolution::singleNumber(vector<int>& nums) {
 	int eor = 0;
 	for (int num : nums) {
 		eor ^= num;
@@ -19,7 +19,7 @@ int SimpleSolution::singleNumber(vector<int>& nums) {
 	return eor;
 }
 
-int SimpleSolution::singleNumber2(vector<int>& nums, int m = 3) {
+int BitwiseOperationSolution::singleNumber2(vector<int>& nums, int m = 3) {
 	// cnts[0] : 0位上有多少个1
 	// cnts[i] : i位上有多少个1
 	// cnts[31] : 31位上有多少个1
@@ -39,7 +39,7 @@ int SimpleSolution::singleNumber2(vector<int>& nums, int m = 3) {
 	return ans;
 }
 
-vector<int> SimpleSolution::singleNumber3(vector<int>& nums) {
+vector<int> BitwiseOperationSolution::singleNumber3(vector<int>& nums) {
 	int eor1 = 0;
 	for (int num : nums) {
 		// nums中有2种数a、b出现了奇数次，其他的数都出现了偶数次
@@ -66,11 +66,11 @@ vector<int> SimpleSolution::singleNumber3(vector<int>& nums) {
 	return { eor2, eor1 ^ eor2 };
 }
 
-bool SimpleSolution::isPowerOfTwo(int n) {
+bool BitwiseOperationSolution::isPowerOfTwo(int n) {
 	return n > 0 && n == (n & -n);
 }
 
-bool SimpleSolution::isPowerOfThree(int n) {
+bool BitwiseOperationSolution::isPowerOfThree(int n) {
 	return n > 0 && 1162261467 % n == 0;
 
 	//while (n && n % 3 == 0) {
@@ -79,7 +79,7 @@ bool SimpleSolution::isPowerOfThree(int n) {
 	//return n == 1;
 }
 
-int SimpleSolution::rangeBitwiseAnd(int left, int right) {
+int BitwiseOperationSolution::rangeBitwiseAnd(int left, int right) {
 	while (left < right)
 	{
 		right -= (right & -right);
@@ -88,7 +88,7 @@ int SimpleSolution::rangeBitwiseAnd(int left, int right) {
 	return right;
 }
 
-uint32_t SimpleSolution::reverseBits(uint32_t n) {
+uint32_t BitwiseOperationSolution::reverseBits(uint32_t n) {
 	n = ((n & 0xaaaaaaaa) >> 1) | ((n & 0x55555555) << 1);
 	n = ((n & 0xcccccccc) >> 2) | ((n & 0x33333333) << 2);
 	n = ((n & 0xf0f0f0f0) >> 4) | ((n & 0x0f0f0f0f) << 4);
@@ -97,7 +97,7 @@ uint32_t SimpleSolution::reverseBits(uint32_t n) {
 	return n;
 }
 
-int SimpleSolution::hammingDistance(int x, int y) {
+int BitwiseOperationSolution::hammingDistance(int x, int y) {
 	int n = x ^ y;
 	// 返回n的二进制中有几个1
 	n = (n & 0x55555555) + ((n >> 1) & 0x55555555);		// 统计2进制上32位分割成每组长度为2上统计1的数量(01)

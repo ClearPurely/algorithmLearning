@@ -1,16 +1,14 @@
 ﻿#pragma once
 #include "../Solution.h"
 
-/***题目介绍***
-给定一个整型数组arr，代表数值不同的纸牌排成一条线
-玩家A和玩家B依次拿走每张纸牌
-规定玩家A先拿，玩家B后拿
-但是每个玩家每次只能拿走最左或最右的纸牌
-玩家A和玩家B都绝顶聪明
-请返回最后获胜者的分数。
-*/
-
-
+/// <summary>
+/// 给定一个整型数组arr，代表数值不同的纸牌排成一条线
+/// 玩家A和玩家B依次拿走每张纸牌
+/// 规定玩家A先拿，玩家B后拿
+/// 但是每个玩家每次只能拿走最左或最右的纸牌
+/// 玩家A和玩家B都绝顶聪明
+/// 请返回最后获胜者的分数。
+/// </summary>
 class SolutionZP : public Solution {
 public:
 	int win1(vector<int> arr)
@@ -19,8 +17,8 @@ public:
 			return -1;
 
 		clock_t start = clock();
-		int first = f1(arr, 0, arr.size() - 1);
-		int second = g1(arr, 0, arr.size() - 1);
+		int first = f1(arr, 0, (int)arr.size() - 1);
+		int second = g1(arr, 0, (int)arr.size() - 1);
 		getFuncExcTime(start);
 
 		if (first > second)
@@ -65,14 +63,14 @@ public:
 		if (arr.empty())
 			return -1;
 
-		int N = arr.size();
+		int N = (int)arr.size();
 		vector<int> temp(N, -1);
 		vector<vector<int>> fmap(N, temp);
 		vector<vector<int>> gmap(N, temp);
 
 		clock_t start = clock();
-		int first = f2(arr, 0, arr.size() - 1, fmap, gmap);
-		int second = g2(arr, 0, arr.size() - 1, fmap, gmap);
+		int first = f2(arr, 0, (int)arr.size() - 1, fmap, gmap);
+		int second = g2(arr, 0, (int)arr.size() - 1, fmap, gmap);
 		getFuncExcTime(start);
 
 		if (first > second)
@@ -130,7 +128,7 @@ public:
 		if (arr.empty())
 			return -1;
 
-		int N = arr.size();
+		int N = (int)arr.size();
 		vector<int> temp(N, -1);
 		vector<vector<int>> fmap(N, temp);
 		vector<vector<int>> gmap(N, temp);

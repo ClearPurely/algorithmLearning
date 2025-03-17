@@ -14,7 +14,7 @@ class _494_FindTargetSumWays : public Solution {
 public:
 	_494_FindTargetSumWays()
 	{
-		srand(time(NULL));
+		std::srand(static_cast<unsigned int>(std::time(nullptr)));
 	}
 
 	///
@@ -111,7 +111,7 @@ public:
 		if (s < 0) {
 			return 0;
 		}
-		int n = nums.size();
+		int n = (int)nums.size();
 		// dp[i][j] : nums前缀长度为i的所有子集，有多少累加和是j？
 		vector<int> temp(s + 1);
 		vector<vector<int>> dp(n + 1, temp);

@@ -1,11 +1,10 @@
 ﻿/***题目介绍***
-收录一些简单的leetcode题目
-为了避免创建一个文件就包含很少的代码
+收录一些与位运算有关的leetcode题目
 */
 #pragma once
 #include "../Solution.h"
 
-class SimpleSolution : public Solution {
+class BitwiseOperationSolution : public Solution {
 public:
 	// 268 找到缺失的数字
 	// 测试链接 : https://leetcode.cn/problems/missing-number/

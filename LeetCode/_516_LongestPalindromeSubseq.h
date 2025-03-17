@@ -1,15 +1,15 @@
-/***ÌâÄ¿½éÉÜ***
-×î³¤»ØÎÄ×ÓĞòÁĞ
-¸ø¶¨Ò»¸ö×Ö·û´®str£¬·µ»ØÕâ¸ö×Ö·û´®µÄ×î³¤»ØÎÄ×ÓĞòÁĞ³¤¶È
-±ÈÈç: str = ¡°a12b3c43def2ghi1kpm¡±
-×î³¤»ØÎÄ×ÓĞòÁĞÊÇ¡°1234321¡±»òÕß¡°123c321¡±£¬·µ»Ø³¤¶È7
+ï»¿/***é¢˜ç›®ä»‹ç»***
+æœ€é•¿å›æ–‡å­åºåˆ—
+ç»™å®šä¸€ä¸ªå­—ç¬¦ä¸²strï¼Œè¿”å›è¿™ä¸ªå­—ç¬¦ä¸²çš„æœ€é•¿å›æ–‡å­åºåˆ—é•¿åº¦
+æ¯”å¦‚: str = â€œa12b3c43def2ghi1kpmâ€
+æœ€é•¿å›æ–‡å­åºåˆ—æ˜¯â€œ1234321â€æˆ–è€…â€œ123c321â€ï¼Œè¿”å›é•¿åº¦7
 */
 #pragma once
 #include "../Solution.h"
 
 class _516_LongestPalindromeSubseq : public Solution {
 public:
-	//¿ÉÒÔ¿´×öÊÇÒ»¸ö×Ö·û´®ºÍÆäÄæĞò×Ö·û´®µÄ×î´ó¹«¹²×ÓĞòÁĞ£¬½â·¨¿É¼û1143Ìâ
+	//å¯ä»¥çœ‹åšæ˜¯ä¸€ä¸ªå­—ç¬¦ä¸²å’Œå…¶é€†åºå­—ç¬¦ä¸²çš„æœ€å¤§å…¬å…±å­åºåˆ—ï¼Œè§£æ³•å¯è§1143é¢˜
 	int longestPalindromeSubseq(string s) {
 		if (s.empty())
 			return 0;
@@ -20,8 +20,8 @@ public:
 	int longestCommonSubsequence(string text1, string text2) {
 		if (text1.empty() || text2.empty())
 			return 0;
-		int N = text1.size();
-		int M = text2.size();
+		int N = (int)text1.size();
+		int M = (int)text2.size();
 		vector<vector<int>> dp(N, vector<int>(M, 0));
 		dp[0][0] = text1[0] == text2[0] ? 1 : 0;
 		for (int j = 1; j < M; j++)
@@ -46,7 +46,7 @@ public:
 	int longestPalindromeSubseq2(string s) {
 		if (s.empty())
 			return 0;
-		return f(s, 0, s.size() - 1);
+		return f(s, 0, (int)s.size() - 1);
 	}
 
 	int f(string s, int L, int R)
@@ -63,11 +63,11 @@ public:
 		return max(p1, max(p2, max(p3, p4)));
 	}
 
-	//¶¯Ì¬¹æ»®
+	//åŠ¨æ€è§„åˆ’
 	int longestPalindromeSubseq3(string s) {
 		if (s.empty())
 			return 0;
-		int N = s.size();
+		int N = (int)s.size();
 		vector<vector<int>> dp(N, vector<int>(N, 0));
 		dp[N - 1][N - 1] = 1;
 		for (int i = 0; i < N-1; i++)
@@ -75,12 +75,12 @@ public:
 			dp[i][i] = 1;
 			dp[i][i + 1] = s[i] == s[i + 1] ? 2 : 1;
 		}
-		//´Óµ¹ÊıµÚÈıĞĞ¿ªÊ¼Ìî
+		//ä»å€’æ•°ç¬¬ä¸‰è¡Œå¼€å§‹å¡«
 		for (int L = N-3; L >= 0; --L)
 		{
 			for (int R = L + 2; R < N; ++R)
 			{
-				int p1 = dp[L + 1][R - 1];	//×óÏÂ
+				int p1 = dp[L + 1][R - 1];	//å·¦ä¸‹
 				int p2 = dp[L][R - 1];
 				int p3 = dp[L + 1][R];
 				int p4 = s[L] == s[R] ? (dp[L + 1][R - 1] + 2) : 0;
@@ -90,11 +90,11 @@ public:
 		return dp[0][N - 1];
 	}
 
-	//ÓÅ»¯
+	//ä¼˜åŒ–
 	int longestPalindromeSubseq4(string s) {
 		if (s.empty())
 			return 0;
-		int N = s.size();
+		int N = (int)s.size();
 		vector<vector<int>> dp(N, vector<int>(N, 0));
 		dp[N - 1][N - 1] = 1;
 		for (int i = 0; i < N - 1; i++)
@@ -102,7 +102,7 @@ public:
 			dp[i][i] = 1;
 			dp[i][i + 1] = s[i] == s[i + 1] ? 2 : 1;
 		}
-		//´Óµ¹ÊıµÚÈıĞĞ¿ªÊ¼Ìî
+		//ä»å€’æ•°ç¬¬ä¸‰è¡Œå¼€å§‹å¡«
 		for (int L = N - 3; L >= 0; --L)
 		{
 			for (int R = L + 2; R < N; ++R)
@@ -116,9 +116,9 @@ public:
 	}
 
 	void testDemo() override {
-		cout << "¸ø¶¨Ò»¸ö×Ö·û´®str£¬·µ»ØÕâ¸ö×Ö·û´®µÄ×î³¤»ØÎÄ×ÓĞòÁĞ³¤¶È" << endl;
-		cout << "±ÈÈç: str = ¡°a12b3c43def2ghi1kpm¡±" << endl;
-		cout << "×î³¤»ØÎÄ×ÓĞòÁĞÊÇ¡°1234321¡±»òÕß¡°123c321¡±£¬·µ»Ø³¤¶È7" << endl;
+		cout << "ç»™å®šä¸€ä¸ªå­—ç¬¦ä¸²strï¼Œè¿”å›è¿™ä¸ªå­—ç¬¦ä¸²çš„æœ€é•¿å›æ–‡å­åºåˆ—é•¿åº¦" << endl;
+		cout << "æ¯”å¦‚: str = â€œa12b3c43def2ghi1kpmâ€" << endl;
+		cout << "æœ€é•¿å›æ–‡å­åºåˆ—æ˜¯â€œ1234321â€æˆ–è€…â€œ123c321â€ï¼Œè¿”å›é•¿åº¦7" << endl;
 
 
 

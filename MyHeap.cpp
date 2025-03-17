@@ -1,4 +1,4 @@
-#include "MyHeap.h"
+﻿#include "MyHeap.h"
 
 MyHeap::MyHeap() {
 	heap = vector<int>();
@@ -11,7 +11,7 @@ MyHeap::MyHeap(vector<int> arr) {
 
 void MyHeap::add(int x) {
 	heap.push_back(x);
-	int i = heap.size();
+	int i = (int)heap.size();
 	while (heap[i] < heap[(i - 1) / 2]) {
 		swap(heap[i], heap[(i - 1) / 2]);
 		i = (i - 1) / 2;
@@ -19,7 +19,7 @@ void MyHeap::add(int x) {
 }
 
 void MyHeap::pop() {
-	int size = heap.size();
+	int size = (int)heap.size();
 	swap(heap[0], heap[--size]);
 	heap.pop_back();
 	int i = 0, l = 1;
@@ -40,5 +40,5 @@ int MyHeap::top() {
 }
 
 int MyHeap::size() {
-	return heap.size();
+	return (int)heap.size();
 }

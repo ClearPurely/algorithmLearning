@@ -49,6 +49,12 @@
     <Filter Include="头文件\Content\数据结构">
       <UniqueIdentifier>{74c60960-c9d9-44bd-90f3-7851c88296fc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\LeetCode题\合集分类">
+      <UniqueIdentifier>{24366350-3f0b-40a0-b9c5-63cfec8c2d4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\LeetCode题\数据结构设计题">
+      <UniqueIdentifier>{022ed6e5-0883-4f11-bf14-2c75501db63b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Validator.h">
@@ -79,9 +85,6 @@
       <Filter>头文件\LeetCode题\类实例</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_622_MyCircularQueue.h">
-      <Filter>头文件\LeetCode题\类实例</Filter>
-    </ClInclude>
-    <ClInclude Include="LeetCode\BinaryTreeTraversalRecursion.h">
       <Filter>头文件\LeetCode题\类实例</Filter>
     </ClInclude>
     <ClInclude Include="OtherQuestion\背包问题.h">
@@ -150,7 +153,7 @@
     <ClInclude Include="LeetCode\_1143_LongestCommonSubsequence.h">
       <Filter>头文件\LeetCode题\500+</Filter>
     </ClInclude>
-    <ClInclude Include="LeetCode\99999 测试.h">
+    <ClInclude Include="LeetCode\_99999_NewName.h">
       <Filter>头文件\LeetCode题</Filter>
     </ClInclude>
     <ClInclude Include="MyHeap.h">
@@ -165,11 +168,47 @@
     <ClInclude Include="LeetCode\_2208_HalveArray.h">
       <Filter>头文件\LeetCode题\500+</Filter>
     </ClInclude>
-    <ClInclude Include="LeetCode\SimpleSolution.h">
-      <Filter>头文件\LeetCode题</Filter>
-    </ClInclude>
     <ClInclude Include="Bitset.h">
       <Filter>头文件\Content\数据结构</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_29_Divide.h">
+      <Filter>头文件\LeetCode题\1-99</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\BitwiseOperationSolution.h">
+      <Filter>头文件\LeetCode题\合集分类</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\LinkListSolution.h">
+      <Filter>头文件\LeetCode题\合集分类</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_25_ReverseKGroup.h">
+      <Filter>头文件\LeetCode题\1-99</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_148_SortList.h">
+      <Filter>头文件\LeetCode题\100+</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\LRUCache.h">
+      <Filter>头文件\LeetCode题\数据结构设计题</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\RandomizedSet.h">
+      <Filter>头文件\LeetCode题\数据结构设计题</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\RandomizedCollection.h">
+      <Filter>头文件\LeetCode题\数据结构设计题</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\MedianFinder.h">
+      <Filter>头文件\LeetCode题\数据结构设计题</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\FreqStack.h">
+      <Filter>头文件\LeetCode题\数据结构设计题</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\AllOne.h">
+      <Filter>头文件\LeetCode题\数据结构设计题</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\BinaryTreeSolution.h">
+      <Filter>头文件\LeetCode题\合集分类</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_297_SerializeBinaryTree.h">
+      <Filter>头文件\LeetCode题\100+</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -203,9 +242,6 @@
     <ClCompile Include="LeetCode\_622_MyCircularQueue.cpp">
       <Filter>头文件\LeetCode题\类实例</Filter>
     </ClCompile>
-    <ClCompile Include="LeetCode\BinaryTreeTraversalRecursion.cpp">
-      <Filter>头文件\LeetCode题\类实例</Filter>
-    </ClCompile>
     <ClCompile Include="LeetCode\_162_FindPeakElement.h">
       <Filter>头文件\LeetCode题\100+</Filter>
     </ClCompile>
@@ -215,11 +251,17 @@
     <ClCompile Include="MyHeap.cpp">
       <Filter>源文件\content\数据结构</Filter>
     </ClCompile>
-    <ClCompile Include="LeetCode\SimpleSolution.cpp">
-      <Filter>头文件\LeetCode题</Filter>
-    </ClCompile>
     <ClCompile Include="Bitset.cpp">
       <Filter>源文件\content\数据结构</Filter>
+    </ClCompile>
+    <ClCompile Include="LeetCode\BitwiseOperationSolution.cpp">
+      <Filter>头文件\LeetCode题\合集分类</Filter>
+    </ClCompile>
+    <ClCompile Include="LeetCode\LinkListSolution.cpp">
+      <Filter>头文件\LeetCode题\合集分类</Filter>
+    </ClCompile>
+    <ClCompile Include="LeetCode\BinaryTreeSolution.cpp">
+      <Filter>头文件\LeetCode题\合集分类</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -20,11 +20,27 @@
 #include <string>
 #include <algorithm>
 #include <numeric> // for std::accumulate
+#include <cstdint>
+#include <sstream>
 
 using namespace std;
 
 #include "Validator.h"
-//using namespace Validator;
+#include "readProcessFun.h"
+
+//随机链表的节点
+class Node {
+public:
+	int val;
+	Node* next;
+	Node* random;
+
+	Node(int _val) {
+		val = _val;
+		next = NULL;
+		random = NULL;
+	}
+};
 
 //链表节点
 struct ListNode {

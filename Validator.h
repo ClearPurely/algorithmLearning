@@ -38,22 +38,13 @@ int randomNum1(int min, int max);
 /// <returns>函数运行时间（秒）</returns>
 double getFuncExcTime(std::clock_t start, bool isPrint = true);
 
-/// <summary>
 /// 打印一个数的二进制表示
-/// </summary>
-/// <param name="num">要打印的数</param>
 void printBinary(int num);
 
-/// <summary>
 /// 打印一个数组的所有值
-/// </summary>
-/// <param name="arr">要打印的数组</param>
 void printArray(const std::vector<int>& arr);
 
-/// <summary>
 /// 打印一个矩阵的所有值
-/// </summary>
-/// <param name="mat">要打印的矩阵</param>
 void printMatrix(const std::vector<std::vector<int>>& mat);
 
 /// <summary>
@@ -90,12 +81,8 @@ std::vector<int> randomArray2(int maxLen, int max, bool isSorted);
 /// <returns>生成的字符串</returns>
 std::string randomString(int maxLen, const std::string& exaction = "GB");
 
-/// <summary>
 /// 拷贝一个数组并返回新数组
-/// </summary>
 std::vector<int> copyArray(const std::vector<int>& source);
 
-/// <summary>
 /// 验证两个数组是否相同
-/// </summary>
 bool sameArray(const std::vector<int>& arr1, const std::vector<int>& arr2);

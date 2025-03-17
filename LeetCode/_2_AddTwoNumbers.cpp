@@ -235,7 +235,7 @@ void _2_AddTwoNumbers::testDemo()
     int ans = 0, n = 0;
     while (sum != nullptr)
     {
-        ans = ans + sum->val * pow(10, n++);
+        ans = ans + sum->val * (int)pow(10, n++);
         cout << sum->val << " ";
         sum = sum->next;
     }

@@ -1,15 +1,11 @@
 ﻿#pragma once
 #include "../Solution.h"
 
-using namespace std;
-
-/***题目介绍***
-规定1和A对应、2和B对应、3和C对应...26和Z对应
-那么一个数字字符串比如"111”就可以转化为:"AAA"、“KA"和"AK"
-给定一个只有数字字符组成的字符串str，返回有多少种转化结果
-*/
-
-
+/// <summary>
+/// 规定1和A对应、2和B对应、3和C对应...26和Z对应
+/// 那么一个数字字符串比如"111”就可以转化为:"AAA"、“KA"和"AK"
+/// 给定一个只有数字字符组成的字符串str，返回有多少种转化结果
+/// </summary>
 class SolutionSZZFC : public Solution {
 public:
 	int number(string str)
@@ -42,7 +38,7 @@ public:
 		{
 			return -1;
 		}
-		int N = str.length();
+		int N = (int)str.length();
 		vector<int> dp(N+1);
 		dp[N] = 1;
 		for (int i = N-1; i >= 0; i--)

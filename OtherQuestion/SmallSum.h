@@ -1,16 +1,12 @@
-
-// Ğ¡ºÍÎÊÌâ
-// ²âÊÔÁ´½Ó : https://www.nowcoder.com/practice/edfe05a1d45c4ea89101d936cac32469
-#pragma once
+ï»¿#pragma once
 #include "../Solution.h"
-#include"../readProcessFun.h"
-
-#include<vector>		//ÏòÁ¿
-using namespace std;
-
 
 static int MAXN = 100001;
 
+/// <summary>
+/// å°å’Œé—®é¢˜
+/// æµ‹è¯•é“¾æ¥ : https://www.nowcoder.com/practice/edfe05a1d45c4ea89101d936cac32469
+/// </summary>
 class SmallSum : public Solution {
 private:
 	vector<int> arr;
@@ -22,10 +18,10 @@ public:
 
 	}
 
-	// ·µ»Ø¿ç×óÓÒ²úÉúµÄĞ¡ºÍÀÛ¼ÓºÍ£¬×ó²àÓĞĞò¡¢ÓÒ²àÓĞĞò£¬ÈÃ×óÓÒÁ½²àÕûÌåÓĞĞò
+	// è¿”å›è·¨å·¦å³äº§ç”Ÿçš„å°å’Œç´¯åŠ å’Œï¼Œå·¦ä¾§æœ‰åºã€å³ä¾§æœ‰åºï¼Œè®©å·¦å³ä¸¤ä¾§æ•´ä½“æœ‰åº
 	// arr[l...m] arr[m+1...r]
 	long merge(int l, int m, int r) {
-		// Í³¼Æ²¿·Ö
+		// ç»Ÿè®¡éƒ¨åˆ†
 		long ans = 0;
 		for (int j = m + 1, i = l, sum = 0; j <= r; j++) {
 			while (i <= m && arr[i] <= arr[j]) {
@@ -33,7 +29,7 @@ public:
 			}
 			ans += sum;
 		}
-		// Õı³£merge
+		// æ­£å¸¸merge
 		int i = l;
 		int a = l;
 		int b = m + 1;
@@ -52,10 +48,10 @@ public:
 		return ans;
 	}
 
-	// ½á¹û±È½Ï´ó£¬ÓÃint»áÒç³öµÄ£¬ËùÒÔ·µ»ØlongÀàĞÍ
-	// ÌØ±ğ×¢ÒâÒç³öÕâ¸öµã£¬±ÊÊÔ³£¼û¿Ó
-	// ·µ»Øarr[l...r]·¶Î§ÉÏ£¬Ğ¡ºÍµÄÀÛ¼ÓºÍ£¬Í¬Ê±Çë°Ñarr[l..r]±äÓĞĞò
-	// Ê±¼ä¸´ÔÓ¶ÈO(n * logn)
+	// ç»“æœæ¯”è¾ƒå¤§ï¼Œç”¨intä¼šæº¢å‡ºçš„ï¼Œæ‰€ä»¥è¿”å›longç±»å‹
+	// ç‰¹åˆ«æ³¨æ„æº¢å‡ºè¿™ä¸ªç‚¹ï¼Œç¬”è¯•å¸¸è§å‘
+	// è¿”å›arr[l...r]èŒƒå›´ä¸Šï¼Œå°å’Œçš„ç´¯åŠ å’Œï¼ŒåŒæ—¶è¯·æŠŠarr[l..r]å˜æœ‰åº
+	// æ—¶é—´å¤æ‚åº¦O(n * logn)
 	long smallSum(int l, int r) {
 		if (l == r) {
 			return 0;
