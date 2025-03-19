@@ -265,32 +265,6 @@ int BinaryTreeSolution::minDepth(TreeNode* root) {
 	return std::min(minDepth(root->left), minDepth(root->right)) + 1;
 }
 
-TreeNode* BinaryTreeSolution::buildTree(vector<int>& pre, vector<int>& in) {
-	if (pre.empty() || in.empty() || (int)pre.size() != (int)in.size()) {
-		return nullptr;
-	}
-	unordered_map<int, int> map = unordered_map<int, int>();
-	for (int i = 0; i < (int)in.size(); i++)
-		map[in[i]] = i;
-	return buildTreeF(pre, 0, (int)pre.size() - 1, in, 0, (int)in.size() - 1, map);
-}
-TreeNode* BinaryTreeSolution::buildTreeF(vector<int>& pre, int l1, int r1, vector<int>& in, int l2, int r2, unordered_map<int, int>& map) {
-	if (l1 > r1) {
-		return nullptr;
-	}
-	TreeNode* head = new TreeNode(pre[l1]);
-	if (l1 == r1) {
-		return head;
-	}
-	int k = map[pre[l1]];
-	// pre : l1(........)[.......r1]
-	// in  : (l2......)k[........r2]
-	// (...)是左树对应，[...]是右树的对应
-	head->left = buildTreeF(pre, l1 + 1, l1 + k - l2, in, l2, k - 1, map);
-	head->right = buildTreeF(pre, l1 + k - l2 + 1, r1, in, k + 1, r2, map);
-	return head;
-}
-
 bool BinaryTreeSolution::isCompleteTree(TreeNode* root) {
 	if (!root) return true;
 	queue<TreeNode*> q;
@@ -320,29 +294,39 @@ bool BinaryTreeSolution::isCompleteTree(TreeNode* root) {
 	return true;
 }
 
-int BinaryTreeSolution::countNodes(TreeNode* root) {
-	if (root == nullptr) {
-		return 0;
+TreeNode* BinaryTreeSolution::lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+	if (root == nullptr || root == p || root == q) {
+		// 遇到空，或者p，或者q，直接返回
+		return root;
 	}
-	return countNodesF(root, 1, mostLeft(root, 1));
+	TreeNode* l = lowestCommonAncestor(root->left, p, q);
+	TreeNode* r = lowestCommonAncestor(root->right, p, q);
+	if (l != nullptr && r != nullptr) {
+		// 左树也搜到，右树也搜到，返回root
+		return root;
+	}
+	if (l == nullptr && r == nullptr) {
+		// 都没搜到返回空
+		return nullptr;
+	}
+	// l和r一个为空，一个不为空
+	// 返回不空的那个
+	return l != nullptr ? l : r;
 }
-int BinaryTreeSolution::countNodesF(TreeNode* cur, int level, int h) {
-	if (level == h) {
-		return 1;
+
+TreeNode* BinaryTreeSolution::lowestCommonAncestor1(TreeNode* root, TreeNode* p, TreeNode* q) {
+	// root从上到下
+	// 如果先遇到了p，说明p是答案
+	// 如果先遇到了q，说明q是答案
+	// 如果root在p~q的值之间，不用管p和q谁大谁小，只要root在中间，那么此时的root就是答案
+	// 如果root在p~q的值的左侧，那么root往右移动
+	// 如果root在p~q的值的右侧，那么root往左移动
+	while (root->val != p->val && root->val != q->val) {
+		if (std::min(p->val, q->val) < root->val && root->val < std::max(p->val, q->val)) {
+			break;
+		}
+		root = root->val < std::min(p->val, q->val) ? root->right : root->left;
 	}
-	if (mostLeft(cur->right, level + 1) == h) {
-		// cur右树上的最左节点，扎到了最深层
-		return (1 << (h - level)) + countNodesF(cur->right, level + 1, h);
-	}
-	else {
-		// cur右树上的最左节点，没扎到最深层
-		return (1 << (h - level - 1)) + countNodesF(cur->left, level + 1, h);
-	}
+	return root;
 }
-int BinaryTreeSolution::mostLeft(TreeNode* cur, int level) {
-	while (cur != nullptr) {
-		level++;
-		cur = cur->left;
-	}
-	return level - 1;
-}
+

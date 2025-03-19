@@ -159,6 +159,12 @@
     <ClInclude Include="LeetCode\FreqStack.h" />
     <ClInclude Include="LeetCode\AllOne.h" />
     <ClInclude Include="LeetCode\_297_SerializeBinaryTree.h" />
+    <ClInclude Include="LeetCode\_105_BuildTree.h" />
+    <ClInclude Include="LeetCode\_113_PathSum.h" />
+    <ClInclude Include="LeetCode\_222_CountNodes.h" />
+    <ClInclude Include="LeetCode\_337_Rob.h" />
+    <ClInclude Include="LeetCode\_90_SubsetsWithDup.h" />
+    <ClInclude Include="LeetCode\_46_47_Permute.h" />
     <ClInclude Include="LeetCode\_99999_NewName.h" />
     <ClInclude Include="LeetCode\_252_MinMeetingRooms.h" />
     <ClInclude Include="MyHeap.h" />

@@ -58,25 +58,80 @@ public:
     // 测试链接 : https://leetcode.cn/problems/minimum-depth-of-binary-tree/
     int minDepth(TreeNode* root);
 
-    // 105 利用先序与中序遍历序列构造二叉树
-    // 测试链接 : https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
-    TreeNode* buildTree(vector<int>& pre, vector<int>& in);
-    //递归构造二叉树（辅助函数）
-    TreeNode* buildTreeF(vector<int>& pre, int l1, int r1, vector<int>& in, int l2, int r2, unordered_map<int, int>& map);
-
     // 958 验证完全二叉树
     // 测试链接 : https://leetcode.cn/problems/check-completeness-of-a-binary-tree/
     bool isCompleteTree(TreeNode* root);
 
-    // 222 求完全二叉树的节点个数
-    // 测试链接 : https://leetcode.cn/problems/count-complete-tree-nodes/
-    int countNodes(TreeNode* root);
-    // cur : 当前来到的节点
-    // level :  当前来到的节点在第几层
-    // h : 整棵树的高度，不是cur这棵子树的高度
-    // 求 : cur这棵子树上有多少节点（辅助函数）
-    int countNodesF(TreeNode* cur, int level, int h);
-    // 当前节点是cur，并且它在level层
-    // 返回从cur开始不停往左，能扎到几层（辅助函数）
-    int mostLeft(TreeNode* cur, int level);
+    // 236 普通二叉树上寻找两个节点的最近公共祖先
+    // 测试链接 : https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q);
+
+    // 235 搜索二叉树上寻找两个节点的最近公共祖先
+    // 测试链接 : https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/
+    TreeNode* lowestCommonAncestor1(TreeNode* root, TreeNode* p, TreeNode* q);
+
+    // 110 验证平衡二叉树
+    // 测试链接 : https://leetcode.cn/problems/balanced-binary-tree/
+    bool balance;
+    bool isBalanced(TreeNode* root) {
+        // balance是全局变量，所有调用过程共享
+        // 所以每次判断开始时，设置为true
+        balance = true;
+        height(root);
+        return balance;
+    }
+    // 一旦发现不平衡，返回什么高度已经不重要了
+    int height(TreeNode* cur) {
+        if (!balance || cur == nullptr) {
+            return 0;
+        }
+        int lh = height(cur->left);
+        int rh = height(cur->right);
+        if (std::abs(lh - rh) > 1) {
+            balance = false;
+        }
+        return std::max(lh, rh) + 1;
+    }
+
+    // 98 验证搜索二叉树
+    // 测试链接 : https://leetcode.cn/problems/validate-binary-search-tree/
+    // 思路：可以用中序遍历做，但是用递归+全局变量的形式更快
+    long long min;
+    long long max;
+    bool isValidBST(TreeNode* head) {
+        if (head == nullptr) {
+            // 使用 long long 类型的边界值
+            min = LLONG_MAX;
+            max = LLONG_MIN;
+            return true;
+        }
+        bool lok = isValidBST(head->left);
+        long long lmin = min;
+        long long lmax = max;
+        bool rok = isValidBST(head->right);
+        long long rmin = min;
+        long long rmax = max;
+        min = std::min({ lmin, rmin, static_cast<long long>(head->val) });
+        max = std::max({ lmax, rmax, static_cast<long long>(head->val) });
+        return lok && rok && (lmax < head->val) && (rmin > head->val);
+    }
+
+    // 669 修剪搜索二叉树
+    // 测试链接 : https://leetcode.cn/problems/trim-a-binary-search-tree/
+    TreeNode* trimBST(TreeNode* cur, int low, int high) {
+        if (cur == nullptr) {
+            return nullptr;
+        }
+        if (cur->val < low) {
+            return trimBST(cur->right, low, high);
+        }
+        if (cur->val > high) {
+            return trimBST(cur->left, low, high);
+        }
+        // cur在范围中
+        cur->left = trimBST(cur->left, low, high);
+        cur->right = trimBST(cur->right, low, high);
+        return cur;
+    }
+
 };

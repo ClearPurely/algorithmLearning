@@ -21,9 +21,6 @@ int main()
 	//MyMatrixProcessFun func = addOne;
 	//processInputMatrix(func);
 
-
-	std::cout << "int: " << sizeof(int) << " bytes (" << 8 * sizeof(int) << " bits)\n";
-	std::cout << "long: " << sizeof(long) << " bytes (" << 8 * sizeof(long) << " bits)\n";
 	int num = 1;
 	Solution* solution = nullptr;
 	while (1) {
