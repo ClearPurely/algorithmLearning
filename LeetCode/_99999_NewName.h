@@ -5,7 +5,11 @@
 #include "../Solution.h"
 
 class _99999_NewName : public Solution {
+private:
+
 public:
+
+
 	void testDemo() override {
 		cout << "" << endl;
 		cout << "" << endl;

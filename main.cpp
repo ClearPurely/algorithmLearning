@@ -8,7 +8,7 @@
 
 //#include"readProcessFun.h"
 // 示例操作函数，将元素加1
-void addOne(std::vector<std::vector<int>>& mat) {
+void addOne(vector<vector<int>>& mat) {
 	for (auto& row : mat) {
 		for (auto& element : row) {
 			element += 1;
@@ -20,12 +20,14 @@ int main()
 {
 	//MyMatrixProcessFun func = addOne;
 	//processInputMatrix(func);
+	long int a;
+	long long a;
 
 	int num = 1;
 	Solution* solution = nullptr;
 	while (1) {
 		cout << "请输入你要查看的题的序号:" << endl;
-		std::cin >> num;
+		cin >> num;
 
 		switch (num) {
 		case 0:
@@ -45,13 +47,28 @@ int main()
 			solution->testDemo();
 			break;
 
+		case 52:
+			solution = new _52_TotalNQueens();
+			solution->testDemo();
+			break;
+
 		case 162:
 			solution = new _162_FindPeakElement();
 			solution->testDemo();
 			break;
 
+		case 726:
+			solution = new _726_CountOfAtoms();
+			solution->testDemo();
+			break;
+
+		case 772:
+			solution = new _772_Calculate();
+			solution->testDemo();
+			break;
+
 		default:
-			std::cout << "无效的输入" << std::endl;
+			cout << "无效的输入" << endl;
 			break;
 		}
 

@@ -6,7 +6,7 @@ MyHeap::MyHeap() {
 
 MyHeap::MyHeap(vector<int> arr) {
 	heap = arr;
-	make_heap(heap.begin(), heap.end(), std::greater<int>());
+	make_heap(heap.begin(), heap.end(), greater<int>());
 }
 
 void MyHeap::add(int x) {

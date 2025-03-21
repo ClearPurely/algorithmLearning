@@ -22,11 +22,11 @@
 #include <numeric> // for std::accumulate
 #include <cstdint>
 #include <sstream>
-
 using namespace std;
 
-#include "Validator.h"
+#include "MyValidator.h"
 #include "readProcessFun.h"
+using namespace MyValidator;
 
 //随机链表的节点
 class Node {

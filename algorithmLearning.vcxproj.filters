@@ -54,7 +54,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Validator.h">
+    <ClInclude Include="MyValidator.h">
       <Filter>头文件\Content</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_21_MergeTwoLists.h">
@@ -192,9 +192,6 @@
     <ClInclude Include="LeetCode\BinaryTreeSolution.h">
       <Filter>头文件\LeetCode题\合集分类</Filter>
     </ClInclude>
-    <ClInclude Include="LeetCode\_337_Rob.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="LeetCode\_90_SubsetsWithDup.h">
       <Filter>头文件\LeetCode题\1-499</Filter>
     </ClInclude>
@@ -225,12 +222,30 @@
     <ClInclude Include="LeetCode\_46_47_Permute.h">
       <Filter>头文件\LeetCode题\1-499</Filter>
     </ClInclude>
+    <ClInclude Include="LeetCode\_394_DecodeString.h">
+      <Filter>头文件\LeetCode题\1-499</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_726_CountOfAtoms.h">
+      <Filter>头文件\LeetCode题\500+</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_52_TotalNQueens.h">
+      <Filter>头文件\LeetCode题\1-499</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_337_Rob.h">
+      <Filter>头文件\LeetCode题\1-499</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_772_Calculate.h">
+      <Filter>头文件\LeetCode题\500+</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_878_NthMagicalNumber.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Validator.cpp">
+    <ClCompile Include="MyValidator.cpp">
       <Filter>源文件\content</Filter>
     </ClCompile>
     <ClCompile Include="LeetCode\_21_MergeTwoLists.cpp">

@@ -1,26 +1,26 @@
-#include"readProcessFun.h"
+ï»¿#include"readProcessFun.h"
 #include <string>
 #include <sstream>
 
 void processInputMatrix(const MyMatrixProcessFun& func)
 {
-	std::istream& in = std::cin;
-	// ¶ÁÈ¡Ö±µ½ÎÄ¼þ½áÊø
+	istream& in = cin;
+	// è¯»å–ç›´åˆ°æ–‡ä»¶ç»“æŸ
 	while (!in.eof()) {
-		// ¶ÁÈ¡n£¬¶þÎ¬Êý×éµÄÐÐÊý
+		// è¯»å–nï¼ŒäºŒç»´æ•°ç»„çš„è¡Œæ•°
 		int n;
 		in >> n;
-		// ¶ÁÈ¡m£¬¶þÎ¬Êý×éµÄÁÐÊý
+		// è¯»å–mï¼ŒäºŒç»´æ•°ç»„çš„åˆ—æ•°
 		int m;
 		in >> m;
-		// ´´½¨Ò»¸önÐÐmÁÐµÄ¶þÎ¬Êý×é
-		std::vector<std::vector<int>> mat(n, std::vector<int>(m));
+		// åˆ›å»ºä¸€ä¸ªnè¡Œmåˆ—çš„äºŒç»´æ•°ç»„
+		vector<vector<int>> mat(n, vector<int>(m));
 		for (int i = 0; i < n; ++i) {
 			for (int j = 0; j < m; ++j) {
 				in >> mat[i][j];
 			}
 		}
-		// Ê¹ÓÃ´«ÈëµÄº¯Êý¶ÔÕû¸ö¶þÎ¬Êý×é½øÐÐ²Ù×÷
+		// ä½¿ç”¨ä¼ å…¥çš„å‡½æ•°å¯¹æ•´ä¸ªäºŒç»´æ•°ç»„è¿›è¡Œæ“ä½œ
 		if (func)
 			func(mat);
 	}
@@ -28,27 +28,27 @@ void processInputMatrix(const MyMatrixProcessFun& func)
 
 void processInputLineNum(const MyIntProcessFun& func)
 {
-	std::string line;
-	std::string delimiter = " "; // ×Ô¶¨Òå·Ö¸ô·û£¬ÕâÀïÊ¹ÓÃ¿Õ¸ñ
-	while (std::getline(std::cin, line)) {
-		std::istringstream iss(line);
-		std::string token;
+	string line;
+	string delimiter = " "; // è‡ªå®šä¹‰åˆ†éš”ç¬¦ï¼Œè¿™é‡Œä½¿ç”¨ç©ºæ ¼
+	while (getline(cin, line)) {
+		istringstream iss(line);
+		string token;
 		int sum = 0;
-		while (std::getline(iss, token, delimiter[0])) {
+		while (getline(iss, token, delimiter[0])) {
 			if (func)
-				func(std::stoi(token));
+				func(stoi(token));
 		}
 	}
 }
 
 void processInputArray(const MyArrayProcessFun& func)
 {
-	std::istream& in = std::cin;
-	// ¶ÁÈ¡Ö±µ½ÎÄ¼þ½áÊø
+	istream& in = cin;
+	// è¯»å–ç›´åˆ°æ–‡ä»¶ç»“æŸ
 	while (!in.eof()) {
 		int n;
 		in >> n;
-		std::vector<int> arr(n,0);
+		vector<int> arr(n,0);
 		for (int i = 0; i < n; ++i) {
 			in >> arr[i];
 		}

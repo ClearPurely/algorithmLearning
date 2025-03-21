@@ -20,7 +20,7 @@ public:
         long long sum = 0;
 
         // 使用最大堆（优先队列）存储放大后的元素
-        std::priority_queue<long long> maxHeap;
+        priority_queue<long long> maxHeap;
         for (int num : nums) {
             long long temp = static_cast<long long>(num) << shift;
             sum += temp;
@@ -64,7 +64,7 @@ public:
     }
 
     // 主函数：将数组和减半的最少操作次数
-    int halveArray2(std::vector<int>& nums) {
+    int halveArray2(vector<int>& nums) {
         size = (int)nums.size(); // 初始化堆的大小
         long sum = 0;       // 初始化总和
 

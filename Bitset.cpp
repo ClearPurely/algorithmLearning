@@ -1,4 +1,4 @@
-#include "Bitset.h"
+ï»¿#include "Bitset.h"
 
 Bitset::Bitset(int n) {
 	saveSet = vector<int>((n + 31) / 32, 0);
@@ -13,9 +13,9 @@ void Bitset::fix(int i)
 	int index = i / 32;
 	int bit = i % 32;
 	if (!reverse) {
-		// Î»Í¼ËùÓĞÎ»µÄ×´Ì¬£¬Î¬³ÖÔ­Ê¼º¬Òå
-		// 0 : ²»´æÔÚ
-		// 1 : ´æÔÚ
+		// ä½å›¾æ‰€æœ‰ä½çš„çŠ¶æ€ï¼Œç»´æŒåŸå§‹å«ä¹‰
+		// 0 : ä¸å­˜åœ¨
+		// 1 : å­˜åœ¨
 		if ((saveSet[index] & (1 << bit)) == 0) {
 			zeros--;
 			ones++;
@@ -23,9 +23,9 @@ void Bitset::fix(int i)
 		}
 	}
 	else {
-		// Î»Í¼ËùÓĞÎ»µÄ×´Ì¬£¬·­×ªÁË
-		// 0 : ´æÔÚ
-		// 1 : ²»´æÔÚ
+		// ä½å›¾æ‰€æœ‰ä½çš„çŠ¶æ€ï¼Œç¿»è½¬äº†
+		// 0 : å­˜åœ¨
+		// 1 : ä¸å­˜åœ¨
 		if ((saveSet[index] & (1 << bit)) != 0) {
 			zeros--;
 			ones++;
@@ -74,7 +74,7 @@ int Bitset::count() {
 }
 
 string Bitset::toString() {
-	std::string builder(size, '0');
+	string builder(size, '0');
 	for (int i = 0, k = 0; i < size; k++) {
 		int number = saveSet[k];
 		for (int j = 0; j < 32 && i < size; j++, i++) {

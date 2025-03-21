@@ -1,39 +1,39 @@
-/*************
-×÷Õß£ºClearPurely
-ËµÃ÷£ºÕâ¸öÎÄ¼þµÄ·½·¨ÊÇÎªÁËÓ¦¶ÔACM·ç¸ñµÄÌâÄ¿×ö³öµÄ´úÂë±àÐ´
-´´½¨ÈÕÆÚ£º2025.1.13
-×îºó¸üÐÂÈÕÆÚ£º2025.1.13
+ï»¿/*************
+ä½œè€…ï¼šClearPurely
+è¯´æ˜Žï¼šè¿™ä¸ªæ–‡ä»¶çš„æ–¹æ³•æ˜¯ä¸ºäº†åº”å¯¹ACMé£Žæ ¼çš„é¢˜ç›®åšå‡ºçš„ä»£ç ç¼–å†™
+åˆ›å»ºæ—¥æœŸï¼š2025.1.13
+æœ€åŽæ›´æ–°æ—¥æœŸï¼š2025.1.13
 ****************/
 #pragma once
 #include <functional>
-#include<iostream>		//	ÊäÈëÊä³ö´òÓ¡
-#include<vector>		//ÏòÁ¿
+#include<iostream>		//	è¾“å…¥è¾“å‡ºæ‰“å°
+#include<vector>		//å‘é‡
 
 using namespace std;
 
-//¶¨ÒåÒ»¸ö ¿É´«ÈëÒ»¸öÕûÊý£¬·µ»ØÖµvoidµÄº¯Êý ÀàÐÍ
-typedef std::function<void(int)> MyIntProcessFun;
+//å®šä¹‰ä¸€ä¸ª å¯ä¼ å…¥ä¸€ä¸ªæ•´æ•°ï¼Œè¿”å›žå€¼voidçš„å‡½æ•° ç±»åž‹
+typedef function<void(int)> MyIntProcessFun;
 
-//¶¨ÒåÒ»¸ö ¿É´«ÈëÒ»¸öÊý×é£¬·µ»ØÖµvoidµÄº¯Êý ÀàÐÍ
-typedef std::function<void(std::vector<int>&)> MyArrayProcessFun;
+//å®šä¹‰ä¸€ä¸ª å¯ä¼ å…¥ä¸€ä¸ªæ•°ç»„ï¼Œè¿”å›žå€¼voidçš„å‡½æ•° ç±»åž‹
+typedef function<void(vector<int>&)> MyArrayProcessFun;
 
-//¶¨ÒåÒ»¸ö ¿É´«ÈëÒ»¸ö¶þÎ¬Êý×é²ÎÊý£¬·µ»ØÖµvoidµÄº¯Êý ÀàÐÍ
-typedef std::function<void(std::vector<std::vector<int>>&)> MyMatrixProcessFun;
+//å®šä¹‰ä¸€ä¸ª å¯ä¼ å…¥ä¸€ä¸ªäºŒç»´æ•°ç»„å‚æ•°ï¼Œè¿”å›žå€¼voidçš„å‡½æ•° ç±»åž‹
+typedef function<void(vector<vector<int>>&)> MyMatrixProcessFun;
 
-//¶ÁÈ¡Ò»¸ö¾ØÕóÎÄ¼þÊý¾Ý£¬²¢ÓÃ´«ÈëµÄº¯Êý¶ÔÆä½øÐÐ´¦Àí
-//¸ÃÎÄ¼þ¸ñÊ½Ó¦·ûºÏÈçÏÂÊ¾Àý£ºÒ»¸ö2ÐÐ2ÁÐµÄ¾ØÕó£¬ÔªËØ·Ö±ðÊÇ9£¬10£¬13£¬14
+//è¯»å–ä¸€ä¸ªçŸ©é˜µæ–‡ä»¶æ•°æ®ï¼Œå¹¶ç”¨ä¼ å…¥çš„å‡½æ•°å¯¹å…¶è¿›è¡Œå¤„ç†
+//è¯¥æ–‡ä»¶æ ¼å¼åº”ç¬¦åˆå¦‚ä¸‹ç¤ºä¾‹ï¼šä¸€ä¸ª2è¡Œ2åˆ—çš„çŸ©é˜µï¼Œå…ƒç´ åˆ†åˆ«æ˜¯9ï¼Œ10ï¼Œ13ï¼Œ14
 //2 2
 //9 10
 //13 14
 void processInputMatrix(const MyMatrixProcessFun& func);
 
-//´¦ÀíÒ»ÐÐÒ»ÐÐµÄÊäÈë£¬¶Ôµ¥¸öÕûÊý½øÐÐ´¦Àí
-//ÊäÈë¾àÀë£¬¸ÃÎÄ¼þÓÐÁ½ÐÐ£º
+//å¤„ç†ä¸€è¡Œä¸€è¡Œçš„è¾“å…¥ï¼Œå¯¹å•ä¸ªæ•´æ•°è¿›è¡Œå¤„ç†
+//è¾“å…¥è·ç¦»ï¼Œè¯¥æ–‡ä»¶æœ‰ä¸¤è¡Œï¼š
 //10 11 12
 //13 50 60
 void processInputLineNum(const MyIntProcessFun& func);
 
-//´¦ÀíÊäÈëÊý×é£¬ÊäÈë¾ÙÀý£ºÒ»¸ö³¤¶È5µÄÊý×é£¬·Ö±ðÊÇ4 2 4 5 1
+//å¤„ç†è¾“å…¥æ•°ç»„ï¼Œè¾“å…¥ä¸¾ä¾‹ï¼šä¸€ä¸ªé•¿åº¦5çš„æ•°ç»„ï¼Œåˆ†åˆ«æ˜¯4 2 4 5 1
 //5
 //4 2 4 5 1
 void processInputArray(const MyArrayProcessFun& func);
