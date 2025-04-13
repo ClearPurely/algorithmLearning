@@ -5,16 +5,16 @@ void SolutionSort::merge(vector<int>& arr, int l, int m, int r) {
 	int a = l;
 	int b = m + 1;
 	while (a <= m && b <= r) {
-		helpArr->at(i++) = arr[a] <= arr[b] ? arr[a++] : arr[b++];
+		helpArr[i++] = arr[a] <= arr[b] ? arr[a++] : arr[b++];
 	}
-	while (a <= m) {		//如果最后合并剩一个左边的数
-		helpArr->at(i++) = arr[a++];
+	while (a <= m) {		//如果最后合并剩下左边的数
+		helpArr[i++] = arr[a++];
 	}
 	while (b <= r) {		//剩右边的数
-		helpArr->at(i++) = arr[b++];
+		helpArr[i++] = arr[b++];
 	}
 	for (i = l; i <= r; i++) {
-		arr[i] = helpArr->at(i);
+		arr[i] = helpArr[i];
 	}
 }
 
@@ -124,15 +124,6 @@ void SolutionSort::heapSort(vector<int>& arr)
 	//arr.pop_back();
 }
 
-int SolutionSort::bits(int number) {
-	int ans = 0;
-	while (number > 0) {
-		ans++;
-		number /= BASE;
-	}
-	return ans;
-}
-
 vector<int> SolutionSort::radixSortArray(vector<int>& arr) {
 	if (arr.size() > 1) {
 		// 如果会溢出，那么要改用long类型数组来排序
@@ -157,6 +148,16 @@ vector<int> SolutionSort::radixSortArray(vector<int>& arr) {
 		}
 	}
 	return arr;
+}
+
+//计算一个数的最大位数
+int SolutionSort::bits(int number) {
+	int ans = 0;
+	while (number > 0) {
+		ans++;
+		number /= BASE;
+	}
+	return ans;
 }
 
 void SolutionSort::radixSort(vector<int>& arr, int n, int bits) {
@@ -184,9 +185,8 @@ void SolutionSort::radixSort(vector<int>& arr, int n, int bits) {
 
 void SolutionSort::useSort(vector<int>& arr)
 {
-	helpArr = new vector<int>(arr.size(), 1);
-
 	cout << "归并排序的结果：" << endl;
+	helpArr.resize(arr.size(), 1);
 	mergeSort(arr, 0, (int)arr.size() - 1);
 	printArray(arr);
 	cout << "非递归方式归并排序的结果：" << endl;

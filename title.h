@@ -10,6 +10,8 @@
 #include"LeetCode/MedianFinder.h"					//295
 #include"LeetCode/FreqStack.h"						//895
 #include"LeetCode/AllOne.h"							//432
+#include"TrieTree.h"								//前缀树，用map实现
+#include"TrieArray.h"								//前缀树，用数组实现
 
 //高频题合集分类
 #include"LeetCode/BitwiseOperationSolution.h"		//268 136 137 260 231 326 201 190 461
@@ -46,6 +48,7 @@
 #include"LeetCode/_148_SortList.h"
 #include"LeetCode/_155_MinStack.h"
 #include"LeetCode/_162_FindPeakElement.h"
+#include"LeetCode/_212_FindWords.h"
 #include"LeetCode/_222_CountNodes.h"
 #include"LeetCode/_225_MyStack.h"
 #include"LeetCode/_232_MyQueue.h"
@@ -53,6 +56,7 @@
 #include"LeetCode/_297_SerializeBinaryTree.h"
 #include"LeetCode/_337_Rob.h"
 #include"LeetCode/_394_DecodeString.h"
+#include"LeetCode/_421_FindMaximumXOR.h"
 #include"LeetCode/_494_FindTargetSumWays.h"
 #include"LeetCode/_516_LongestPalindromeSubseq.h"
 #include"LeetCode/_622_MyCircularQueue.h"
@@ -61,6 +65,7 @@
 #include"LeetCode/_726_CountOfAtoms.h"
 #include"LeetCode/_772_Calculate.h"
 #include"LeetCode/_878_NthMagicalNumber.h"
+#include"LeetCode/_906_SuperpalindromesInRange.h"
 #include"LeetCode/_1143_LongestCommonSubsequence.h"
 #include"LeetCode/_1891_MaxPoint.h"
 #include"LeetCode/_2208_HalveArray.h"

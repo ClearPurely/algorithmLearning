@@ -170,6 +170,9 @@
     <ClInclude Include="LeetCode\_726_CountOfAtoms.h" />
     <ClInclude Include="LeetCode\_52_TotalNQueens.h" />
     <ClInclude Include="LeetCode\_878_NthMagicalNumber.h" />
+    <ClInclude Include="LeetCode\_906_SuperpalindromesInRange.h" />
+    <ClInclude Include="LeetCode\_421_FindMaximumXOR.h" />
+    <ClInclude Include="LeetCode\_212_FindWords.h" />
     <ClInclude Include="LeetCode\_99999_NewName.h" />
     <ClInclude Include="LeetCode\_252_MinMeetingRooms.h" />
     <ClInclude Include="MyHeap.h" />
@@ -203,6 +206,8 @@
     <ClInclude Include="LeetCode\_155_MinStack.h" />
     <ClInclude Include="LeetCode\_641_MyCircularDeque.h" />
     <ClInclude Include="title.h" />
+    <ClInclude Include="TrieArray.h" />
+    <ClInclude Include="TrieTree.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bitset.cpp" />
@@ -224,6 +229,8 @@
     <ClCompile Include="LeetCode\_232_MyQueue.cpp" />
     <ClCompile Include="LeetCode\_225_MyStack.cpp" />
     <ClCompile Include="LeetCode\_155_MinStack.cpp" />
+    <ClCompile Include="TrieArray.cpp" />
+    <ClCompile Include="TrieTree.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

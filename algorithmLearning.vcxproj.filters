@@ -13,29 +13,11 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="头文件\LeetCode题">
-      <UniqueIdentifier>{6e313266-8480-47ce-8ea7-a1576d17d327}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="头文件\LeetCode题\500+">
-      <UniqueIdentifier>{60ca1739-d3b5-4c46-9ba9-4bdf19df7032}</UniqueIdentifier>
-    </Filter>
     <Filter Include="源文件\content">
       <UniqueIdentifier>{6cb355f0-252b-4084-bbfb-9be33cfe03a6}</UniqueIdentifier>
     </Filter>
     <Filter Include="头文件\Content">
       <UniqueIdentifier>{851f6b46-bbfe-4236-aad8-5afb23a591cf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="头文件\LeetCode题\类实例">
-      <UniqueIdentifier>{5e2ef0c8-a2ef-4e5a-a947-a37b4e8ac4aa}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="头文件\Content\排序算法">
-      <UniqueIdentifier>{8a409fac-34b0-4e61-af45-eab9bd7150e9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="头文件\LeetCode题\附加题">
-      <UniqueIdentifier>{83d9efb7-edae-4517-a602-4f3890fcdcc8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\content\排序算法">
-      <UniqueIdentifier>{770a5089-bdbb-42cc-a86d-e2d48cc77185}</UniqueIdentifier>
     </Filter>
     <Filter Include="源文件\content\数据结构">
       <UniqueIdentifier>{c89dae77-c2a8-42ec-a2f6-83ca3bec2a31}</UniqueIdentifier>
@@ -43,14 +25,32 @@
     <Filter Include="头文件\Content\数据结构">
       <UniqueIdentifier>{74c60960-c9d9-44bd-90f3-7851c88296fc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\LeetCode题\合集分类">
+    <Filter Include="头文件\LeetCode">
+      <UniqueIdentifier>{6e313266-8480-47ce-8ea7-a1576d17d327}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\LeetCode\500+">
+      <UniqueIdentifier>{60ca1739-d3b5-4c46-9ba9-4bdf19df7032}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\LeetCode\类实例">
+      <UniqueIdentifier>{5e2ef0c8-a2ef-4e5a-a947-a37b4e8ac4aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\LeetCode\合集分类">
       <UniqueIdentifier>{24366350-3f0b-40a0-b9c5-63cfec8c2d4d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\LeetCode题\数据结构设计题">
+    <Filter Include="头文件\LeetCode\数据结构设计题">
       <UniqueIdentifier>{022ed6e5-0883-4f11-bf14-2c75501db63b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\LeetCode题\1-499">
+    <Filter Include="头文件\LeetCode\1-499">
       <UniqueIdentifier>{65088d06-d11f-41a4-823a-e0fc6729cfd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\LeetCode\OtherQuestion">
+      <UniqueIdentifier>{83d9efb7-edae-4517-a602-4f3890fcdcc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Content\sort">
+      <UniqueIdentifier>{8a409fac-34b0-4e61-af45-eab9bd7150e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\content\sort">
+      <UniqueIdentifier>{770a5089-bdbb-42cc-a86d-e2d48cc77185}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -58,186 +58,201 @@
       <Filter>头文件\Content</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_21_MergeTwoLists.h">
-      <Filter>头文件\LeetCode题\类实例</Filter>
+      <Filter>头文件\LeetCode\类实例</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_2_AddTwoNumbers.h">
-      <Filter>头文件\LeetCode题\类实例</Filter>
+      <Filter>头文件\LeetCode\类实例</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_86_Partition.h">
-      <Filter>头文件\LeetCode题\类实例</Filter>
+      <Filter>头文件\LeetCode\类实例</Filter>
     </ClInclude>
     <ClInclude Include="readProcessFun.h">
       <Filter>头文件\Content</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_641_MyCircularDeque.h">
-      <Filter>头文件\LeetCode题\类实例</Filter>
+      <Filter>头文件\LeetCode\类实例</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_155_MinStack.h">
-      <Filter>头文件\LeetCode题\类实例</Filter>
+      <Filter>头文件\LeetCode\类实例</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_225_MyStack.h">
-      <Filter>头文件\LeetCode题\类实例</Filter>
+      <Filter>头文件\LeetCode\类实例</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_232_MyQueue.h">
-      <Filter>头文件\LeetCode题\类实例</Filter>
+      <Filter>头文件\LeetCode\类实例</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_622_MyCircularQueue.h">
-      <Filter>头文件\LeetCode题\类实例</Filter>
+      <Filter>头文件\LeetCode\类实例</Filter>
     </ClInclude>
     <ClInclude Include="OtherQuestion\背包问题.h">
-      <Filter>头文件\LeetCode题\附加题</Filter>
+      <Filter>头文件\LeetCode\OtherQuestion</Filter>
     </ClInclude>
     <ClInclude Include="OtherQuestion\机器人行走.h">
-      <Filter>头文件\LeetCode题\附加题</Filter>
+      <Filter>头文件\LeetCode\OtherQuestion</Filter>
     </ClInclude>
     <ClInclude Include="OtherQuestion\咖啡机问题.h">
-      <Filter>头文件\LeetCode题\附加题</Filter>
+      <Filter>头文件\LeetCode\OtherQuestion</Filter>
     </ClInclude>
     <ClInclude Include="OtherQuestion\数字转换为字符串.h">
-      <Filter>头文件\LeetCode题\附加题</Filter>
+      <Filter>头文件\LeetCode\OtherQuestion</Filter>
     </ClInclude>
     <ClInclude Include="OtherQuestion\象棋的骑士到一个点的走法.h">
-      <Filter>头文件\LeetCode题\附加题</Filter>
+      <Filter>头文件\LeetCode\OtherQuestion</Filter>
     </ClInclude>
     <ClInclude Include="OtherQuestion\纸牌游戏.h">
-      <Filter>头文件\LeetCode题\附加题</Filter>
+      <Filter>头文件\LeetCode\OtherQuestion</Filter>
     </ClInclude>
     <ClInclude Include="OtherQuestion\SmallSum.h">
-      <Filter>头文件\LeetCode题\附加题</Filter>
+      <Filter>头文件\LeetCode\OtherQuestion</Filter>
     </ClInclude>
     <ClInclude Include="sort\SolutionSort.h">
-      <Filter>头文件\Content\排序算法</Filter>
+      <Filter>头文件\Content\sort</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_1_TwoSum.h">
-      <Filter>头文件\LeetCode题\1-499</Filter>
+      <Filter>头文件\LeetCode\1-499</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_3_LengthOfLongestSubstring.h">
-      <Filter>头文件\LeetCode题\1-499</Filter>
+      <Filter>头文件\LeetCode\1-499</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_4_FindMedianSortedArrays.h">
-      <Filter>头文件\LeetCode题\1-499</Filter>
+      <Filter>头文件\LeetCode\1-499</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_5_LongestPalindrome.h">
-      <Filter>头文件\LeetCode题\1-499</Filter>
+      <Filter>头文件\LeetCode\1-499</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_7_Reverse.h">
-      <Filter>头文件\LeetCode题\1-499</Filter>
+      <Filter>头文件\LeetCode\1-499</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_10_IsMatch.h">
-      <Filter>头文件\LeetCode题\1-499</Filter>
+      <Filter>头文件\LeetCode\1-499</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_15_ThreeSum.h">
-      <Filter>头文件\LeetCode题\1-499</Filter>
+      <Filter>头文件\LeetCode\1-499</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_516_LongestPalindromeSubseq.h">
-      <Filter>头文件\LeetCode题\500+</Filter>
+      <Filter>头文件\LeetCode\500+</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_691_MinStickers.h">
-      <Filter>头文件\LeetCode题\500+</Filter>
+      <Filter>头文件\LeetCode\500+</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_1891_MaxPoint.h">
-      <Filter>头文件\LeetCode题\500+</Filter>
+      <Filter>头文件\LeetCode\500+</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_1143_LongestCommonSubsequence.h">
-      <Filter>头文件\LeetCode题\500+</Filter>
+      <Filter>头文件\LeetCode\500+</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_99999_NewName.h">
-      <Filter>头文件\LeetCode题</Filter>
+      <Filter>头文件\LeetCode</Filter>
     </ClInclude>
     <ClInclude Include="MyHeap.h">
       <Filter>头文件\Content\数据结构</Filter>
-    </ClInclude>
-    <ClInclude Include="Solution.h">
-      <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="title.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_2208_HalveArray.h">
-      <Filter>头文件\LeetCode题\500+</Filter>
+      <Filter>头文件\LeetCode\500+</Filter>
     </ClInclude>
     <ClInclude Include="Bitset.h">
       <Filter>头文件\Content\数据结构</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_29_Divide.h">
-      <Filter>头文件\LeetCode题\1-499</Filter>
+      <Filter>头文件\LeetCode\1-499</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\BitwiseOperationSolution.h">
-      <Filter>头文件\LeetCode题\合集分类</Filter>
+      <Filter>头文件\LeetCode\合集分类</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\LinkListSolution.h">
-      <Filter>头文件\LeetCode题\合集分类</Filter>
+      <Filter>头文件\LeetCode\合集分类</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_25_ReverseKGroup.h">
-      <Filter>头文件\LeetCode题\1-499</Filter>
+      <Filter>头文件\LeetCode\1-499</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\LRUCache.h">
-      <Filter>头文件\LeetCode题\数据结构设计题</Filter>
+      <Filter>头文件\LeetCode\数据结构设计题</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\RandomizedSet.h">
-      <Filter>头文件\LeetCode题\数据结构设计题</Filter>
+      <Filter>头文件\LeetCode\数据结构设计题</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\RandomizedCollection.h">
-      <Filter>头文件\LeetCode题\数据结构设计题</Filter>
+      <Filter>头文件\LeetCode\数据结构设计题</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\MedianFinder.h">
-      <Filter>头文件\LeetCode题\数据结构设计题</Filter>
+      <Filter>头文件\LeetCode\数据结构设计题</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\FreqStack.h">
-      <Filter>头文件\LeetCode题\数据结构设计题</Filter>
+      <Filter>头文件\LeetCode\数据结构设计题</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\AllOne.h">
-      <Filter>头文件\LeetCode题\数据结构设计题</Filter>
+      <Filter>头文件\LeetCode\数据结构设计题</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\BinaryTreeSolution.h">
-      <Filter>头文件\LeetCode题\合集分类</Filter>
+      <Filter>头文件\LeetCode\合集分类</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_90_SubsetsWithDup.h">
-      <Filter>头文件\LeetCode题\1-499</Filter>
+      <Filter>头文件\LeetCode\1-499</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_105_BuildTree.h">
-      <Filter>头文件\LeetCode题\1-499</Filter>
+      <Filter>头文件\LeetCode\1-499</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_113_PathSum.h">
-      <Filter>头文件\LeetCode题\1-499</Filter>
+      <Filter>头文件\LeetCode\1-499</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_138_CopyRandomList.h">
-      <Filter>头文件\LeetCode题\1-499</Filter>
+      <Filter>头文件\LeetCode\1-499</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_148_SortList.h">
-      <Filter>头文件\LeetCode题\1-499</Filter>
+      <Filter>头文件\LeetCode\1-499</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_222_CountNodes.h">
-      <Filter>头文件\LeetCode题\1-499</Filter>
+      <Filter>头文件\LeetCode\1-499</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_252_MinMeetingRooms.h">
-      <Filter>头文件\LeetCode题\1-499</Filter>
+      <Filter>头文件\LeetCode\1-499</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_297_SerializeBinaryTree.h">
-      <Filter>头文件\LeetCode题\1-499</Filter>
+      <Filter>头文件\LeetCode\1-499</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_494_FindTargetSumWays.h">
-      <Filter>头文件\LeetCode题\1-499</Filter>
+      <Filter>头文件\LeetCode\1-499</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_46_47_Permute.h">
-      <Filter>头文件\LeetCode题\1-499</Filter>
+      <Filter>头文件\LeetCode\1-499</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_394_DecodeString.h">
-      <Filter>头文件\LeetCode题\1-499</Filter>
+      <Filter>头文件\LeetCode\1-499</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_726_CountOfAtoms.h">
-      <Filter>头文件\LeetCode题\500+</Filter>
+      <Filter>头文件\LeetCode\500+</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_52_TotalNQueens.h">
-      <Filter>头文件\LeetCode题\1-499</Filter>
+      <Filter>头文件\LeetCode\1-499</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_337_Rob.h">
-      <Filter>头文件\LeetCode题\1-499</Filter>
+      <Filter>头文件\LeetCode\1-499</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_772_Calculate.h">
-      <Filter>头文件\LeetCode题\500+</Filter>
+      <Filter>头文件\LeetCode\500+</Filter>
+    </ClInclude>
+    <ClInclude Include="TrieArray.h">
+      <Filter>头文件\Content\数据结构</Filter>
+    </ClInclude>
+    <ClInclude Include="TrieTree.h">
+      <Filter>头文件\Content\数据结构</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_421_FindMaximumXOR.h">
+      <Filter>头文件\LeetCode\1-499</Filter>
     </ClInclude>
     <ClInclude Include="LeetCode\_878_NthMagicalNumber.h">
+      <Filter>头文件\LeetCode\500+</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_906_SuperpalindromesInRange.h">
+      <Filter>头文件\LeetCode\500+</Filter>
+    </ClInclude>
+    <ClInclude Include="Solution.h">
+      <Filter>头文件\LeetCode</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetCode\_212_FindWords.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -249,31 +264,31 @@
       <Filter>源文件\content</Filter>
     </ClCompile>
     <ClCompile Include="LeetCode\_21_MergeTwoLists.cpp">
-      <Filter>头文件\LeetCode题\类实例</Filter>
+      <Filter>头文件\LeetCode\类实例</Filter>
     </ClCompile>
     <ClCompile Include="LeetCode\_2_AddTwoNumbers.cpp">
-      <Filter>头文件\LeetCode题\类实例</Filter>
+      <Filter>头文件\LeetCode\类实例</Filter>
     </ClCompile>
     <ClCompile Include="LeetCode\_86_Partition.cpp">
-      <Filter>头文件\LeetCode题\类实例</Filter>
+      <Filter>头文件\LeetCode\类实例</Filter>
     </ClCompile>
     <ClCompile Include="readProcessFun.cpp">
       <Filter>源文件\content</Filter>
     </ClCompile>
     <ClCompile Include="LeetCode\_155_MinStack.cpp">
-      <Filter>头文件\LeetCode题\类实例</Filter>
+      <Filter>头文件\LeetCode\类实例</Filter>
     </ClCompile>
     <ClCompile Include="LeetCode\_225_MyStack.cpp">
-      <Filter>头文件\LeetCode题\类实例</Filter>
+      <Filter>头文件\LeetCode\类实例</Filter>
     </ClCompile>
     <ClCompile Include="LeetCode\_232_MyQueue.cpp">
-      <Filter>头文件\LeetCode题\类实例</Filter>
+      <Filter>头文件\LeetCode\类实例</Filter>
     </ClCompile>
     <ClCompile Include="LeetCode\_622_MyCircularQueue.cpp">
-      <Filter>头文件\LeetCode题\类实例</Filter>
+      <Filter>头文件\LeetCode\类实例</Filter>
     </ClCompile>
     <ClCompile Include="sort\SolutionSort.cpp">
-      <Filter>源文件\content\排序算法</Filter>
+      <Filter>源文件\content\sort</Filter>
     </ClCompile>
     <ClCompile Include="MyHeap.cpp">
       <Filter>源文件\content\数据结构</Filter>
@@ -282,16 +297,22 @@
       <Filter>源文件\content\数据结构</Filter>
     </ClCompile>
     <ClCompile Include="LeetCode\BitwiseOperationSolution.cpp">
-      <Filter>头文件\LeetCode题\合集分类</Filter>
+      <Filter>头文件\LeetCode\合集分类</Filter>
     </ClCompile>
     <ClCompile Include="LeetCode\LinkListSolution.cpp">
-      <Filter>头文件\LeetCode题\合集分类</Filter>
+      <Filter>头文件\LeetCode\合集分类</Filter>
     </ClCompile>
     <ClCompile Include="LeetCode\BinaryTreeSolution.cpp">
-      <Filter>头文件\LeetCode题\合集分类</Filter>
+      <Filter>头文件\LeetCode\合集分类</Filter>
     </ClCompile>
     <ClCompile Include="LeetCode\_162_FindPeakElement.h">
-      <Filter>头文件\LeetCode题\1-499</Filter>
+      <Filter>头文件\LeetCode\1-499</Filter>
+    </ClCompile>
+    <ClCompile Include="TrieTree.cpp">
+      <Filter>源文件\content\数据结构</Filter>
+    </ClCompile>
+    <ClCompile Include="TrieArray.cpp">
+      <Filter>源文件\content\数据结构</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

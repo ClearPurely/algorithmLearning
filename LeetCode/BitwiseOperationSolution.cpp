@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "BitwiseOperationSolution.h"
 
 int BitwiseOperationSolution::missingNumber(vector<int>& nums) {
@@ -20,9 +20,9 @@ int BitwiseOperationSolution::singleNumber(vector<int>& nums) {
 }
 
 int BitwiseOperationSolution::singleNumber2(vector<int>& nums, int m = 3) {
-	// cnts[0] : 0Î»ÉÏÓĞ¶àÉÙ¸ö1
-	// cnts[i] : iÎ»ÉÏÓĞ¶àÉÙ¸ö1
-	// cnts[31] : 31Î»ÉÏÓĞ¶àÉÙ¸ö1
+	// cnts[0] : 0ä½ä¸Šæœ‰å¤šå°‘ä¸ª1
+	// cnts[i] : iä½ä¸Šæœ‰å¤šå°‘ä¸ª1
+	// cnts[31] : 31ä½ä¸Šæœ‰å¤šå°‘ä¸ª1
 	vector<int> cnts(32, 0);
 	for (int num : nums) {
 		for (int i = 0; i < 32; i++) {
@@ -31,7 +31,7 @@ int BitwiseOperationSolution::singleNumber2(vector<int>& nums, int m = 3) {
 	}
 	int ans = 0;
 	for (int i = 0; i < 32; i++) {
-		//Èç¹ûµ±Ç°Õâ¸öÎ»ÊıÉÏÍ³¼ÆµÄ1³öÏÖµÄ´ÎÊı ¶ÔmÈ¡Óà!=0 ÄÇ¾ÍËµÃ÷ÕâÎ»ÉÏÊÇ1
+		//å¦‚æœå½“å‰è¿™ä¸ªä½æ•°ä¸Šç»Ÿè®¡çš„1å‡ºç°çš„æ¬¡æ•° å¯¹må–ä½™!=0 é‚£å°±è¯´æ˜è¿™ä½ä¸Šæ˜¯1
 		if (cnts[i] % m != 0) {
 			ans |= 1 << i;
 		}
@@ -42,19 +42,19 @@ int BitwiseOperationSolution::singleNumber2(vector<int>& nums, int m = 3) {
 vector<int> BitwiseOperationSolution::singleNumber3(vector<int>& nums) {
 	int eor1 = 0;
 	for (int num : nums) {
-		// numsÖĞÓĞ2ÖÖÊıa¡¢b³öÏÖÁËÆæÊı´Î£¬ÆäËûµÄÊı¶¼³öÏÖÁËÅ¼Êı´Î
+		// numsä¸­æœ‰2ç§æ•°aã€bå‡ºç°äº†å¥‡æ•°æ¬¡ï¼Œå…¶ä»–çš„æ•°éƒ½å‡ºç°äº†å¶æ•°æ¬¡
 		eor1 ^= num;
 	}
 	// eor1 = a ^ b
-	// Brian KernighanËã·¨
-	// ÌáÈ¡³ö¶ş½øÖÆÀï×îÓÒ²àµÄ1
+	// Brian Kernighanç®—æ³•
+	// æå–å‡ºäºŒè¿›åˆ¶é‡Œæœ€å³ä¾§çš„1
 	int rightOne;
 	if (eor1 == INT_MIN) {
-		// µ± eor1 µÈÓÚ INT_MIN Ê±£¬Ö±½Ó¸³Öµ
+		// å½“ eor1 ç­‰äº INT_MIN æ—¶ï¼Œç›´æ¥èµ‹å€¼
 		rightOne = INT_MIN;
 	}
 	else {
-		// Õı³£Çé¿ö£¬¼ÆËã×îÓÒ²àµÄ 1
+		// æ­£å¸¸æƒ…å†µï¼Œè®¡ç®—æœ€å³ä¾§çš„ 1
 		rightOne = eor1 & (-eor1);
 	}
 	int eor2 = 0;
@@ -66,6 +66,7 @@ vector<int> BitwiseOperationSolution::singleNumber3(vector<int>& nums) {
 	return { eor2, eor1 ^ eor2 };
 }
 
+//00000100 & 11111100 = 00000100
 bool BitwiseOperationSolution::isPowerOfTwo(int n) {
 	return n > 0 && n == (n & -n);
 }
@@ -83,7 +84,7 @@ int BitwiseOperationSolution::rangeBitwiseAnd(int left, int right) {
 	while (left < right)
 	{
 		right -= (right & -right);
-		//right = right & (right - 1);	//ÕâÑùĞ´Ò²ĞĞ
+		//right = right & (right - 1);	//è¿™æ ·å†™ä¹Ÿè¡Œ
 	}
 	return right;
 }
@@ -99,11 +100,11 @@ uint32_t BitwiseOperationSolution::reverseBits(uint32_t n) {
 
 int BitwiseOperationSolution::hammingDistance(int x, int y) {
 	int n = x ^ y;
-	// ·µ»ØnµÄ¶ş½øÖÆÖĞÓĞ¼¸¸ö1
-	n = (n & 0x55555555) + ((n >> 1) & 0x55555555);		// Í³¼Æ2½øÖÆÉÏ32Î»·Ö¸î³ÉÃ¿×é³¤¶ÈÎª2ÉÏÍ³¼Æ1µÄÊıÁ¿(01)
-	n = (n & 0x33333333) + ((n >> 2) & 0x33333333);		// Í³¼Æ2½øÖÆÉÏ32Î»·Ö¸î³ÉÃ¿×é³¤¶ÈÎª4ÉÏÍ³¼Æ1µÄÊıÁ¿(0011)
-	n = (n & 0x0f0f0f0f) + ((n >> 4) & 0x0f0f0f0f);		// Í³¼Æ2½øÖÆÉÏ32Î»·Ö¸î³ÉÃ¿×é³¤¶ÈÎª8ÉÏÍ³¼Æ1µÄÊıÁ¿(00001111)
-	n = (n & 0x00ff00ff) + ((n >> 8) & 0x00ff00ff);		// Í³¼Æ2½øÖÆÉÏ32Î»·Ö¸î³ÉÃ¿×é³¤¶ÈÎª16ÉÏÍ³¼Æ1µÄÊıÁ¿(0000000011111111)
-	n = (n & 0x0000ffff) + ((n >> 16) & 0x0000ffff);	// Í³¼Æ2½øÖÆÉÏ32Î»·Ö¸î³ÉÃ¿×é³¤¶ÈÎª32ÉÏÍ³¼Æ1µÄÊıÁ¿(00000000000000001111111111111111)
+	// è¿”å›nçš„äºŒè¿›åˆ¶ä¸­æœ‰å‡ ä¸ª1
+	n = (n & 0x55555555) + ((n >> 1) & 0x55555555);		// ç»Ÿè®¡2è¿›åˆ¶ä¸Š32ä½åˆ†å‰²æˆæ¯ç»„é•¿åº¦ä¸º2ä¸Šç»Ÿè®¡1çš„æ•°é‡(01)
+	n = (n & 0x33333333) + ((n >> 2) & 0x33333333);		// ç»Ÿè®¡2è¿›åˆ¶ä¸Š32ä½åˆ†å‰²æˆæ¯ç»„é•¿åº¦ä¸º4ä¸Šç»Ÿè®¡1çš„æ•°é‡(0011)
+	n = (n & 0x0f0f0f0f) + ((n >> 4) & 0x0f0f0f0f);		// ç»Ÿè®¡2è¿›åˆ¶ä¸Š32ä½åˆ†å‰²æˆæ¯ç»„é•¿åº¦ä¸º8ä¸Šç»Ÿè®¡1çš„æ•°é‡(00001111)
+	n = (n & 0x00ff00ff) + ((n >> 8) & 0x00ff00ff);		// ç»Ÿè®¡2è¿›åˆ¶ä¸Š32ä½åˆ†å‰²æˆæ¯ç»„é•¿åº¦ä¸º16ä¸Šç»Ÿè®¡1çš„æ•°é‡(0000000011111111)
+	n = (n & 0x0000ffff) + ((n >> 16) & 0x0000ffff);	// ç»Ÿè®¡2è¿›åˆ¶ä¸Š32ä½åˆ†å‰²æˆæ¯ç»„é•¿åº¦ä¸º32ä¸Šç»Ÿè®¡1çš„æ•°é‡(00000000000000001111111111111111)
 	return n;
 }

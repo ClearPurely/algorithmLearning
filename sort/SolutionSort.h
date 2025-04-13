@@ -20,7 +20,7 @@ class SolutionSort : public Solution {
 private:
 
 	/// 归并排序的部分
-	vector<int>* helpArr;
+	vector<int> helpArr;
 	//归并排序的辅助函数
 	void merge(vector<int>& arr, int l, int m, int r);
 	//归并排序
@@ -63,7 +63,7 @@ private:
 	void radixSort(vector<int>& arr, int n, int bits);
 
 public:
-	SolutionSort()
+	SolutionSort(): first(1),last(1), helpArr(vector<int>(100))
 	{
 		help = vector<int>(MAXN);
 		cnts = vector<int>(BASE);
@@ -71,8 +71,6 @@ public:
 
 	~SolutionSort()
 	{
-		delete helpArr;
-		helpArr = NULL;
 	}
 
 	//传入一个数组，测试所有不同种类的排序
