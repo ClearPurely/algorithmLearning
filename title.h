@@ -17,6 +17,8 @@
 #include"LeetCode/BitwiseOperationSolution.h"		//268 136 137 260 231 326 201 190 461
 #include"LeetCode/LinkListSolution.h"				//160 138 234 142
 #include"LeetCode/BinaryTreeSolution.h"				//94 144 145 102 103 662 104 111 958 235 236 110 98 669
+#include"LeetCode/PrefixSum.h"			
+
 
 /*暴力递归和动态规划*/
 #include"OtherQuestion/机器人行走.h"

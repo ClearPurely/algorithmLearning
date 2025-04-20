@@ -252,8 +252,11 @@
     <ClInclude Include="Solution.h">
       <Filter>头文件\LeetCode</Filter>
     </ClInclude>
+    <ClInclude Include="LeetCode\PrefixSum.h">
+      <Filter>头文件\LeetCode\合集分类</Filter>
+    </ClInclude>
     <ClInclude Include="LeetCode\_212_FindWords.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\LeetCode\1-499</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

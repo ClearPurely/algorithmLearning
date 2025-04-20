@@ -81,7 +81,6 @@ void testTrieTreeDemo() {
 	cout << "Test7.2: " << (trie.countWordsStartingWith("app") == 1 ? "Pass" : "Fail") << endl; // 只剩application
 }
 
-
 int main()
 {
 	//MyMatrixProcessFun func = addOne;
